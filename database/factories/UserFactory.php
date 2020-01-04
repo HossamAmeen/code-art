@@ -25,3 +25,28 @@ $factory->define(User::class, function (Faker $faker) {
         'remember_token' => Str::random(10),
     ];
 });
+
+$factory->define(App\Models\Adds::class, function (Faker $faker) {
+    return [
+        'title' => $faker->name,
+        'description' => $faker->sentence,
+        'percent' => $faker->randomDigit,
+        'image' => 'image.jpg',
+    ];
+});
+
+$factory->define(App\Models\ServiceCategory::class, function (Faker $faker) {
+    return [
+        'name' => $faker->name,
+    ];
+});
+
+$factory->define(App\Models\LastWork::class, function (Faker $faker) {
+    return [
+        'title' => $faker->name,
+        'description' => $faker->sentence,
+        'image' => 'image.jpg',
+    ];
+});
+
+

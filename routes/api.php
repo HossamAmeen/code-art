@@ -17,6 +17,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::post('upload/image', 'BackController@storeFile');
+
 Route::namespace('APIs')->group(function () {
         Route::group(['middleware' => ['guest:api']], function () {
             Route::post('login', 'AuthController@login');
@@ -26,4 +28,9 @@ Route::namespace('APIs')->group(function () {
             Route::get('logout', 'AuthController@logout');
             Route::get('getuser', 'AuthController@getUser');
         });
+
+    Route::resource('adds', 'AddsController');
+    Route::resource('category', 'ServiceCategoryController');
+    Route::resource('last/work', 'LastWorkController');
+
 });

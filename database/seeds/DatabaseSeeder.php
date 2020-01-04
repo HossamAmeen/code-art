@@ -16,5 +16,8 @@ class DatabaseSeeder extends Seeder
 
         ]);
         factory('App\Models\User', 10)->create();
+        factory('App\Models\Adds', 10)->create();
+        factory('App\Models\ServiceCategory', 10)->create();
+        factory('App\Models\LastWork', 10)->create();
     }
 }
