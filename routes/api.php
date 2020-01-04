@@ -27,4 +27,10 @@ Route::namespace('APIs')->group(function () {
             Route::get('logout', 'AuthController@logout');
             Route::get('getuser', 'AuthController@getUser');
         });
+
+    Route::resource('adds', 'AddsController');
+    Route::resource('category', 'ServiceCategoryController');
+    Route::resource('last/work', 'LastWorkController');
+    Route::resource('complaint', 'ComplaintController');
+
 });
