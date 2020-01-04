@@ -113,7 +113,7 @@ class BackController extends Controller
         return $this->pluralModelName() . '/' . $folderName . '/' . $name;
     }
 
-    protected function storeFile($file)
+    protected function storeFile(Request $file)
     {
         $mytime = Carbon\Carbon::now();
 
@@ -133,5 +133,21 @@ class BackController extends Controller
 //        return substr($destinationPath, 34) . '/' . $name;
         return $this->pluralModelName()  .'/'. $name ;
     }
+
+    protected function uploadImage(Request $request , $height = 400 , $width = 400){
+
+    $photo = $request->file('image');
+    $fileName = time().str_random('10').'.'.$photo->getClientOriginalExtension();
+    $destinationPath = public_path('uploads/');
+    $image = Image::make($photo->getRealPath())->resize($height, $width);
+
+        // return $destinationPath;
+
+     if(!is_dir($destinationPath) ){
+         mkdir($destinationPath);
+     }
+    $image->save($destinationPath.$fileName,60);
+    return 'uploads/'.$fileName;
+}
 
 }
