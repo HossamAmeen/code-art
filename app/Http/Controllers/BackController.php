@@ -134,7 +134,7 @@ class BackController extends Controller
         return $this->pluralModelName()  .'/'. $name ;
     }
 
-    protected function uploadImage(Request $request , $height = 400 , $width = 400){
+    function uploadImage(Request $request , $height = 400 , $width = 400){
 
     $photo = $request->file('image');
     $fileName = time().str_random('10').'.'.$photo->getClientOriginalExtension();

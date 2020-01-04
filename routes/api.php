@@ -17,6 +17,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::post('upload/image', 'UploadImageController');
 Route::namespace('APIs')->group(function () {
         Route::group(['middleware' => ['guest:api']], function () {
             Route::post('login', 'AuthController@login');
