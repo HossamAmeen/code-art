@@ -113,7 +113,7 @@ class BackController extends Controller
         return $this->pluralModelName() . '/' . $folderName . '/' . $name;
     }
 
-    protected function storeFile($fileName, $file)
+    protected function storeFile($file)
     {
         $mytime = Carbon\Carbon::now();
 
@@ -123,7 +123,7 @@ class BackController extends Controller
             File::makeDirectory($path, 0777, true, true);
         }
 
-        $name = $fileName. '_' .$this->pluralModelName() . ' ' . $mytime->toDateTimeString() .'.'.$file->getClientOriginalExtension();
+        $name = $this->pluralModelName() . ' ' . $mytime->toDateTimeString() .'.'.$file->getClientOriginalExtension();
 
         $name = str_replace(' ', '_', $name);
         $destinationPath = public_path('/'. $this->pluralModelName() );
