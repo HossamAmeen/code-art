@@ -39,6 +39,6 @@ class APICommand extends Command
     {
         Artisan::call('make:controller Dashboard/'.$this->argument('api').'Controller' );
         Artisan::call('make:model Models/'.$this->argument('api').' -m' );
-
+        
     }
 }

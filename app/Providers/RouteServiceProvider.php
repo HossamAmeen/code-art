@@ -15,7 +15,7 @@ class RouteServiceProvider extends ServiceProvider
      * @var string
      */
     protected $namespace = 'App\Http\Controllers';
-
+    protected $dashboardNamespace = 'App\Http\Controllers\Dashboard';
     /**
      * Define your route model bindings, pattern filters, etc.
      *
@@ -39,6 +39,7 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapWebRoutes();
 
+        $this->mapDashboardRoutes();
         //
     }
 
@@ -69,5 +70,20 @@ class RouteServiceProvider extends ServiceProvider
              ->middleware('api')
              ->namespace($this->namespace)
              ->group(base_path('routes/api.php'));
+    }
+
+    /**
+     * Define the "api" routes for the dashboard of application.
+     *
+     * These routes are typically stateless.
+     *
+     * @return void
+     */
+    protected function mapDashboardRoutes()
+    {
+        Route::prefix('dashboard')
+        ->middleware('api')
+             ->namespace($this->dashboardNamespace)
+             ->group(base_path('routes/dashboard.php'));
     }
 }
