@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\APIs;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\BackController;
+use App\Http\Controllers\BackEndController;
 use App\Models\Adds;
 
-class AddsController extends BackController
+class AddsController extends BackEndController
 {
     public function __construct(Adds $model)
     {

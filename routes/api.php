@@ -34,3 +34,6 @@ Route::namespace('APIs')->group(function () {
     Route::resource('complaint', 'ComplaintController');
 
 });
+Route::namespace('Dashboard')->group(function () {
+    Route::resource('configration', 'ConfigrationController')->only(['index', 'update']);
+});

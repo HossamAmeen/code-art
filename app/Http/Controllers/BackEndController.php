@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Image, Carbon, File;
 
-class BackController extends Controller
+class BackEndController extends Controller
 {
     use APIResponseTrait;
     protected $model;

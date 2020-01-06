@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\APIs;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\BackController;
+use App\Http\Controllers\BackEndController;
 use App\Models\LastWork;
 
-class LastWorkController extends BackController
+class LastWorkController extends BackEndController
 {
     public function __construct(LastWork $model)
     {

@@ -41,6 +41,21 @@ $factory->define(User::class, function (Faker $faker) {
     ];
 });
 
+$factory->define(App\Models\Configration::class, function (Faker $faker) {
+    return [
+        'email' => $faker->safeEmail,
+        'description' => $faker->sentence($nbWords = 6, $variableNbWords = true),
+        'home_description' => $faker->sentence($nbWords = 6, $variableNbWords = true),
+        'phone' => $faker->e164PhoneNumber,
+        'address' =>$faker->address ,
+        'facebook' => "https://www.facebook.com/UROClinicDrAhmedReda/",
+        'twitter' => "https://twitter.com/",
+        'instagram' => "https://www.instagram.com/", // 
+        'youtube' =>"https://www.youtube.com" ,
+    ];
+});
+
+
 $factory->define(App\Models\Adds::class, function (Faker $faker) {
     return [
         'title' => $faker->name,

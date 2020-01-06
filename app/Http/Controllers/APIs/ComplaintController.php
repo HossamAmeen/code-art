@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\APIs;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\BackController;
+use App\Http\Controllers\BackEndController;
 use App\Models\Complaint;
 
-class ComplaintController extends BackController
+class ComplaintController extends BackEndController
 {
     public function __construct(Complaint $model)
     {
