@@ -39,7 +39,7 @@ class AddsController extends BackEndController
             $request['image'] = $destination;
             copy( $source, $destination );
         }
-        
+
         $add->update($request->all());
 
         return $this->APIResponse(null, null, 200);
