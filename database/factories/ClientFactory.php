@@ -78,3 +78,13 @@ $factory->define(App\Models\Question::class, function (Faker $faker) {
         "category_question_id" => $faker->randomElement(getCategoryQuestion()),
     ];
 });
+ 
+$factory->define(App\Models\Order::class, function (Faker $faker) {
+    return [
+        "price" => $faker->randomDigit,
+        "amount"   => $faker->randomDigit,
+        "status" =>  $faker->randomElement(array(1,2,3,4)),
+        "client_id" => $faker->randomElement(getClients()),
+        "service_id" => $faker->randomElement(getServices()),
+    ];
+});
