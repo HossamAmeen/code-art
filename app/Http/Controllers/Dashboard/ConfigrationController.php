@@ -24,10 +24,4 @@ class ConfigrationController extends BackEndController
         $configration->update($request->all());
         return $this->APIResponse(null, null, 200);
     }
-
-    public function attributes()
-    {
-        return ["email","address","description",
-        "phone","whatsapp","youtube","facebook","twitter","instagram"];
-    }
 }

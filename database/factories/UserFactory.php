@@ -45,7 +45,8 @@ $factory->define(App\Models\Configration::class, function (Faker $faker) {
     return [
         'email' => $faker->safeEmail,
         'description' => $faker->sentence($nbWords = 6, $variableNbWords = true),
-        'home_description' => $faker->sentence($nbWords = 6, $variableNbWords = true),
+        "about_us" => $faker->sentence($nbWords = 6, $variableNbWords = true),
+        'registration_conditions' => $faker->sentence($nbWords = 6, $variableNbWords = true),
         'phone' => $faker->e164PhoneNumber,
         'address' =>$faker->address ,
         'facebook' => "https://www.facebook.com/UROClinicDrAhmedReda/",

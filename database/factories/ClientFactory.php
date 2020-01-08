@@ -88,3 +88,12 @@ $factory->define(App\Models\Order::class, function (Faker $faker) {
         "service_id" => $faker->randomElement(getServices()),
     ];
 });
+
+$factory->define(App\Models\SuggestAddition::class, function (Faker $faker) {
+    return [
+        "suggestion" => $faker->name,
+        "price"   => $faker->randomDigit,
+        // "amount"   => $faker->randomDigit,
+        "service_id" => $faker->randomElement(getServices()),
+    ];
+});

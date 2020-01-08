@@ -19,8 +19,10 @@ class CreateConfigrationsTable extends Migration
             $table->string('email')->nullable();
             $table->string('address')->nullable();
             $table->text('description')->nullable();
-            $table->text('home_description')->nullable();
-            $table->text('descriptionPoint')->nullable();
+            $table->text('about_us')->nullable();
+            $table->text('registration_conditions')->nullable();
+            $table->text('how_work')->nullable();
+            $table->text('privacy')->nullable();
             $table->string('phone')->nullable();
             $table->string('whatsapp')->nullable();
             $table->string('youtube')->nullable();
