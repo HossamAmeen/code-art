@@ -3,12 +3,12 @@
 namespace App\Http\Controllers\APIs;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\BackEndController;
-use App\Models\ServiceCategory;
+use App\Http\Controllers\BackController;
+use App\Models\Category;
 
-class ServiceCategoryController extends BackEndController
+class CategoryController extends BackController
 {
-    public function __construct(ServiceCategory $model)
+    public function __construct(Category $model)
     {
         $this->model = $model;
     }
@@ -22,8 +22,8 @@ class ServiceCategoryController extends BackEndController
 
     public function update(Request $request, $id)
     {
-        $serviceCategory = $this->model::find($id);
-        $serviceCategory->update($request->all());
+        $category = $this->model::find($id);
+        $category->update($request->all());
 
         return $this->APIResponse(null, null, 200);
     }

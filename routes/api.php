@@ -29,9 +29,13 @@ Route::namespace('APIs')->group(function () {
         });
 
     Route::resource('adds', 'AddsController');
-    Route::resource('category', 'ServiceCategoryController');
-    Route::resource('last/work', 'LastWorkController');
+    Route::resource('category', 'CategoryController');
+    Route::resource('service/category', 'ServiceCategoryController');
+    Route::resource('last-work', 'LastWorkController');
     Route::resource('complaint', 'ComplaintController');
+    Route::resource('service-provider', 'ServiceProviderController');
+    Route::resource('service-provider-service', 'ServiceProviderServiceController');
+    Route::resource('service-provider-wallet', 'ServiceProviderServiceController');
 
 });
 Route::namespace('Dashboard')->group(function () {
