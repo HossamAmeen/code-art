@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\APIs;
+namespace App\Http\Controllers\Dashboard;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\BackEndController;
-use App\Models\Adds;
+use App\Models\Country;
 
-class AddsController extends BackEndController
+class CountryController extends BackEndController
 {
-    public function __construct(Adds $model)
+    public function __construct(Country $model)
     {
         $this->model = $model;
     }
@@ -16,16 +16,15 @@ class AddsController extends BackEndController
     public function store(Request $request)
     {
         $this->model->create($request->all());
+
         return $this->APIResponse(null, null, 201);
     }
 
     public function update(Request $request, $id)
     {
-        $add = $this->model::find($id);
-        $add->update($request->all());
+      $this->model::find($id)->update($request->all());
 
-        return $this->APIResponse(null, null, 200);
+     return $this->APIResponse(null, null, 200);
     }
-
 
 }

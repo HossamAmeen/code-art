@@ -1,14 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\APIs;
-
+namespace App\Http\Controllers\Dashboard;
+use App\Models\Client;
 use Illuminate\Http\Request;
 use App\Http\Controllers\BackEndController;
-use App\Models\Adds;
 
-class AddsController extends BackEndController
+class ClientController extends BackEndController
 {
-    public function __construct(Adds $model)
+    public function __construct(Client $model)
     {
         $this->model = $model;
     }
@@ -16,16 +15,15 @@ class AddsController extends BackEndController
     public function store(Request $request)
     {
         $this->model->create($request->all());
+        
         return $this->APIResponse(null, null, 201);
     }
 
     public function update(Request $request, $id)
     {
-        $add = $this->model::find($id);
-        $add->update($request->all());
+        $complaint = $this->model::find($id);
+        $complaint->update($request->all());
 
         return $this->APIResponse(null, null, 200);
     }
-
-
 }
