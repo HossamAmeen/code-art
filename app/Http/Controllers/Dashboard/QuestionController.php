@@ -1,20 +1,21 @@
 <?php
 
-namespace App\Http\Controllers\APIs;
+namespace App\Http\Controllers\Dashboard;
 
-use App\Models\ServiceType;
 use Illuminate\Http\Request;
 use App\Http\Controllers\BackEndController;
+use App\Models\Question;
 
-class ServiceTypeController extends BackEndController
+class QuestionController extends BackEndController
 {
-    public function __construct(ServiceType $model)
+    public function __construct(Question $model)
     {
         $this->model = $model;
     }
 
     public function store(Request $request)
     {
+        
         $this->model->create($request->all());
 
         return $this->APIResponse(null, null, 201);
@@ -22,10 +23,8 @@ class ServiceTypeController extends BackEndController
 
     public function update(Request $request, $id)
     {
-        $serviceType = $this->model::find($id);
-        $serviceType->update($request->all());
+      $this->model::find($id)->update($request->all());
 
-        return $this->APIResponse(null, null, 200);
+     return $this->APIResponse(null, null, 200);
     }
-
 }

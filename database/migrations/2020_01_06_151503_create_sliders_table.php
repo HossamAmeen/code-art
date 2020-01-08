@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateServiceQuestionsTable extends Migration
+class CreateSlidersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateServiceQuestionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('service_questions', function (Blueprint $table) {
+       
+        Schema::create('sliders', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('question');
-            $table->enum('type', ['text', 'multi choice', 'boolean', 'file']);
+            $table->string('description');
+            $table->double('percent');
+            $table->string('image');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateServiceQuestionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('service_questions');
+        Schema::dropIfExists('sliders');
     }
 }

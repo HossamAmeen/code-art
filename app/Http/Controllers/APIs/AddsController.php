@@ -24,7 +24,6 @@ class AddsController extends BackEndController
         }
 
         $this->model->create($request->all());
-
         return $this->APIResponse(null, null, 201);
     }
 

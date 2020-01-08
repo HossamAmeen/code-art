@@ -15,6 +15,12 @@ class CreateServiceQuestionFilesTable extends Migration
     {
         Schema::create('service_question_files', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('question');
+            $table->string('file');
+
+            $table->bigInteger('service_question_id')->unsigned()->nullable();
+            $table->foreign('service_question_id')->references('id')->on('service_questions')->onDelete('set null');
+
             $table->timestamps();
         });
     }

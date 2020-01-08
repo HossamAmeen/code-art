@@ -30,6 +30,11 @@ function getServiceProviderService()
     return App\Models\ServiceProviderService::pluck('id')->toArray();
 }
 
+function getServiceQuestion()
+{
+    return App\Models\ServiceQuestion::pluck('id')->toArray();
+}
+
 
 $factory->define(User::class, function (Faker $faker) {
     return [
@@ -114,6 +119,7 @@ $factory->define(App\Models\ServiceProviderService::class, function (Faker $fake
     ];
 });
 
+
 $factory->define(App\Models\Service::class, function (Faker $faker) {
     return [
         'service_provider_id' => $faker->randomElement(getServiceProvider()),
@@ -121,26 +127,12 @@ $factory->define(App\Models\Service::class, function (Faker $faker) {
     ];
 });
 
-// $factory->define(App\Models\ServiceQuestion::class, function (Faker $faker) {
-//     return [
-//         relations
-//     ];
-// });
-
-// $factory->define(App\Models\ServiceType::class, function (Faker $faker) {
-//     return [
-//         'name',
-//         'description',
-//         ''
-//     ];
-// });
-
 $factory->define(App\Models\ServiceProviderWallet::class, function (Faker $faker) {
     return [
         'service_provider_id' => $faker->randomElement(getServiceProvider()),
         'balance' => $faker->randomDigit,
         'date' => $faker->date(),
-        'recieve' => $faker->randomDigit,
+        'receive' => $faker->randomDigit,
     ];
 });
 
@@ -149,5 +141,47 @@ $factory->define(App\Models\ServiceType::class, function (Faker $faker) {
         'price' => $faker->randomDigit,
         'days' => $faker->randomDigit,
         'service_provider_id' => $faker->randomElement(getServiceProvider()),
+    ];
+});
+
+$factory->define(App\Models\ServiceQuestion::class, function (Faker $faker) {
+    return [
+        'question' => $faker->sentence,
+        'type' => $faker->randomElement(['text', 'multi choice', 'boolean', 'file']),
+    ];
+});
+
+$factory->define(App\Models\ServiceQuestionBoolean::class, function (Faker $faker) {
+    return [
+        'question' => $faker->sentence,
+        'choice' => $faker->boolean,
+        'service_question_id' => $faker->randomElement(getServiceQuestion()),
+    ];
+});
+
+$factory->define(App\Models\ServiceQuestionFile::class, function (Faker $faker) {
+    return [
+        'question' => $faker->sentence,
+        'file' => 'file.xls',
+        'service_question_id' => $faker->randomElement(getServiceQuestion()),
+    ];
+});
+
+$factory->define(App\Models\ServiceQuestionText::class, function (Faker $faker) {
+    return [
+        'question' => $faker->sentence,
+        'choice' => $faker->sentence,
+        'service_question_id' => $faker->randomElement(getServiceQuestion()),
+    ];
+});
+
+$factory->define(App\Models\ServiceQuestionMultipleChoice::class, function (Faker $faker) {
+    return [
+        'question' => $faker->sentence,
+        'choice_one' => $faker->sentence,
+        'choice_two' => $faker->sentence,
+        'choice_three' => $faker->sentence,
+        'choice_four' => $faker->sentence,
+        'service_question_id' => $faker->randomElement(getServiceQuestion()),
     ];
 });

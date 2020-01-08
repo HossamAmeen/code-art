@@ -17,7 +17,7 @@ class CreateServiceProviderWalletsTable extends Migration
             $table->bigIncrements('id');
             $table->double('balance');
             $table->date('date');
-            $table->double('recieve');
+            $table->double('receive');
 
             $table->bigInteger('service_provider_id')->unsigned()->nullable();
             $table->foreign('service_provider_id')->references('id')->on('service_providers')->onDelete('cascade');
