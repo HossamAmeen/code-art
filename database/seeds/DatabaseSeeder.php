@@ -11,7 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        
+
         $this->call([
             UserSeeder::class,
 
@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
         factory('App\Models\ServiceProvider', 10)->create();
         factory('App\Models\ServiceProviderService', 10)->create();
         factory('App\Models\Service', 10)->create();
-        // factory('App\Models\ServiceType', 10)->create();
+        factory('App\Models\ServiceType', 10)->create();
         // factory('App\Models\ServiceQuestion', 10)->create();
         factory('App\Models\ServiceProviderWallet', 10)->create();
     }

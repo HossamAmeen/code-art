@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateServiceTypesTable extends Migration
+class CreateServiceQuestionMultipleChoicesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,8 @@ class CreateServiceTypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('service_types', function (Blueprint $table) {
+        Schema::create('service_question_multiple_choices', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->double('price');
-            $table->integer('days');
-
-            $table->bigInteger('service_provider_id')->unsigned()->nullable();
-            $table->foreign('service_provider_id')->references('id')->on('service_providers')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -31,6 +26,6 @@ class CreateServiceTypesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('service_types');
+        Schema::dropIfExists('service_question_multiple_choices');
     }
 }

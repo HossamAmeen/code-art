@@ -50,7 +50,7 @@ $factory->define(App\Models\Configration::class, function (Faker $faker) {
         'address' =>$faker->address ,
         'facebook' => "https://www.facebook.com/UROClinicDrAhmedReda/",
         'twitter' => "https://twitter.com/",
-        'instagram' => "https://www.instagram.com/", // 
+        'instagram' => "https://www.instagram.com/", //
         'youtube' =>"https://www.youtube.com" ,
     ];
 });
@@ -141,5 +141,13 @@ $factory->define(App\Models\ServiceProviderWallet::class, function (Faker $faker
         'balance' => $faker->randomDigit,
         'date' => $faker->date(),
         'recieve' => $faker->randomDigit,
+    ];
+});
+
+$factory->define(App\Models\ServiceType::class, function (Faker $faker) {
+    return [
+        'price' => $faker->randomDigit,
+        'days' => $faker->randomDigit,
+        'service_provider_id' => $faker->randomElement(getServiceProvider()),
     ];
 });
