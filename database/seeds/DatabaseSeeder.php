@@ -19,20 +19,25 @@ class DatabaseSeeder extends Seeder
         factory('App\Models\ServiceProviderService', 10)->create();
         $this->call([
             UserSeeder::class,
-            ClientSeeder::class,
+//            ClientSeeder::class,
         ]);
         factory('App\Models\Configration',1)->create();
         factory('App\Models\User', 10)->create();
         factory('App\Models\Adds', 10)->create();
         factory('App\Models\Slider', 5)->create();
-       
+
         factory('App\Models\LastWork', 10)->create();
         factory('App\Models\Complaint', 10)->create();
-    
+
         factory('App\Models\Service', 10)->create();
-       
-        // factory('App\Models\ServiceType', 10)->create();
-        // factory('App\Models\ServiceQuestion', 10)->create();
-        factory('App\Models\ServiceProviderWallet', 10)->create();
+
+         factory('App\Models\ServiceType', 10)->create();
+         factory('App\Models\ServiceProviderWallet', 10)->create();
+        factory('App\Models\ServiceQuestion', 10)->create();
+        factory('App\Models\ServiceQuestionBoolean', 10)->create();
+        factory('App\Models\ServiceQuestionFile', 10)->create();
+        factory('App\Models\ServiceQuestionText', 10)->create();
+        factory('App\Models\ServiceQuestionMultipleChoice', 10)->create();
+
     }
 }

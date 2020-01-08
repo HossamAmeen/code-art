@@ -4,10 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ServiceProviderWallet extends Model
+class ServiceQuestionFile extends Model
 {
     protected $fillable = [
-        'service_provider_id', 'balance', 'date', 'receive'
+        'question', 'file', 'service_question_id'
     ];
-
 }

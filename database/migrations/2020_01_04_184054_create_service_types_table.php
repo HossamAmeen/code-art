@@ -15,6 +15,11 @@ class CreateServiceTypesTable extends Migration
     {
         Schema::create('service_types', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->double('price');
+            $table->integer('days');
+
+            $table->bigInteger('service_provider_id')->unsigned()->nullable();
+            $table->foreign('service_provider_id')->references('id')->on('service_providers')->onDelete('cascade');
             $table->timestamps();
         });
     }

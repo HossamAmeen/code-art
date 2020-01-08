@@ -36,6 +36,8 @@ Route::namespace('APIs')->group(function () {
     Route::resource('service-provider', 'ServiceProviderController');
     Route::resource('service-provider-service', 'ServiceProviderServiceController');
     Route::resource('service-provider-wallet', 'ServiceProviderServiceController');
+    Route::resource('service-type', 'ServiceTypeController');
+    Route::resource('service-question', 'ServiceQuestionController');
 
 });
 Route::namespace('Dashboard')->group(function () {
