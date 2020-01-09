@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateServiceQuestionTextsTable extends Migration
+class CreateServiceQuestionMultipleChoicesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateServiceQuestionTextsTable extends Migration
      */
     public function up()
     {
-        Schema::create('service_question_texts', function (Blueprint $table) {
+        Schema::create('service_question_multiple_choices', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('question');
             $table->string('choice');
-
             $table->bigInteger('service_question_id')->unsigned()->nullable();
+
             $table->foreign('service_question_id')->references('id')->on('service_questions')->onDelete('set null');
             $table->timestamps();
         });
@@ -31,6 +30,6 @@ class CreateServiceQuestionTextsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('service_question_texts');
+        Schema::dropIfExists('service_question_multiple_choices');
     }
 }

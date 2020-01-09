@@ -33,15 +33,22 @@ $factory->define(App\Models\Country::class, function (Faker $faker) {
 $factory->define(App\Models\City::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
-        "country_id" =>  $faker->randomElement(getCities()),
+        "country_id" =>  $faker->randomElement(getCountries()),
     ];
 });
 
 $factory->define(App\Models\Slider::class, function (Faker $faker) {
     return [
-        "description" => $faker->sentence($nbWords = 6, $variableNbWords = true), 
+        "service_id" => $faker->randomElement(getServices()), 
         "image" => "upload/sliders/slider.png",
-        "percent" => $faker->randomDigit,
+       
+    ];
+});
+
+$factory->define(App\Models\Adds::class, function (Faker $faker) {
+    return [
+        "service_id" => $faker->randomElement(getServices()), 
+        "image" => "upload/sliders/slider.png",
     ];
 });
 

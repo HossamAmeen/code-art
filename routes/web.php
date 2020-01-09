@@ -11,7 +11,28 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/chartPdf', 'ChartController@index');
+    Route::view('/', 'index');
+    Route::view('complaint', 'complaint');
+    Route::view('/', 'index');
+    Route::view('/', 'index');
+    Route::view('/', 'index');
+    Route::view('/', 'index');
+    Route::view('/', 'index');
+    Route::view('/', 'index');
+    Route::view('/', 'index');
+    Route::view('/', 'index');
+    Route::view('/', 'index');
+    Route::view('/', 'index');
+    Route::view('/', 'index');
+    Route::view('/', 'index');
+    Route::view('/', 'index');
+
+
+    /////////////////////// api 
+
+        Route::post("register" , "ClientController@register");
+        Route::get("categories" , "HomeController@show_categories");
+        Route::get("countries" , "HomeController@show_countries");
+        Route::get("cities" , "HomeController@show_cities");
+        Route::get("categories" , "HomeController@show_categories");
+        Route::get("categories" , "HomeController@show_categories");

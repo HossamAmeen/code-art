@@ -15,7 +15,11 @@ class CreateServiceProviderServicesTable extends Migration
     {
         Schema::create('service_provider_services', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
+            $table->bigInteger('service_provider_id')->unsigned()->nullable();
+            $table->bigInteger('service_id')->unsigned()->nullable();
+
+            $table->foreign('service_provider_id')->references('id')->on('service_providers')->onDelete('cascade');
+            $table->foreign('service_id')->references('id')->on('service_categories')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -13,4 +13,5 @@
     Route::resource('question-categories', 'CategoryQuestionController')->except('edit');
     Route::resource('suggestion-additions', 'SuggestAdditionController')->except('edit');
         // Route::resource('sliders', 'SliderController')->except('show')
+
 ?>

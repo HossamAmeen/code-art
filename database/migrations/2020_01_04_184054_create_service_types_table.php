@@ -17,9 +17,12 @@ class CreateServiceTypesTable extends Migration
             $table->bigIncrements('id');
             $table->double('price');
             $table->integer('days');
-
             $table->bigInteger('service_provider_id')->unsigned()->nullable();
-            $table->foreign('service_provider_id')->references('id')->on('service_providers')->onDelete('cascade');
+            $table->bigInteger('service_id')->unsigned()->nullable();
+
+            $table->foreign('service_provider_id')->references('id')->on('service_providers')
+            ->onDelete('cascade');
+            $table->foreign('service_id')->references('id')->on('service_categories')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -16,7 +16,10 @@ class CreateServiceQuestionsTable extends Migration
         Schema::create('service_questions', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('question');
-            $table->enum('type', ['text', 'multi choice', 'boolean', 'file']);
+            $table->enum('type', ['text', 'multi_choice', 'boolean', 'file']);
+            $table->bigInteger('service_id')->unsigned()->nullable();
+
+            $table->foreign('service_id')->references('id')->on('service_categories')->onDelete('cascade');       
             $table->timestamps();
         });
     }
