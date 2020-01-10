@@ -21,27 +21,14 @@ class ServiceQuestionController extends BackEndController
     {
         $question = $this->model->create($request->all());
         $request['service_question_id'] = $question->id;
-        if($request->type == 'text')
-        {
-            ServiceQuestionText::create($request->all());
-        }
 
-        if($request->type == 'multi choice')
+        if($request->type == 'multi_choice')
         {
-            ServiceQuestionMultipleChoice::create($request->all());
-        }
-
-        if($request->type == 'boolean')
-        {
-            ServiceQuestionBoolean::create($request->all());
-        }
-
-        if($request->type == 'file')
-        {
-            ServiceQuestionFile::create([
-                'file' => $request->file,
-                'service_question_id' => $question->id
-            ]);
+            foreach ($request['choices'] as $choice)
+                ServiceQuestionMultipleChoice::create([
+                    'choice' => $choice,
+                    'service_question_id' => $question->id
+                ]);
         }
 
         return $this->APIResponse(null, null, 201);
