@@ -53,6 +53,11 @@ class ClientController extends Controller
       return   Auth::guard('client-api')->user()->id;
         return auth()->user();
     }
+
+    public function cart()
+    {
+        
+    }
     
 }
 

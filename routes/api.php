@@ -42,8 +42,9 @@ Route::namespace('APIs')->group(function () {
     Route::namespace("Website")->group(function () {
         Route::post("register" , "ClientController@register");
         Route::post("client/login" , "ClientController@login");
-        Route::post("complaint" , "ClientController@complaint");
+        Route::get("cart" , "ClientController@cart");
         Route::get("wishlists" , "ClientController@wishlist");
+        Route::post("complaint" , "HomeController@complaint");
         Route::get("categories" , "HomeController@showCategories");
         Route::get("countries" , "HomeController@showCountries");
         Route::get("cities" , "HomeController@showCities");
