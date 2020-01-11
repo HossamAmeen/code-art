@@ -39,7 +39,21 @@ Route::namespace('APIs')->group(function () {
     Route::resource('service-type', 'ServiceTypeController');
     Route::resource('service-question', 'ServiceQuestionController');
 
+    Route::namespace("Website")->group(function () {
+        Route::post("register" , "ClientController@register");
+        Route::post("client/login" , "ClientController@login");
+        Route::post("complaint" , "ClientController@complaint");
+        Route::get("wishlists" , "ClientController@wishlist");
+        Route::get("categories" , "HomeController@showCategories");
+        Route::get("countries" , "HomeController@showCountries");
+        Route::get("cities" , "HomeController@showCities");
+        Route::get("orders" , "ClientController@showOrders");
+        Route::get("categories" , "HomeController@show_categories");
+    });
+    
 });
 Route::namespace('Dashboard')->group(function () {
     Route::resource('configration', 'ConfigrationController')->only(['index', 'update']);
 });
+
+

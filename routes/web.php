@@ -28,11 +28,4 @@
     Route::view('/', 'index');
 
 
-    /////////////////////// api 
-
-        Route::post("register" , "ClientController@register");
-        Route::get("categories" , "HomeController@show_categories");
-        Route::get("countries" , "HomeController@show_countries");
-        Route::get("cities" , "HomeController@show_cities");
-        Route::get("categories" , "HomeController@show_categories");
-        Route::get("categories" , "HomeController@show_categories");
+   

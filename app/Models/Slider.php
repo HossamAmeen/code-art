@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Slider extends Model
 {
-    protected $fillable = [ "description","image","percent"];
+    protected $fillable = [ 'service_id', 'image'];
 }

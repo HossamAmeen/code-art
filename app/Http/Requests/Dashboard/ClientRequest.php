@@ -23,6 +23,8 @@ class ClientRequest extends FormRequest
      */
     public function rules()
     {
+        $rules =  [];
+        return $rules;
         $email = $this->request->get("id");
         $rules =  [
             'user_name' => ['required', 'max:100'],

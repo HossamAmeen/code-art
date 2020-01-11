@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
         factory('App\Models\ServiceProviderService', 10)->create();
         $this->call([
             UserSeeder::class,
-//            ClientSeeder::class,
+           ClientSeeder::class,
         ]);
         factory('App\Models\Configration',1)->create();
         factory('App\Models\User', 10)->create();

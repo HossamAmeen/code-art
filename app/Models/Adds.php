@@ -9,6 +9,6 @@ class Adds extends Model
     protected $table = 'adds';
 
     protected $fillable = [
-        'title', 'description', 'percent', 'image'
+        'service_id', 'image'
     ];
 }
