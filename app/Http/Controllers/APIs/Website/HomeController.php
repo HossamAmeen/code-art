@@ -5,6 +5,7 @@ use App\Http\Controllers\APIResponseTrait;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\ServiceCategory;
 use App\Models\Complaint;
 
 class HomeController extends Controller
@@ -22,6 +23,10 @@ class HomeController extends Controller
        return $this->APIResponse( Category::with('services')->get(), null, 200);
     }
 
+    public function showServices(Request $request)
+    {
+        return $this->APIResponse( ServiceCategory::where('category_id' , $request->category_id)->get('name'), null, 200);
+    }
     public function showCountries()
     {
         return $this->APIResponse( \App\Models\Country::get(), null, 200);

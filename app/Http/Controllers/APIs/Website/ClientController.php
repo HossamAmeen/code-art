@@ -7,8 +7,10 @@ use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 use App\Models\Client;
 use App\Models\User;
+use App\Models\Order;
 use App\Models\WishList;
 use Auth;
+use Illuminate\Http\Request;
 use App\Http\Requests\Dashboard\ClientRequest;
 
 class ClientController extends Controller
@@ -21,7 +23,7 @@ class ClientController extends Controller
         {
             return $this->APIResponse(null , $request->validator->messages() ,  400);
         }
-        $request['password'] = Hash::make($request['password']);
+        $request['password'] = bcrypt($request->password);
         $client = Client::create($request->all());
         auth()->login($client);
         // return auth()->user();
@@ -42,21 +44,44 @@ class ClientController extends Controller
        
     }
 
+    public function updateProfile(Request $request)
+    {
+        $client = Client::find( Auth::guard('client-api')->user()->id );
+        if(isset($request->password))
+        {
+            $request['password'] = bcrypt($request->password);
+        }
+       
+        $client->update($request->all());
+
+        return $this->APIResponse(null, null, 200);
+    }
     public function wishlist()
     {
         $wishlists = WishList::where('client_id' , Auth::guard('client-api')->user()->id)
+                        ->with('service')
                         ->get();
+
         return $this->APIResponse($wishlists, null, 201);               
     }
     public function showOrders()
     {
-      return   Auth::guard('client-api')->user()->id;
-        return auth()->user();
+        $carts = Order::where('client_id' , Auth::guard('client-api')->user()->id)
+        ->where('status', 4)
+        ->with('service')
+        ->get();
+
+        return $this->APIResponse($carts, null, 201); 
     }
 
     public function cart()
     {
-        
+        $carts = Order::where('client_id' , Auth::guard('client-api')->user()->id)
+                        ->where('status' , '<' , 4)
+                        ->with('service')
+                        ->get();
+
+        return $this->APIResponse($carts, null, 201); 
     }
     
 }

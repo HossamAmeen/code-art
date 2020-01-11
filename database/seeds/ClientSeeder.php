@@ -23,7 +23,7 @@ class ClientSeeder extends Seeder
         factory('App\Models\WishList', 10)->create();
         factory('App\Models\CategoryQuestion', 10)->create();
         factory('App\Models\Question', 10)->create();
-        factory('App\Models\Order', 10)->create();
+        factory('App\Models\Order', 100)->create();
         factory('App\Models\SuggestAddition', 30)->create();
     }
 }

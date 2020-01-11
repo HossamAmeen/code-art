@@ -31,11 +31,14 @@ Route::namespace('APIs')->group(function () {
 
     Route::namespace("Website")->group(function () {
         Route::post("register" , "ClientController@register");
+        Route::put("client/update/profile" , "ClientController@updateProfile");
         Route::post("client/login" , "ClientController@login");
         Route::get("cart" , "ClientController@cart");
         Route::get("wishlists" , "ClientController@wishlist");
+        Route::get("order" , "ClientController@showOrders");
         Route::post("complaint" , "HomeController@complaint");
         Route::get("categories" , "HomeController@showCategories");
+        Route::get("services" , "HomeController@showServices");
         Route::get("countries" , "HomeController@showCountries");
         Route::get("cities" , "HomeController@showCities");
         Route::get("orders" , "ClientController@showOrders");
@@ -51,9 +54,8 @@ Route::namespace('APIs')->group(function () {
             Route::get('service-category/comments', 'ServiceProviderController@get_service_category_comments');
 
 
-
-
         });
+
     });
 
 });
