@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ServiceCategory extends Model
+class ServiceComment extends Model
 {
     protected $fillable = [
-        'name', 'category_id', 'delivery_price', 'special', 'image'
+        'service_provider_id', 'service_category_id', 'comment',
     ];
 }

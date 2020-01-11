@@ -18,6 +18,7 @@ class CreateServiceCategoriesTable extends Migration
             $table->string('name');
             $table->double('delivery_price');
             $table->boolean('special');
+            $table->string('image');
 
             $table->bigInteger('category_id')->unsigned()->nullable();
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');

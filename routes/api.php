@@ -28,16 +28,6 @@ Route::namespace('APIs')->group(function () {
             Route::get('getuser', 'AuthController@getUser');
         });
 
-    Route::resource('adds', 'AddsController');
-    Route::resource('category', 'CategoryController');
-    Route::resource('service/category', 'ServiceCategoryController');
-    Route::resource('last-work', 'LastWorkController');
-    Route::resource('complaint', 'ComplaintController');
-    Route::resource('service-provider', 'ServiceProviderController');
-    Route::resource('service-provider-service', 'ServiceProviderServiceController');
-    Route::resource('service-provider-wallet', 'ServiceProviderServiceController');
-    Route::resource('service-type', 'ServiceTypeController');
-    Route::resource('service-question', 'ServiceQuestionController');
 
     Route::namespace("Website")->group(function () {
         Route::post("register" , "ClientController@register");
@@ -50,8 +40,22 @@ Route::namespace('APIs')->group(function () {
         Route::get("cities" , "HomeController@showCities");
         Route::get("orders" , "ClientController@showOrders");
         Route::get("categories" , "HomeController@show_categories");
+
+        Route::post('service-provider/login', 'ServiceProviderController@login');
+        Route::middleware('auth:service-provider-api')->group(function () {
+            Route::get('service-provider/service-type/', 'ServiceProviderController@get_service_type');
+            Route::get('service-provider/service-provider-service/', 'ServiceProviderController@get_service_provider_service');
+            Route::get('service-category/service-provider/', 'ServiceProviderController@get_service_provider');
+            Route::get('service-category/suggest-addition/', 'ServiceProviderController@get_suggest_addition');
+            Route::post('service-provider-service/add', 'ServiceProviderController@add_service_provider_service');
+            Route::get('service-category/comments', 'ServiceProviderController@get_service_category_comments');
+
+
+
+
+        });
     });
-    
+
 });
 Route::namespace('Dashboard')->group(function () {
     Route::resource('configration', 'ConfigrationController')->only(['index', 'update']);

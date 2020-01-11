@@ -34,6 +34,7 @@ class DatabaseSeeder extends Seeder
         factory('App\Models\ServiceQuestionMultipleChoice', 10)->create();
         factory('App\Models\Adds', 10)->create();
         factory('App\Models\Slider', 5)->create();
+        factory('App\Models\ServiceComment', 10)->create();
 
 
     }
