@@ -14,6 +14,7 @@ class ClientController extends BackEndController
 
     public function store(Request $request)
     {
+        $request['password'] = bcrypt($request['password']);
         $this->model->create($request->all());
         
         return $this->APIResponse(null, null, 201);
@@ -21,8 +22,14 @@ class ClientController extends BackEndController
 
     public function update(Request $request, $id)
     {
-        $complaint = $this->model::find($id);
-        $complaint->update($request->all());
+
+        $client = $this->model::find($id);
+        if(isset($request->password))
+        {
+            $request['password'] = bcrypt($request->password);
+        }
+       
+        $client->update($request->all());
 
         return $this->APIResponse(null, null, 200);
     }

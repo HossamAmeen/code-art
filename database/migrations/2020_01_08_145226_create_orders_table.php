@@ -18,12 +18,12 @@ class CreateOrdersTable extends Migration
             $table->double('price');
             $table->integer('amount');
             $table->integer('status');
+          
             $table->bigInteger('client_id')->unsigned()->nullable();
-            $table->bigInteger('service_id')->unsigned()->nullable();
-        
             $table->foreign('client_id')->references('id')->on('clients')->onUpdate('set null')
             ->onDelete('set null');
-            $table->foreign('service_id')->references('id')->on('service_categories')->onUpdate('set null')
+            $table->bigInteger('service_id')->unsigned()->nullable();
+            $table->foreign('service_id')->references('id')->on('service_provider_services')->onUpdate('set null')
             ->onDelete('set null');
             $table->timestamps();
         });
