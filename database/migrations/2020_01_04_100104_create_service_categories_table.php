@@ -16,7 +16,9 @@ class CreateServiceCategoriesTable extends Migration
         Schema::create('service_categories', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            
+            $table->double('delivery_price');
+            $table->boolean('special');
+
             $table->bigInteger('category_id')->unsigned()->nullable();
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->timestamps();

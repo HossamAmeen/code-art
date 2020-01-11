@@ -23,11 +23,9 @@ class DatabaseSeeder extends Seeder
         ]);
         factory('App\Models\Configration',1)->create();
         factory('App\Models\User', 10)->create();
-      
+
         factory('App\Models\LastWork', 10)->create();
         factory('App\Models\Complaint', 10)->create();
-
-        factory('App\Models\Service', 10)->create();
 
          factory('App\Models\ServiceType', 10)->create();
          factory('App\Models\ServiceProviderWallet', 10)->create();
