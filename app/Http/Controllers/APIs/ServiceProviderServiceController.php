@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\APIs;
 
+use App\Http\Controllers\BackEndController;
 use Illuminate\Http\Request;
-use App\Http\Controllers\BackController;
 use App\Models\ServiceProviderService;
 
-class ServiceProviderServiceController extends BackController
+class ServiceProviderServiceController extends BackEndController
 {
     public function __construct(ServiceProviderService $model)
     {
@@ -15,6 +15,14 @@ class ServiceProviderServiceController extends BackController
 
     public function store(Request $request)
     {
+        if($request->image)
+        {
+            $source = public_path($request->image);
+            $destination = "Service Provider Service" . substr($request->image, strpos($request->image, '/'));
+            $request['image'] = $destination;
+            copy($source, $destination);
+        }
+
     	$this->model->create($request->all());
 
         return $this->APIResponse(null, null, 201);
@@ -23,6 +31,13 @@ class ServiceProviderServiceController extends BackController
     public function update(Request $request, $id)
     {
         $serviceProviderService = $this->model::find($id);
+        if($request->image)
+        {
+            $source = public_path($request->image);
+            $destination = "Service Provider Service".substr($request->image, strpos($request->image , '/') ) ;
+            $request['image'] = $destination;
+            copy( $source, $destination );
+        }
         $serviceProviderService->update($request->all());
 
         return $this->APIResponse(null, null, 200);
