@@ -17,9 +17,9 @@ class CreateServiceQuestionsTable extends Migration
             $table->bigIncrements('id');
             $table->string('question');
             $table->enum('type', ['text', 'multi_choice', 'boolean', 'file']);
-            $table->bigInteger('service_id')->unsigned()->nullable();
 
-            $table->foreign('service_id')->references('id')->on('service_categories')->onDelete('cascade');       
+            $table->bigInteger('service_id')->unsigned()->nullable();
+            $table->foreign('service_id')->references('id')->on('service_categories')->onDelete('cascade');
             $table->timestamps();
         });
     }

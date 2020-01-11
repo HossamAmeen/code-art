@@ -16,8 +16,8 @@ class CreateServiceQuestionMultipleChoicesTable extends Migration
         Schema::create('service_question_multiple_choices', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('choice');
-            $table->bigInteger('service_question_id')->unsigned()->nullable();
 
+            $table->bigInteger('service_question_id')->unsigned()->nullable();
             $table->foreign('service_question_id')->references('id')->on('service_questions')->onDelete('set null');
             $table->timestamps();
         });

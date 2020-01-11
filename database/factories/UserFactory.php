@@ -20,6 +20,11 @@ function getCategory()
     return App\Models\Category::pluck('id')->toArray();
 }
 
+function getServiceCategory()
+{
+    return App\Models\ServiceCategory::pluck('id')->toArray();
+}
+
 function getServiceProvider()
 {
     return App\Models\ServiceProvider::pluck('id')->toArray();
@@ -74,6 +79,8 @@ $factory->define(App\Models\ServiceCategory::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
         'category_id' => $faker->randomElement(getCategory()),
+        'delivery_price' => $faker->randomDigit,
+        'special' => $faker->boolean,
     ];
 });
 
@@ -110,15 +117,12 @@ $factory->define(App\Models\ServiceProvider::class, function (Faker $faker) {
 $factory->define(App\Models\ServiceProviderService::class, function (Faker $faker) {
     return [
         'service_provider_id' => $faker->randomElement(getServiceProvider()),
-        'service_id'          => $faker->randomElement(getServices()),
-    ];
-});
-
-
-$factory->define(App\Models\Service::class, function (Faker $faker) {
-    return [
-        'service_provider_id' => $faker->randomElement(getServiceProvider()),
-        'service_provider_service_id' => $faker->randomElement(getServiceProviderService()),
+        'service_category_id' => $faker->randomElement(getServiceCategory()),
+        'description' => $faker->sentence,
+        'rate' => $faker->randomDigit,
+        'discount' => $faker->randomDigit,
+        'image' => 'imahe.jpg',
+        'overview' => $faker->sentence,
     ];
 });
 
@@ -136,6 +140,7 @@ $factory->define(App\Models\ServiceType::class, function (Faker $faker) {
         'price' => $faker->randomDigit,
         'days' => $faker->randomDigit,
         'service_provider_id' => $faker->randomElement(getServiceProvider()),
+        'service_provider_service_id' => $faker->randomElement(getServiceProviderService()),
     ];
 });
 
