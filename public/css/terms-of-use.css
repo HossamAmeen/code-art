@@ -1,0 +1,140 @@
+.section-terms-of-use hr {
+    border-bottom: 3px solid #0071bc;
+    width: 95%;
+}
+
+
+
+/* .terms-of-use {
+    padding: 80px 70px;
+} */
+
+.terms-of-use-div {
+    /* margin: 30px 40px; */
+    transition: 0.4s;
+}
+
+.terms-of-use-div-hdr{
+    background-color: #f7931e;
+    padding: 15px 20px;
+  }
+.terms-of-use-div-hdr p{
+    text-align: center;
+    margin-bottom: 0;
+    color:white;
+    font-size: 20px; 
+    font-weight: bold;
+    
+  }
+.terms-lastupdated-date{
+    font-size: 13px;
+    color:black;
+    float: left;
+    position: relative;
+    bottom: 24px;
+    margin-left: 40px;
+}
+  
+.terms-of-use .terms-of-use-div .terms-of-use-div-body {
+    background-color: white;
+    padding: 35px 20px;
+}
+
+.terms-of-use-div-body .item {
+    padding: 10px 20px 50px 20px;
+}
+
+.data-cell-label-hdr{
+    color:#0071bc;
+    font-size: 19px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 2px solid red;
+}
+
+.terms-of-use-section-div{
+    padding: 20px 0px;
+}
+
+.terms-of-use-section-content{
+    color:#777777;
+    padding-right: 30px;
+    margin-bottom: 0 !important;
+}
+.terms-of-use-section-div i{
+    color:#39b54a;
+    position: relative;
+    top: 25px;
+}
+
+@media (max-width: 1100px) {
+    .terms-of-use .terms-of-use-div .terms-of-use-div-hdr p {
+        font-size: 19px;
+    }
+}
+
+@media (max-width: 992px) {
+
+    
+
+    .terms-of-use .terms-of-use-div .terms-of-use-div-body {
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 900px) {
+
+    .terms-of-use .terms-of-use-div .terms-of-use-div-hdr p {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 767px) {
+    .terms-lastupdated-date{
+        font-size: 12px;
+        color:rgb(109, 109, 109);
+        float: left;
+        top:40px;
+        position: relative;
+        margin-left: 20px;
+    }
+
+    .terms-of-use .terms-of-use-div .terms-of-use-div-hdr p {
+        font-size: 14px;
+    }
+
+    .data-cell-label-title {
+        font-size: 13px;
+    }
+
+}
+
+@media (max-width: 575px) {
+    .terms-of-use .terms-of-use-div .terms-of-use-div-body {
+        padding: 10px 0px;
+    }
+
+    .col-data-3 {
+        margin-right: 0px;
+        margin-top: 30px;
+    }
+
+    .div-2, .div-3{
+        width: 50% !important;
+    }
+    .data-cell-label-hdr{
+        color:#0071bc;
+        font-size: 17px;
+        margin-bottom: 20px;
+        font-weight: bold;
+        padding-bottom: 10px;
+        border-bottom: 2px solid red;
+    }
+}
+
+@media (max-width: 450px) {
+    .terms-of-use {
+        padding: 10px 0px;
+    }
+}

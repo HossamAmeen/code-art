@@ -1,0 +1,231 @@
+.section-phoneConfirm hr {
+    border-bottom: 1px solid #ababab;
+}
+
+.section-phoneConfirm {
+    background-color: #ffffff;
+}
+
+.phoneConfirm {
+    padding:30px 30px;
+}
+
+.phoneConfirm-div {
+    margin: 30px 40px;
+    transition: 0.4s;
+    
+}
+
+.phoneConfirm .phoneConfirm-div .phoneConfirm-div-hdr {
+    background-color: #ffffff;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+}
+
+.phoneConfirm .phoneConfirm-div .phoneConfirm-div-hdr p {
+    margin-bottom: 0;
+    color: #8b0ec5;
+    font-size: 22px;
+    font-weight: bold;
+}
+.phoneConfirm-div-body{
+    padding: 40px 60px;
+    background-color: #f9f9f9;
+    box-shadow: 2px 8px 17px #848484;
+}
+.address-col-info{
+    padding: 10px 0px; 
+    width: 40%;
+    margin: auto;
+    text-align: center;
+}
+.address-col2 .address-col-info{
+    padding: 20px 0px;
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+}
+.address-col2 a{
+    color:black;
+    cursor: pointer;
+}
+.address-col-info div{
+    color: black ;
+    font-size: 25px !important;
+}
+
+.address-col-info span{
+    color: orange ;
+    font-weight: bold;
+}
+.info-title{
+    color:rgb(153, 153, 153) !important;
+}
+.info-title-data{
+    color:black !important;
+}
+.address-col2{
+    height: 100%;
+    padding: 0px 50px;
+}
+.data-cell-label-title{
+    font-size: 1rem;
+    font-weight: bold;
+}
+.txtBox-name {
+    background-color: white !important;
+    border: none !important;
+    border: 1px solid #b9b9b9 !important;
+    border-radius: 0px !important;
+    padding-top: 7px;
+    padding-right: 7px;
+    padding-bottom: 7px;
+    height: auto;
+    color: rgb(129, 129, 129);
+    font-size: 16px;
+    font-weight: bold;
+    width: 30%;
+    font-size: 30px;
+    line-height: 0fr;
+    margin: auto;
+    text-align: center;
+    margin-top: 30px;
+}
+.codeInvalid{
+    width: 30%;
+    margin: auto;
+}
+.form-control.is-invalid,
+.was-validated .form-control:invalid,
+.custom-select.is-valid,
+.form-control.is-valid,
+.was-validated .custom-select:valid,
+.was-validated .form-control:valid {
+    background-image: unset !important;
+    padding-right: 20px;
+}
+
+.form-control.is-invalid,
+.was-validated .form-control:invalid {
+    border-color: red !important;
+    background-position: left;
+}
+#map {
+    width: 100%;
+    height: 400px;
+    box-shadow: 2px 8px 17px #848484;
+    background-color: grey;
+}
+.btn-submit-div {
+    display: flex;
+    margin-top: 0px;
+}
+.btn-submit {
+    background-color: #1a87fe !important;
+    color: white;
+    border-color: #1a87fe !important;
+    font-weight: bold;
+    padding: 13px 0px 13px;
+    margin-top: 20px;
+    transition: 0.5s;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    border-radius: 0px !important;
+}
+
+.btn-submit:hover {
+    color: white;
+    padding: 13px 80px;
+    background-color: #1774d6 !important;
+    border-radius: 20px !important;
+    width: 30%;
+}
+
+.btn-submit:focus {
+    box-shadow: unset !important;
+    color: white !important;
+}
+@media (max-width: 1100px) {
+    .phoneConfirm {
+        padding: 30px 40px;
+    }
+    .phoneConfirm .phoneConfirm-div .phoneConfirm-div-hdr p {
+        font-size: 19px;
+    }
+}
+
+@media (max-width: 992px) {
+    .phoneConfirm-div {
+        margin: 50px 20px;
+    }
+    .address-col2{
+        margin-top: 60px;
+    }
+    .txtBox-name, .codeInvalid {
+        width: 100%;
+    }
+    .data-cell-label-title {
+        font-size: 16px;
+        margin-bottom: 3px 0px;
+    }
+    .phoneConfirm-div-body{
+        padding: 30px 40px;
+        background-color: #f9f9f9;
+        box-shadow: 2px 8px 17px #848484;
+    }
+}
+
+@media (max-width: 900px) {
+    .phoneConfirm {
+        border-width: 7px;
+    }
+    .phoneConfirm .phoneConfirm-div .phoneConfirm-div-hdr p {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 767px) {
+    .phoneConfirm {
+        padding: 10px 10px;
+    }
+    .phoneConfirm .phoneConfirm-div .phoneConfirm-div-hdr p {
+        font-size: 14px;
+    }
+    .btn-submit{
+        width: 90%;
+    }
+    .btn-submit:hover{
+        width: 90%;
+    }
+    .data-cell-label-title {
+        font-size: 13px;
+    }
+    .address-col-info{
+        padding: 10px 0px; 
+    }
+    
+    .phoneConfirm-div-body{
+        padding: 10px 30px;
+        background-color: #f9f9f9;
+        box-shadow: 2px 8px 17px #848484;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 450px) {
+    .phoneConfirm {
+        padding: 10px 0px;
+    }
+    .info-title-data{
+        display: block;
+        margin-top: 10px;
+    }
+    .phoneConfirm-div-body{
+        padding: 10px 30px;
+        background-color: #f9f9f9;
+        box-shadow: 2px 8px 17px #848484;
+        font-size: 13px;
+    }
+}

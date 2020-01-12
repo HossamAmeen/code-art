@@ -1,0 +1,210 @@
+.section-order-application hr{
+    border-bottom:1px solid #ababab;
+  }
+  
+  
+  .section-order-application{
+    background-color: #ebebeb;
+  }
+  
+  .order-application {
+    padding: 80px 70px;
+  }
+  
+  .order-application-div{
+    margin: 30px 40px;
+    transition: 0.4s;
+    box-shadow: 2px 8px 17px #848484;
+  }
+  .order-application .order-application-div .order-application-div-hdr{
+    background-color: #39b54a;
+    padding: 10px 20px;
+  }
+  .order-application .order-application-div .order-application-div-hdr p{
+    margin-bottom: 0;
+    color:white;
+    font-size: 22px; 
+    font-weight: bold;
+  }
+  
+  
+  
+  
+  
+  
+  .order-application .order-application-div .order-application-div-body{
+    background-color: white;
+    padding: 35px 20px;
+  }
+  
+  .order-application-div-body .item{
+    padding: 10px 20px 20px 20px;
+  }
+  
+  .form-item{
+    margin-top: 30px;
+  }
+  
+  .data-cell-label-title{
+    color:#662d91;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px 0px;
+  }
+  .data-cell-label{
+    background-color:#eff3f6;
+    padding: 10px;
+    width: 100%;
+    margin-top: 10px;
+    font-weight: 0px !important;
+  }
+  
+  .data-lable{
+    font-size: 15px;
+  }
+  
+  .data-cell-label-price{
+    background-color: #ff0440;
+    color: white;
+  }
+  .required-star{
+      color: red;
+      font-size: 20px;
+  }
+  .txtBox-name {
+    background-color: transparent !important;
+    border: none !important;
+    border: 1px solid #b9b9b9 !important;
+    border-radius: 0px !important;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 15px;
+    height: auto;
+    color: rgb(129, 129, 129);
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .selectOption{
+    margin-top: 6px;
+    padding-top: 7px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    height: auto;
+  }
+  .form-control.is-invalid,
+  .was-validated .form-control:invalid,
+  .custom-select.is-valid,
+  .form-control.is-valid,
+  .was-validated .custom-select:valid,
+  .was-validated .form-control:valid {
+      background-image: unset !important;
+      padding-right: 20px;
+  }
+
+  .form-control.is-invalid,
+  .was-validated .form-control:invalid {
+      border-color: red !important;
+      background-position: left;
+  }
+  .btn-submit-div {
+    display: flex;
+    margin-top: 0px;
+  }
+  .btn-submit {
+    background-color: #1a87fe !important;
+    color: white;
+    border-color: #1a87fe !important;
+    font-weight: bold;
+    padding: 10px 0px 10px;
+    margin-top: 20px;
+    transition: 0.5s;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    border-radius: 0px !important;
+  }
+
+  .btn-submit:hover {
+      color: white;
+      padding: 10px 0px;
+      background-color: #1774d6 !important;
+      border-radius: 12px !important;
+      width: 20%;
+  }
+
+  .btn-submit:focus {
+      box-shadow: unset !important;
+      color: white !important;
+  }
+  @media (max-width: 1100px) {
+    .order-application {
+      padding: 30px 40px;
+    }
+    .order-application .order-application-div .order-application-div-hdr p{
+      font-size: 19px; 
+    }
+  }
+  @media (max-width: 992px) {
+    .order-application-div{
+      margin: 50px 20px;
+    }
+    .data-cell{
+      margin-top: 10px;
+  
+    }
+    .form-item-cell{
+      margin-top: 15px;
+    }
+    .data-cell-label-title{
+      font-size: 14px;
+      margin-bottom: 3px 0px;
+    }
+    .data-lable{
+      font-size: 13px;
+    }
+    .order-application .order-application-div .order-application-div-body{
+      padding: 10px 20px;
+    }
+  }
+  @media (max-width: 900px) {
+    .order-application {
+      border-width: 7px;
+    }
+    .order-application .order-application-div .order-application-div-hdr p{
+      font-size: 17px; 
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .order-application {
+      padding: 10px 10px;
+    }
+    .order-application .order-application-div .order-application-div-hdr p{
+      font-size: 14px; 
+    }
+    .data-cell-label-title{
+      font-size: 13px;
+    }
+    .data-lable{
+      font-size: 12px;
+    }
+    
+    .btn-submit{
+      width: 100%;
+    }
+    .btn-submit:hover{
+        width: 100%;
+    }
+  }
+  
+  @media (max-width: 575px) {
+    .order-application .order-application-div .order-application-div-body{
+      padding: 10px 0px;
+    }
+  }
+  
+  @media (max-width: 450px) {
+    .order-application {
+      padding: 10px 0px;
+    }
+  }

@@ -1,0 +1,140 @@
+.section-about-us hr {
+    border-bottom: 3px solid #0071bc;
+    width: 95%;
+}
+
+
+
+.about-us {
+    padding: 80px 70px;
+}
+
+.about-us-div {
+    margin: 30px 40px;
+    transition: 0.4s;
+    box-shadow: 4px 5px 2px #dfdfdf;
+}
+
+
+.about-us .about-us-div .about-us-div-body {
+    background-color: #f9f9f9;
+    padding: 35px 20px;
+}
+
+.about-us-div-body .item {
+    padding: 10px 20px 30px 20px;
+}
+.data-cell-label-hdr-top{
+    background-color: #662d91 ;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 60px;
+    position: relative;
+    bottom: 68px;
+    right: 20px;
+    color:white;
+}
+
+.data-cell-label-hdr{
+    color:#ed1c24;
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+
+.about-us-section-div{
+    padding: 20px 0px;
+}
+
+.about-us-section-content{
+    color:#777777;
+    margin-bottom: 30px;
+}
+.about-us-section-div i{
+    color:#39b54a;
+    position: relative;
+    top: 25px;
+}
+
+@media (max-width: 1100px) {
+    .about-us {
+        padding: 30px 40px;
+    }
+
+    .about-us .about-us-div .about-us-div-hdr p {
+        font-size: 19px;
+    }
+    .data-cell-label-hdr-top{
+        font-size: 17px;
+        padding: 7px 40px;
+        bottom: 68px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .about-us-div {
+        margin: 50px 20px;
+    }
+    .about-us .about-us-div .about-us-div-body {
+        padding: 10px 20px;
+    }
+    .data-cell-label-hdr-top{
+        font-size: 17px;
+        padding: 7px 40px;
+        bottom: 38px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 900px) {
+    .about-us {
+        border-width: 7px;
+    }
+
+    .about-us .about-us-div .about-us-div-hdr p {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 767px) {
+    .about-us {
+        padding: 10px 10px;
+    }
+
+    .about-us .about-us-div .about-us-div-hdr p {
+        font-size: 14px;
+    }
+
+    .data-cell-label-title {
+        font-size: 13px;
+    }
+    .data-cell-label-hdr-top{
+        font-size: 15px;
+        padding: 7px 30px;
+        bottom: 38px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 575px) {
+    .about-us .about-us-div .about-us-div-body {
+        padding: 10px 0px;
+    }
+
+    .col-data-3 {
+        margin-right: 0px;
+        margin-top: 30px;
+    }
+
+    .div-2, .div-3{
+        width: 50% !important;
+    }
+}
+
+@media (max-width: 450px) {
+    .about-us {
+        padding: 10px 0px;
+    }
+}

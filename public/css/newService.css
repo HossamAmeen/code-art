@@ -1,0 +1,319 @@
+.service-rovider-User {
+    background-color: #e4e4e4;
+    background-position: center center;
+    background-size: cover;
+    padding: 40px 20px 80px;
+  }
+
+  .user-badge{
+    background-color: white;
+    box-shadow: 2px 8px 17px #848484;
+    position: absolute;
+    top: 170px;
+    width: 20%;
+    right: 0px;
+    padding: 30px;
+  }
+
+  .user-badge .serviceProvider-img img{
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    border: 3px solid #0071bc;
+    box-shadow: 2px 4px 5px #e79b9b;
+
+  }
+
+  .user-badge .serviceProvider-name{
+    color: #0071bc;
+    text-align: center;
+    margin-top: 30px;
+    display: block;
+  }
+
+  .user-badge .serviceProvider-rating{
+    margin-top: 20px;
+    text-align: center;
+    display: block;
+    color:black;
+  }
+
+  .user-badge .serviceProvider-rating .fa-star{
+    text-align: center;
+    color: #0071bc;
+  }
+  .user-badge .serviceProvider-rating .rating-value{
+    color:rgb(129, 129, 129)
+  }
+
+  .service-rovider-User-item-1 {
+    border-color: red !important;
+  }
+
+  .service-rovider-User-item-2 {
+    border-color: blue !important;
+  }
+
+  .service-rovider-User-item-3 {
+    border-color: orange !important;
+  }
+
+  .service-rovider-User-item-4 {
+    border-color: green !important;
+  }
+
+  .service-rovider-User-item-5 {
+    border-color: #ffdd2a !important;
+  }
+
+  .service-rovider-User-item-6 {
+    border-color: purple !important;
+  }
+  .service-rovider-User-item-div{
+  margin: 50px 10px;
+  transition: 0.4s;
+  box-shadow: 2px 8px 17px #848484;
+
+
+
+  }
+
+  .service-rovider-User-item {
+    padding: 10px;
+    border: 8px solid;
+    background-color: white;
+    transition: 0.2s;
+  }
+
+
+
+  .service-rovider-User-item .item-price {
+    margin-bottom: -30px;
+    padding: 5px 0px;
+    position: relative;
+    bottom: 39px;
+    display: table;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    cursor: auto !important;
+    border: 0px solid !important;
+  }
+
+  .service-rovider-User-item-1 .item-price {
+    background-color: red !important;
+  }
+
+  .service-rovider-User-item-2 .item-price {
+    background-color: blue !important;
+  }
+
+  .service-rovider-User-item-3 .item-price {
+    background-color: orange !important;
+  }
+
+  .service-rovider-User-item-4 .item-price {
+    background-color: green !important;
+  }
+
+  .service-rovider-User-item-5 .item-price {
+    background-color: #ffdd2a !important;
+    color: black !important;
+  }
+
+  .service-rovider-User-item-6 .item-price {
+    background-color: purple !important;
+  }
+
+  .service-rovider-User-item img {
+    width: 100%;
+    border: 2px solid gray;
+    transition: 0.4s;
+  }
+
+  .service-rovider-User-item .item-info {
+    margin: 20px 0px;
+  }
+
+  .service-rovider-User-item .item-info p {
+    text-align: center;
+    font-size: 17px;
+    margin-bottom: 20px;
+  }
+
+  .service-rovider-User-item .item-info .item-provider {
+    text-align: center;
+    font-size: 16px;
+    color: rgb(151, 151, 151);
+  }
+
+  .service-rovider-User-item .item-info .item-provider-name {
+    color: green;
+  }
+
+  .service-rovider-User-item .item-info .item-buyer {
+    text-align: center;
+    font-size: 16px;
+    color: rgb(151, 151, 151);
+  }
+
+  .service-rovider-User-item .item-info .item-rating {
+    margin-top: 30px;
+  }
+
+  .service-rovider-User-item .item-info .item-rating .item-rate-star {
+    color: rgb(177, 177, 177);
+    font-size: 20px;
+  }
+
+  .service-rovider-User-item .item-info .item-rating .active {
+    color: rgb(255, 208, 0);
+  }
+
+
+  .service-rovider-User-item .order-red {
+    padding: 8px 20px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-size: 18px;
+    border-radius: 0px !important;
+  }
+
+  .service-rovider-User-item-1 .order-red {
+    background-color: red !important;
+  }
+
+  .service-rovider-User-item-2 .order-red {
+    background-color: blue !important;
+  }
+
+  .service-rovider-User-item-3 .order-red {
+    background-color: orange !important;
+  }
+
+  .service-rovider-User-item-4 .order-red {
+    background-color: green !important;
+  }
+
+  .service-rovider-User-item-5 .order-red {
+    background-color: #ffdd2a !important;
+    color: black !important;
+  }
+
+  .service-rovider-User-item-6 .order-red {
+    background-color: purple !important;
+  }
+
+  .service-rovider-User-item .order-btn {
+    margin-top: -30px;
+    position: relative;
+    top: 57px;
+    display: block;
+    transition: 0.4s;
+  }
+
+
+
+  a.service-rovider-User-item-href-div {
+    transition: 0.4s !important;
+    font-size: 20px;
+    text-decoration: none;
+  }
+
+
+  @media (max-width: 1100px) {
+    .service-rovider-User-item-div {
+      margin: 50px 0px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .service-rovider-User-item-div {
+      margin: 50px 0px;
+      border-width: 7px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .service-rovider-User-item .item-price {
+      bottom: 30px;
+      padding: 3px 15px;
+    }
+
+    .service-rovider-User-item {
+      margin: 50px 0px;
+      border-width: 5px;
+    }
+
+    .service-rovider-User-item .order-btn {
+      margin-top: -20px;
+      top: 30px;
+    }
+
+    .service-rovider-User-item .order-red {
+      padding: 6px 18px;
+      font-size: 14px;
+    }
+    .user-badge{
+      background-color: white;
+      box-shadow: 2px 8px 17px #848484;
+      position: unset;
+      width: 100%;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+    .user-badge .serviceProvider-img img{
+      margin-right: auto;
+      margin-left: auto;
+      width: 50px;
+      height: 50px;
+
+    }
+
+    .user-badge .serviceProvider-name{
+      color: #0071bc;
+      text-align: center;
+      margin-top: 0px;
+      display: inline-block;
+    }
+
+    .user-badge .serviceProvider-rating{
+      margin-top: 0;
+      text-align: center;
+      display: inline-block;
+      color:black;
+    }
+
+  }
+
+  @media (max-width: 575px) {
+    .service-rovider-User-item-col {
+      width: 50%;
+    }
+
+    .service-rovider-User {
+      padding: 30px 10px;
+    }
+
+    .service-rovider-User-item .item-info p {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .service-rovider-User-item .item-info .item-provider,
+    .service-rovider-User-item .item-info .item-buyer {
+      font-size: 12px;
+    }
+
+    .service-rovider-User-item .item-info .item-rating .item-rate-star {
+      font-size: 16px;
+    }
+    .user-badge{
+      font-size: 14px;
+    }
+  } 

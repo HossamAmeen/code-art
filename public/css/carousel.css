@@ -1,0 +1,301 @@
+                                                              /* carousel */
+
+                                                              /* rtl */
+.carousel-control-next,
+.carousel-control-prev {
+    width: 6%
+}
+
+.carousel-indicators li {
+    -ms-transform: rotate(60deg);
+    -webkit-transform: rotate(60deg);
+    transform: rotate(60deg);
+    width: 10px;
+    height: 10px;
+    background-color: white !important;
+    opacity: 1;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.carousel-indicators .active {
+    background-color: red !important;
+}
+
+@media (max-width: 1000px) {
+    .carousel-indicators li {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+@media (max-width: 750px) {
+    .carousel-indicators li {
+        width: 7px;
+        height: 7px;
+    }
+}
+
+
+
+                                                              /*css*/
+.carousel-caption-l {
+  position: absolute;
+  top: 25%;
+  right: 60%;
+  width: max-content;
+}
+
+.carousel-info-hdr-l {
+  font-size: 60px
+}
+
+.carousel-info-l {
+  padding-top: 20px;
+}
+
+.carousel-info-l p {
+  color: yellow;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.carousel-link-l {
+  color: red !important;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.carousel-link-l:hover {
+  margin-right: 20px;
+  text-decoration: underline !important;
+}
+
+/* rigft */
+.carousel-caption-r {
+  position: absolute;
+  bottom: 40%;
+  right: 8%;
+  width: max-content;
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 15px;
+}
+
+.carousel-info-hdr-r {
+  font-size: 25px;
+  color: purple;
+}
+
+.carousel-info-r {
+  padding-top: 20px;
+}
+
+.carousel-info-r-offer {
+  color: orange;
+}
+
+.carousel-info-r p {
+  color: grey;
+  font-size: 18px;
+}
+
+
+
+
+
+@media (max-width: 1250px) {
+  .carousel-caption-l {
+    top: 25%;
+    right: 60%;
+  }
+
+  .carousel-info-hdr-l {
+    font-size: 40px
+  }
+
+  .carousel-info-l p {
+    font-size: 23px;
+  }
+
+  .carousel-link-l {
+    font-size: 20px;
+  }
+
+  /* rigft */
+  .carousel-caption-r {
+    bottom: 40%;
+    right: 8%;
+  }
+
+  .carousel-info-hdr-r {
+    font-size: 25px
+  }
+
+  .carousel-info-r p {
+    font-size: 18px;
+  }
+
+}
+
+@media (max-width: 1000px) {
+  .carousel-caption-l {
+    top: 23%;
+    right: 60%;
+  }
+
+  .carousel-info-hdr-l {
+    font-size: 40px
+  }
+
+  .carousel-info-l p {
+    font-size: 20px;
+  }
+
+  .carousel-link-l {
+    font-size: 18px;
+  }
+
+  /* rigft */
+  .carousel-caption-r {
+    bottom: 35%;
+    right: 8%;
+  }
+
+  .carousel-info-hdr-r {
+    font-size: 25px
+  }
+
+  .carousel-info-r p {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 850px) {
+  .carousel-caption-l {
+    top: 20%;
+    right: 60%;
+  }
+
+  .carousel-info-l {
+    padding-top: 10px;
+  }
+
+  .carousel-info-hdr-l {
+    font-size: 30px
+  }
+
+  .carousel-info-l p {
+    font-size: 16px;
+  }
+
+  .carousel-link-l {
+    font-size: 14px;
+  }
+
+  /* rigft */
+  .carousel-caption-r {
+    bottom: 30%;
+    right: 8%;
+    padding: 0px 10px;
+  }
+
+  .carousel-info-r {
+    padding-top: 10px;
+  }
+
+  .carousel-info-hdr-r {
+    font-size: 20px
+  }
+
+  .carousel-info-r p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 700px) {
+  .carousel-caption-l {
+    top: 10%;
+    right: 55%;
+  }
+
+  .carousel-info-l {
+    padding-top: 8px;
+  }
+
+  .carousel-info-hdr-l {
+    font-size: 20px
+  }
+
+  .carousel-info-l p {
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .carousel-link-l {
+    font-size: 12px;
+  }
+  /* rigft */
+  .carousel-caption-r {
+    bottom: 35%;
+    right: 8%;
+    padding: 0px 10px;
+  }
+
+  .carousel-info-hdr-r {
+    font-size: 15px
+  }
+
+  .carousel-info-r {
+    padding-top: 0px;
+  }
+
+  .carousel-info-r p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .carousel-caption-l {
+    top: 3%;
+    right: 60%;
+  }
+
+  .carousel-info-l {
+    padding-top: 8px;
+  }
+
+  .carousel-info-hdr-l {
+    font-size: 15px
+  }
+
+  .carousel-info-l p {
+    font-size: 10px;
+    font-weight: bold;
+  }
+
+  .carousel-link-l {
+    font-size: 12px;
+  }
+
+  /* rigft */
+  .carousel-caption-r {
+    bottom: 35%;
+    right: 8%;
+    padding: 0px 10px;
+  }
+
+  .carousel-info-hdr-r {
+    font-size: 13px
+  }
+
+  .carousel-info-r {
+    padding-top: 0px;
+  }
+
+  .carousel-info-r p {
+    font-size: 10px;
+  }
+}

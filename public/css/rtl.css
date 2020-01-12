@@ -1,0 +1,93 @@
+/* red  #ed1c24 */
+/* blue #0071bc */
+/* navbar */
+
+.navbar-light .navbar-nav .nav-link {
+    color: #707070;
+    transition: 0.4s;
+}
+
+@media (min-width: 992px) {
+    .navbar-expand-lg {
+        padding: 5px 50px;
+    }
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #0071bc;
+}
+
+.navbar-light .navbar-nav .active>.nav-link {
+    color: #ed1c24;
+}
+
+.navbar-light .navbar-nav .nav-link:focus .navbar-link-span,
+.navbar-light .navbar-nav .nav-link:hover .navbar-link-span {
+    border-bottom: 2px solid #0071bc;
+}
+
+.nav-link-icon {
+    font-size: 15px;
+    padding: 0px 5px;
+}
+
+.navbar-link-span {
+    font-size: 14px;
+    font-weight: 200;
+    transition: 0.2s;
+}
+
+.navbar-light .navbar-nav .nav-item>.nav-link .nav-link-icon {
+    color: #0071bc;
+}
+
+.navbar-light .navbar-nav .active>.nav-link .nav-link-icon {
+    color: #ed1c24;
+}
+
+.navbar-light .navbar-nav .active>.nav-link .navbar-link-span {
+    border-bottom: 2px solid #ed1c24;
+}
+
+.icon-bigscreen,
+.form-ul {
+    position: relative;
+}
+
+.navbar-search-textbox {
+    width: 180px !important;
+    border-radius: 2px;
+    position: relative;
+}
+
+.navbar-search-btn {
+    color: white;
+    border-radius: 2px;
+    background-color: #0071bc;
+    top: 0px;
+    left: 10px;
+    color: #ffffff;
+    position: relative;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.navbar-search-btn:hover {
+    color: white;
+    background-color: #005790;
+
+}
+
+
+@media (max-width: 1200px) {
+    .navbar-link-span {
+        font-size: 13px;
+    }
+}
+
+
+@media (max-width: 1107px) {
+    .navbar-expand-lg {
+        padding: 5px 19px;
+    }
+}

@@ -1,0 +1,192 @@
+.section-payment hr{
+  border-bottom:1px solid #ababab;
+}
+
+
+.section-payment{
+  background-color: #ebebeb;
+}
+
+.payment {
+  padding: 80px 70px;
+}
+
+.payment-div{
+  margin: 30px 40px;
+  transition: 0.4s;
+  box-shadow: 2px 8px 17px #848484;
+}
+.payment .payment-div .payment-div-hdr{
+  background-color: #39b54a;
+  padding: 10px 20px;
+}
+.payment .payment-div .payment-div-hdr p{
+  margin-bottom: 0;
+  color:white;
+  font-size: 22px; 
+  font-weight: bold;
+}
+
+
+
+
+
+
+.payment .payment-div .payment-div-body{
+  background-color: white;
+  padding: 35px 20px;
+}
+
+.payment-div-body .item{
+  padding: 10px 20px 20px 20px;
+}
+
+.form-item{
+  margin-top: 30px;
+}
+
+.data-cell-label-title{
+  color:#662d91;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px 0px;
+}
+.data-cell-label{
+  background-color:#eff3f6;
+  padding: 10px;
+  width: 100%;
+  margin-top: 10px;
+  font-weight: 0px !important;
+}
+
+.data-lable{
+  font-size: 15px;
+}
+
+.data-cell-label-price{
+  background-color: #ff0440;
+  color: white;
+}
+.payWay-div{
+  margin-bottom: 20px;
+  padding: 0px 50px;
+}
+
+.payWay-div p{
+  color:white;
+  font-size: 18px;
+  text-align: center;
+}
+.pay-btn{
+  color:white;
+  padding: 15px;
+  width: 100%;
+  border-radius: 0px;
+  box-shadow: 2px 2px 4px rgb(0, 0, 0);
+  margin-top: 20px;
+  transition: 0.4s;
+}
+.pay-btn:hover{
+  color:white;
+}
+.pay-btn:focus{
+  box-shadow: 2px 2px 4px rgb(0, 0, 0);
+}
+.pay-btn-1{
+  background-color: #0071bc;
+}
+.pay-btn-1:hover{
+  background-color: #1a83c9;
+}
+
+.pay-btn-2{
+  background-color: #ed1c24;
+}
+.pay-btn-2:hover{
+  background-color: rgb(252, 73, 79);
+}
+
+.pay-btn-3{
+  background-color: #fcee21;
+  color:black;
+}
+.pay-btn-3:hover{
+  background-color: rgb(236, 226, 75);
+  color: black;
+}
+
+.pay-btn-4{
+  background-color: #39b54a;
+}
+.pay-btn-4:hover{
+  background-color: #4ace5b;
+}
+@media (max-width: 1100px) {
+  .payment {
+    padding: 30px 40px;
+  }
+  .payment .payment-div .payment-div-hdr p{
+    font-size: 19px; 
+  }
+}
+@media (max-width: 992px) {
+  .payment-div{
+    margin: 50px 20px;
+  }
+  .data-cell{
+    margin-top: 10px;
+
+  }
+  .form-item-cell{
+    margin-top: 15px;
+  }
+  .data-cell-label-title{
+    font-size: 14px;
+    margin-bottom: 3px 0px;
+  }
+  .data-lable{
+    font-size: 13px;
+  }
+  .payment .payment-div .payment-div-body{
+    padding: 10px 20px;
+  }
+}
+@media (max-width: 900px) {
+  .payment {
+    border-width: 7px;
+  }
+  .payment .payment-div .payment-div-hdr p{
+    font-size: 17px; 
+  }
+}
+
+@media (max-width: 767px) {
+  .payment {
+    padding: 10px 10px;
+  }
+  .payment .payment-div .payment-div-hdr p{
+    font-size: 14px; 
+  }
+  .data-cell-label-title{
+    font-size: 13px;
+  }
+  .data-lable{
+    font-size: 12px;
+  }
+  .pay-btn{
+    padding: 7px;
+    
+  }
+}
+
+@media (max-width: 575px) {
+  .payment .payment-div .payment-div-body{
+    padding: 10px 0px;
+  }
+}
+
+@media (max-width: 450px) {
+  .payment {
+    padding: 10px 0px;
+  }
+}
