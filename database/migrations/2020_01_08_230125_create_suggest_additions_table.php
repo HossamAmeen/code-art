@@ -18,9 +18,9 @@ class CreateSuggestAdditionsTable extends Migration
             $table->string('suggestion');
             // $table->integer('amount');
             $table->double('price');
-            $table->bigInteger('service_id')->unsigned()->nullable();
+            $table->bigInteger('service_category_id')->unsigned()->nullable();
 
-            $table->foreign('service_id')->references('id')->on('service_categories')->onUpdate('set null')
+            $table->foreign('service_category_id')->references('id')->on('service_categories')->onUpdate('set null')
             ->onDelete('set null');
             $table->timestamps();
         });

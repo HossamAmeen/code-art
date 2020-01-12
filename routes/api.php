@@ -44,14 +44,17 @@ Route::namespace('APIs')->group(function () {
         Route::put("client/update/profile" , "ClientController@updateProfile");
         Route::post("client/login" , "ClientController@login");
         Route::get("cart" , "ClientController@cart");
+        Route::get("orders" , "ClientController@showOrders");
         Route::get("wishlists" , "ClientController@wishlist");
         Route::get("order" , "ClientController@showOrders");
         Route::post("complaint" , "HomeController@complaint");
         Route::get("categories" , "HomeController@showCategories");
         Route::get("services" , "HomeController@showServices");
+        Route::get("special/services" , "HomeController@showSpecialServices");
+        Route::get("bestseller/services" , "HomeController@showBestSellerServices");
         Route::get("countries" , "HomeController@showCountries");
         Route::get("cities" , "HomeController@showCities");
-        Route::get("orders" , "ClientController@showOrders");
+        
        
     });
     

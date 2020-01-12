@@ -26,8 +26,8 @@ class ClientController extends Controller
         $request['password'] = bcrypt($request->password);
         $client = Client::create($request->all());
         auth()->login($client);
-        // return auth()->user();
-        return $this->APIResponse(null, null, 201);
+        $success['token'] =  $client->createToken('token')->accessToken;
+        return response()->json($success, 200);
     }
 
     public function login()

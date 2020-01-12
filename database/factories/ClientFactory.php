@@ -101,6 +101,6 @@ $factory->define(App\Models\SuggestAddition::class, function (Faker $faker) {
         "suggestion" => $faker->name,
         "price"   => $faker->randomDigit,
         // "amount"   => $faker->randomDigit,
-        "service_id" => $faker->randomElement(getServices()),
+        "service_category_id" => $faker->randomElement(getServices()),
     ];
 });
