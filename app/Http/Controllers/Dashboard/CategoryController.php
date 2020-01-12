@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\APIs;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\BackEndController;
-use App\Models\Complaint;
+use Illuminate\Http\Request;
+use App\Models\Category;
 
-class ComplaintController extends BackEndController
+class CategoryController extends BackEndController
 {
-    public function __construct(Complaint $model)
+    public function __construct(Category $model)
     {
         $this->model = $model;
     }
@@ -22,12 +22,10 @@ class ComplaintController extends BackEndController
 
     public function update(Request $request, $id)
     {
-        $complaint = $this->model::find($id);
-        $complaint->update($request->all());
+        $category = $this->model::find($id);
+        $category->update($request->all());
 
         return $this->APIResponse(null, null, 200);
     }
 
-
 }
-

@@ -49,11 +49,21 @@ return [
         'client' => [
             'driver' => 'session',
             'provider' => 'clients',
-            
+
         ],
         'client-api' => [
             'driver' => 'passport',
             'provider' => 'clients',
+            'hash' => false,
+        ],
+        'service-provider' => [
+            'driver' => 'session',
+            'provider' => 'service-providers',
+
+        ],
+        'service-provider-api' => [
+            'driver' => 'passport',
+            'provider' => 'service-providers',
             'hash' => false,
         ],
     ],
@@ -83,6 +93,10 @@ return [
         'clients' => [
             'driver' => 'eloquent',
             'model' => App\Models\Client::class,
+        ],
+        'service-providers' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\ServiceProvider::class,
         ],
         // 'users' => [
         //     'driver' => 'database',

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\APIs;
+namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\BackEndController;
 use App\Models\ServiceQuestion;
