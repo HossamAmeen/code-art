@@ -28,7 +28,7 @@
 
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light">
-		<a class="navbar-brand" href="index.html">
+		<a class="navbar-brand" href="{{ url('index') }}">
 			<img src="{{asset('../public/imgs/logo.png')}}" width="42" height="60" alt="" />
 		</a>
 		<form class="form-inline mr-auto icon-smallscreen">
@@ -56,7 +56,7 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item active">
-					<a class="nav-link" href="index.html"><i class="nav-link-icon fas fa-home"></i>
+					<a class="nav-link" href="{{ url('index') }}"><i class="nav-link-icon fas fa-home"></i>
 						<span class="navbar-link-span">الرئيسية</span>
 					</a>
 				</li>
@@ -68,7 +68,7 @@
 						</span>
 					</a>
 					<div class="dropdown-menu nav-link-dropdown" aria-labelledby="dropdownMenuLink" id="dropdownservice">
-						<a class="dropdown-item" href="categoriesOfServices.html"><i
+						{{-- <a class="dropdown-item" href="categoriesOfServices.html"><i
 								class="nav-link-icon fas fa-palette"></i>تصميم</a>
 						<a class="dropdown-item" href="categoriesOfServices.html"><i class="nav-link-icon fas fa-print"></i>
 							الطباعة</a>
@@ -77,22 +77,22 @@
 						<a class="dropdown-item" href="categoriesOfServices.html"><i class="nav-link-icon fas fa-camera"></i>
 							تصويرالمناسبات</a>
 						<a class="dropdown-item" href="categoriesOfServices.html"><i class="nav-link-icon fas fa-photo-video"></i>
-							الرسومالمتحركة</a>
+							الرسومالمتحركة</a> --}}
 					</div>
 				</li>
 				<li class="nav-item ">
-					<a class="nav-link" href="my-orders.html"><i class="nav-link-icon fas fa-box-open"></i>
+					<a class="nav-link" href="{{ url('order') }}"><i class="nav-link-icon fas fa-box-open"></i>
 						<span class="navbar-link-span">الطلبات</span>
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="complaints-suggestions.html"><i
+					<a class="nav-link" href="{{ url('complaint') }}"><i
 							class="nav-link-icon fas fa-file-invoice"></i>
 						<span class="navbar-link-span">الشكاوي والمقترحات</span>
 					</a>
 				</li>
 				<li class="nav-item ">
-					<a class="nav-link" href="helping.html"><i class="nav-link-icon fas fa-headset"></i>
+					<a class="nav-link" href="{{ url('help') }}"><i class="nav-link-icon fas fa-headset"></i>
 						<span class="navbar-link-span">تواصل معنا</span>
 					</a>
 				</li>
@@ -112,10 +112,10 @@
 			<form class="form-inline my-2 my-lg-0 icon-bigscreen">
 				<ul class="navbar-nav" style="display: inline-block;">
 					<li class="nav-item form-nav">
-						<a class="nav-link" href="fav-items.html">
+						<a class="nav-link" href="{{ url('fav') }}">
 							<i class="nav-link-icon fas fa-heart"></i>
 						</a>
-						<a class="nav-link" href="cart.html">
+						<a class="nav-link" href="{{ url('cart') }}">
 							<i class=" cartHasNotification fas fa-circle"></i><i
 								class="nav-link-icon fas fa-shopping-cart"></i>
 						</a>
@@ -135,11 +135,11 @@
 						</span>
 					</a>
 					<div class="dropdown-menu user_card-dropdown" aria-labelledby="">
-						<a class="dropdown-item" href="my-orders.html"><i class="nav-link-icon fas fa-shopping-bag"></i>
+						<a class="dropdown-item" href="{{ url('order') }}"><i class="nav-link-icon fas fa-shopping-bag"></i>
 							الطلبات</a>
-						<a class="dropdown-item" href="cart.html"><i class="nav-link-icon fas fa-shopping-cart"></i> سلة
+						<a class="dropdown-item" href="{{ url('cart') }}"><i class="nav-link-icon fas fa-shopping-cart"></i> سلة
 							الشراء </a>
-						<a class="dropdown-item" href="fav-items.html"><i class="nav-link-icon fas fa-heart"></i>
+						<a class="dropdown-item" href="{{ url('fav') }}"><i class="nav-link-icon fas fa-heart"></i>
 							المفضلة</a>
 						<a class="dropdown-item" href="settings.html"><i class="nav-link-icon fas fa-edit"></i> تعديل
 							البيانات</a>
@@ -194,7 +194,7 @@
 											الخصوصية</a>
 									</li>
 									<li class="list-group-item">
-										<a class="footer-link-item" href="helping.html"><i
+										<a class="footer-link-item" href="{{ url('help') }}"><i
 												class="orange-square fas fa-square"></i>تواصل معنا</a>
 									</li>
 								</ul>
@@ -213,6 +213,7 @@
 				<div class="footer-mdl">
 					<div class="row">
 						<div class="col-12 sm-icon-div">
+						
 							<a><img src="{{asset('../public/imgs/youtybeicon.png')}}" /></a>
 							<a><img src="{{asset('../public/imgs/whatsappicon.png')}}" /></a>
 							<a><img src="{{asset('../public/imgs/twittericon.png')}}" /></a>
@@ -257,8 +258,10 @@
 		}
 
 	</script>
-	  <script type="text/javascript">
-        //Create the XHR Object
+	  <script >
+	 
+		//Create the XHR Object
+		let dropdown = document.getElementById('dropdownservice');
      let xhr1 = new XMLHttpRequest;
      //Call the open function, GET-type of request, url, true-asynchronous
      xhr1.open('GET', "http://localhost/code-art/public/api/categories", true)
@@ -272,21 +275,19 @@
              console.log(JSON.parse(this.responseText));
      
                 var obj=JSON.parse(this.responseText);
-             //  alert(obj[1].name);
-                //return server response as an object with JSON.parse
-     
-    //  for(var x=0;x<obj.data.length;x++)
-    //  {
-    //    attr+=' <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 services-item-col-div">';
+			
+   
+				for (let i = 0; i < obj.data.length; i++) {
+         attr+='<a class="dropdown-item" href="{{ url('service') }}"  data-id='+obj.data[i].id+'><i class="nav-link-icon fas fa-palette"></i>'+obj.data[i].name+'</a>';
+		
+		}
     
-    
-    //  }
-        
-      $("#dropdownservice").append(attr);
-     
+		$("#dropdownservice").append(attr);
+			}
+   
      
      }
-            }
+            
      //call send
      
      
@@ -295,7 +296,7 @@
      // 200: OK
      // 404: ERROR
      // 403: FORBIDDEN
-     
+
      </script>
 
 	     @yield ('scripts')
