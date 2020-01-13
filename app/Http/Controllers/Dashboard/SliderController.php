@@ -18,6 +18,8 @@ class SliderController extends BackEndController
             $destination = "upload/".$this->pluralModelName().substr($request->image, strpos($request->image , '/') ) ;
             rename( $request->image, $destination );
         }
+        $request['image'] = $destination ; 
+        // return $request->image ;
         $this->model->create($request->all());
         return $this->APIResponse(null, null, 201);
     }
