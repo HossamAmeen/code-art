@@ -81,7 +81,7 @@ $factory->define(App\Models\ServiceCategory::class, function (Faker $faker) {
         'category_id' => $faker->randomElement(getCategory()),
         'delivery_price' => $faker->randomDigit,
         'special' => $faker->boolean,
-        'image' => 'image.jpg',
+        'image' => 'ServiceCategory/services.png',
     ];
 });
 
