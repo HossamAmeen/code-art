@@ -36,15 +36,15 @@ Route::namespace('APIs')->group(function () {
         Route::get("cart" , "ClientController@cart");
         Route::get("orders" , "ClientController@showOrders");
         Route::get("wishlists" , "ClientController@wishlist");
-        Route::get("order" , "ClientController@showOrders");
         Route::post("complaint" , "HomeController@complaint");
         Route::get("categories" , "HomeController@showCategories");
+        Route::get("sliders" , "HomeController@showSliders");
+        Route::get("adds" , "HomeController@showAdds");
         Route::get("services" , "HomeController@showServices");
         Route::get("special/services" , "HomeController@showSpecialServices");
         Route::get("bestseller/services" , "HomeController@showBestSellerServices");
         Route::get("countries" , "HomeController@showCountries");
         Route::get("cities" , "HomeController@showCities");
-        Route::get("orders" , "ClientController@showOrders");
         Route::get("categories" , "HomeController@show_categories");
 
         Route::post('service-provider/login', 'ServiceProviderController@login');
@@ -65,5 +65,3 @@ Route::namespace('APIs')->group(function () {
 Route::namespace('Dashboard')->group(function () {
     Route::resource('configration', 'ConfigrationController')->only(['index', 'update']);
 });
-
-

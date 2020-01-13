@@ -8,12 +8,23 @@ use App\Models\Category;
 use App\Models\ServiceCategory;
 use App\Models\Complaint;
 use App\Models\Order;
+use App\Models\Adds;
+use App\Models\Slider;
 use DB;
 
 class HomeController extends Controller
 {
     use APIResponseTrait;
 
+    public function showSliders()
+    {
+      return $this->APIResponse( Slider::get(), null, 200);
+    }
+
+    public function showAdds()
+    {
+        return $this->APIResponse( Adds::get(), null, 200);
+    }
     public function complaint(Request $request)
     {
         Complaint::create($request->all());
@@ -41,7 +52,7 @@ class HomeController extends Controller
 
     public function showSpecialServices()
     {
-        
+
         return $this->APIResponse( \App\Models\ServiceCategory::where('special' , 1)->limit(4)->get(), null, 200);
     }
 
@@ -50,16 +61,16 @@ class HomeController extends Controller
         $orders = DB::table('orders')
                  ->select('service_id' , DB::raw('count(*) as total'))
                  ->groupBy('service_id')
-                 
+
                  ->get();
-        
+
 
         $orders = DB::table('service_categories')
             ->inRandomOrder()
             ->limit(4)
             // ->groupBy('service_id')
             ->get();
-            
+
         // $orders = Order::orderBy('id','DESC')
         // ->select(DB::raw('service_id,count(*) as total') )
         // ->get()
