@@ -67,7 +67,7 @@
 						<span class="navbar-link-span">الخدمات <i class="fas fa-angle-down"></i>
 						</span>
 					</a>
-					<div class="dropdown-menu nav-link-dropdown" aria-labelledby="dropdownMenuLink">
+					<div class="dropdown-menu nav-link-dropdown" aria-labelledby="dropdownMenuLink" id="dropdownservice">
 						<a class="dropdown-item" href="categoriesOfServices.html"><i
 								class="nav-link-icon fas fa-palette"></i>تصميم</a>
 						<a class="dropdown-item" href="categoriesOfServices.html"><i class="nav-link-icon fas fa-print"></i>
@@ -257,6 +257,47 @@
 		}
 
 	</script>
+	  <script type="text/javascript">
+        //Create the XHR Object
+     let xhr1 = new XMLHttpRequest;
+     //Call the open function, GET-type of request, url, true-asynchronous
+     xhr1.open('GET', "http://localhost/code-art/public/api/categories", true)
+     //call the onload
+     xhr1.onload = function()
+     {
+        var attr="";
+        //check if the status is 200(means everything is okay)
+        if (this.status === 200)
+            {
+             console.log(JSON.parse(this.responseText));
+     
+                var obj=JSON.parse(this.responseText);
+             //  alert(obj[1].name);
+                //return server response as an object with JSON.parse
+     
+    //  for(var x=0;x<obj.data.length;x++)
+    //  {
+    //    attr+=' <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 services-item-col-div">';
+    
+    
+    //  }
+        
+      $("#dropdownservice").append(attr);
+     
+     
+     }
+            }
+     //call send
+     
+     
+     xhr1.send();
+     //Common Types of HTTP Statuses
+     // 200: OK
+     // 404: ERROR
+     // 403: FORBIDDEN
+     
+     </script>
+
 	     @yield ('scripts')
 </body>
 
