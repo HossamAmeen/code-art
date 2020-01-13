@@ -45,7 +45,7 @@ Route::namespace('APIs')->group(function () {
         Route::get("bestseller/services" , "HomeController@showBestSellerServices");
         Route::get("countries" , "HomeController@showCountries");
         Route::get("cities" , "HomeController@showCities");
-        Route::get("categories" , "HomeController@show_categories");
+
 
         Route::post('service-provider/login', 'ServiceProviderController@login');
         Route::middleware('auth:service-provider-api')->group(function () {
