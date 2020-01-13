@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\ServiceCategory;
 use App\Models\Complaint;
+use App\Models\Order;
+use DB;
 
 class HomeController extends Controller
 {
@@ -35,5 +37,36 @@ class HomeController extends Controller
     public function showCities()
     {
         return $this->APIResponse( \App\Models\City::get(), null, 200);
+    }
+
+    public function showSpecialServices()
+    {
+        
+        return $this->APIResponse( \App\Models\ServiceCategory::where('special' , 1)->limit(4)->get(), null, 200);
+    }
+
+    public function showBestSellerServices()
+    {
+        $orders = DB::table('orders')
+                 ->select('service_id' , DB::raw('count(*) as total'))
+                 ->groupBy('service_id')
+                 
+                 ->get();
+        
+
+        $orders = DB::table('service_categories')
+            ->inRandomOrder()
+            ->limit(4)
+            // ->groupBy('service_id')
+            ->get();
+            
+        // $orders = Order::orderBy('id','DESC')
+        // ->select(DB::raw('service_id,count(*) as total') )
+        // ->get()
+        // ->groupBy('service_id');
+        return $orders;
+    //    $bestSellerServices =  \App\Models\Order::where('special' , 1)->limit(4)->get();
+
+        return $this->APIResponse( null, null, 200);
     }
 }

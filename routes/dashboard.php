@@ -12,6 +12,18 @@
     Route::resource('questions', 'QuestionController')->except('edit');
     Route::resource('question-categories', 'CategoryQuestionController')->except('edit');
     Route::resource('suggestion-additions', 'SuggestAdditionController')->except('edit');
+
+
+    Route::resource('adds', 'AddsController');
+    Route::resource('category', 'CategoryController');
+    Route::resource('service/category', 'ServiceCategoryController');
+    Route::resource('last-work', 'LastWorkController');
+    Route::resource('complaint', 'ComplaintController');
+    Route::resource('service-provider', 'ServiceProviderController');
+    Route::resource('service-provider-service', 'ServiceProviderServiceController');
+    Route::resource('service-provider-wallet', 'ServiceProviderServiceController');
+    Route::resource('service-type', 'ServiceTypeController');
+    Route::resource('service-question', 'ServiceQuestionController');
         // Route::resource('sliders', 'SliderController')->except('show')
 
 ?>

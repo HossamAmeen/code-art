@@ -83,8 +83,9 @@
                     </g>
                 </svg>
             </div>
-            <div class="row">
-                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 services-item-col-div">
+            <div class="row" id="specialservice">
+           
+                {{-- <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 services-item-col-div">
                     <div class="services-item-col">
                         <div class="services-item">
                             <div class="services-item-header">
@@ -176,38 +177,7 @@
                             <a href="service-details.html" class="btn services-item-btn">اطلب الآن</a>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 services-item-col-div">
-                    <div class="services-item-col">
-                        <div class="services-item">
-                            <div class="services-item-header">
-                                <div class="on-item-option" onclick="addToFav(1)" data-toggle="popover"
-                                    data-trigger="hover" data-placement="left" data-content="اضف الى قائمة المفضلة">
-                                    <i class="far fa-heart fav-icon"></i>
-                                </div>
-                                <a href="service-details.html">
-                                    <img src="./assets/imgs/services-item-2.png" alt="" width="100%;" />
-                                </a>
-                            </div>
-                            <div class="services-item-info">
-                                <a href="service-details.html">
-                                    <span class="item-name">تصميم مواقع</span>
-                                </a>
-
-                                <div class="item-details">
-                                    <span>تصميم مواقع بطريقة محترفة ومتميزة</span>
-                                    <br /><br />
-                                    <a href="serviceProfile_User.html">
-                                        <span class="services-provider">مقدم الخدمة: اسامة عسكر</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="services-item-footer">
-                            <a href="service-details.html" class="btn services-item-btn">اطلب الآن</a>
-                        </div>
-                    </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
@@ -247,7 +217,7 @@
                     </g>
                 </svg>
             </div>
-            <div class="row">
+            <div class="row" id="bestseller">
                 <div class="col-lg-6 col-md-6 col-sm-6 new-serivces-item-col-row ">
                     <div class="new-serivces-item-col new-serivces-item-col-r-1">
                         <a href="service-details.html">
@@ -263,7 +233,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 new-serivces-item-col-row ">
+                {{-- <div class="col-lg-6 col-md-6 col-sm-6 new-serivces-item-col-row ">
                     <div class="new-serivces-item-col new-serivces-item-col-l-2">
                         <a href="service-details.html">
                             <div class="new-services-item new-serivces-item-2 row">
@@ -307,7 +277,7 @@
                             </div>
                         </a>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
@@ -340,7 +310,7 @@
         //Create the XHR Object
      let xhr = new XMLHttpRequest;
      //Call the open function, GET-type of request, url, true-asynchronous
-     xhr.open('GET', "{!! URL('api/special/services') !!}", true)
+     xhr.open('GET', "http://localhost/code-art/public/api/special/services", true)
      //call the onload
      xhr.onload = function()
      {
@@ -354,9 +324,24 @@
              //  alert(obj[1].name);
                 //return server response as an object with JSON.parse
      
+     for(var x=0;x<obj.data.length;x++)
+     {
+       attr+=' <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 services-item-col-div">';
+        attr+= '<div class="services-item-col"> <div class="services-item"><div class="services-item-header">';
+     attr+= ' <div class="on-item-option" onclick="addToFav(1)" data-toggle="popover" data-trigger="hover" data-placement="left" data-content="اضف الى قائمة المفضلة">';
+     attr+= '<i class="far fa-heart fav-icon"></i> </div> <a href="service-details.html">';
+        attr+= ' <img src="./assets/imgs/services-item-2.png" alt="" width="100%;" /> </a> </div>';
+        attr+= '  <div class="services-item-info"><a href="service-details.html"> <span class="item-name">'+obj.data[x].name+' </span> </a>';
+      attr+= '<div class="item-details"><span>تصميم مواقع بطريقة محترفة ومتميزة</span> <br /><br />';
+     attr+= ' <a href="serviceProfile_User.html"> <span class="services-provider">مقدم الخدمة: اسامة عسكر</span> </a>';
+     attr+= ' </div>  </div> </div> <div class="services-item-footer">';
+     attr+= ' <a href="service-details.html" class="btn services-item-btn">اطلب الآن</a>  </div> </div>  </div>';
      
+
+    
+     }
         
-     
+      $("#specialservice").append(attr);
      
      
      }

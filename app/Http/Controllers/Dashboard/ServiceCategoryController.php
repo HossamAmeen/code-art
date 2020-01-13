@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\APIs;
+namespace App\Http\Controllers\Dashboard;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\BackEndController;
-use App\Models\Adds;
+use App\Models\ServiceCategory;
 
-class AddsController extends BackEndController
+class ServiceCategoryController extends BackEndController
 {
-    public function __construct(Adds $model)
+    public function __construct(ServiceCategory $model)
     {
         $this->model = $model;
     }
@@ -18,31 +18,29 @@ class AddsController extends BackEndController
         if($request->image)
         {
             $source = public_path($request->image);
-            $destination = "Adds".substr($request->image, strpos($request->image , '/') ) ;
+            $destination = "Service Category".substr($request->image, strpos($request->image , '/') ) ;
             $request['image'] = $destination;
             copy( $source, $destination );
         }
 
         $this->model->create($request->all());
+
         return $this->APIResponse(null, null, 201);
     }
 
     public function update(Request $request, $id)
     {
-        $add = $this->model::find($id);
-
+        $serviceCategory = $this->model::find($id);
         if($request->image)
         {
             $source = public_path($request->image);
-            $destination = "Adds".substr($request->image, strpos($request->image , '/') ) ;
+            $destination = "Service Category".substr($request->image, strpos($request->image , '/') ) ;
             $request['image'] = $destination;
             copy( $source, $destination );
         }
-
-        $add->update($request->all());
+        $serviceCategory->update($request->all());
 
         return $this->APIResponse(null, null, 200);
     }
-
 
 }

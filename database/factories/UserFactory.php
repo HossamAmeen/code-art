@@ -81,6 +81,7 @@ $factory->define(App\Models\ServiceCategory::class, function (Faker $faker) {
         'category_id' => $faker->randomElement(getCategory()),
         'delivery_price' => $faker->randomDigit,
         'special' => $faker->boolean,
+        'image' => 'image.jpg',
     ];
 });
 
@@ -123,6 +124,8 @@ $factory->define(App\Models\ServiceProviderService::class, function (Faker $fake
         'discount' => $faker->randomDigit,
         'image' => 'imahe.jpg',
         'overview' => $faker->sentence,
+        'title' => $faker->title,
+        'program' => $faker->sentence,
     ];
 });
 
@@ -151,11 +154,17 @@ $factory->define(App\Models\ServiceQuestion::class, function (Faker $faker) {
     ];
 });
 
-
-
 $factory->define(App\Models\ServiceQuestionMultipleChoice::class, function (Faker $faker) {
     return [
         'choice' => $faker->sentence,
         'service_question_id' => $faker->randomElement(getServiceQuestion()),
+    ];
+});
+
+$factory->define(App\Models\ServiceComment::class, function (Faker $faker) {
+    return [
+        'service_provider_id' => $faker->randomElement(getServiceProvider()),
+        'service_category_id' => $faker->randomElement(getServiceCategory()),
+        'comment' => $faker->sentence,
     ];
 });

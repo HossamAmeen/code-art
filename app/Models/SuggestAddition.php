@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class SuggestAddition extends Model
 {
-   protected $fillable = ['suggestion' , 'price'  , 'service_id',
+   protected $fillable = ['suggestion' , 'price'  , 'service_category_id',
 ];
 }

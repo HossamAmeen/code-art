@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateServiceProviderServicesTable extends Migration
+class CreateServiceCommentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,21 +13,16 @@ class CreateServiceProviderServicesTable extends Migration
      */
     public function up()
     {
-        Schema::create('service_provider_services', function (Blueprint $table) {
+        Schema::create('service_comments', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->longText('description');
-            $table->double('discount');
-            $table->double('rate')->nullable();
-            $table->string('image');
-            $table->longText('overview');
-            $table->string('title');
-            $table->string('program');
+            $table->longText('comment');
 
             $table->bigInteger('service_provider_id')->unsigned()->nullable();
             $table->foreign('service_provider_id')->references('id')->on('service_providers')->onDelete('cascade');
 
             $table->bigInteger('service_category_id')->unsigned()->nullable();
             $table->foreign('service_category_id')->references('id')->on('service_categories')->onDelete('cascade');
+
             $table->timestamps();
         });
     }
@@ -39,6 +34,6 @@ class CreateServiceProviderServicesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('service_provider_services');
+        Schema::dropIfExists('service_comments');
     }
 }

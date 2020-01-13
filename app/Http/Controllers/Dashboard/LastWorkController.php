@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\APIs;
+namespace App\Http\Controllers\Dashboard;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\BackEndController;
@@ -31,7 +31,7 @@ class LastWorkController extends BackEndController
     public function update(Request $request, $id)
     {
         $add = $this->model::find($id);
-        
+
         if($request->image)
         {
             $source = public_path($request->image);

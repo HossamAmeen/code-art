@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\APIs;
+namespace App\Http\Controllers\Dashboard;
 
+use App\Http\Controllers\BackEndController;
 use Illuminate\Http\Request;
-use App\Http\Controllers\BackController;
 use App\Models\ServiceProvider;
 use Hash;
 
-class ServiceProviderController extends BackController
+class ServiceProviderController extends BackEndController
 {
     public function __construct(ServiceProvider $model)
     {
@@ -33,7 +33,7 @@ class ServiceProviderController extends BackController
     public function update(Request $request, $id)
     {
         $add = $this->model::find($id);
-        
+
         if($request->image)
         {
             $source = public_path($request->image);
