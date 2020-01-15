@@ -84,7 +84,7 @@
                 </svg>
             </div>
             <div class="row" id="specialservice">
-           
+
                 {{-- <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 services-item-col-div">
                     <div class="services-item-col">
                         <div class="services-item">
@@ -205,7 +205,7 @@
     <div class="container-fluid">
         <div class="section-row new-services">
             <div class="section-hdr">
-                <h3 class="section-hdr-txt"><b>   الاكثر طلبا</b></h3>
+                <h3 class="section-hdr-txt"><b> الاكثر طلبا</b></h3>
                 <svg class="section-hdr-underline" height="40" width="300">
                     <g fill="none">
                         <path stroke="blue" class="underline-1" d="M0 1 l140 0" />
@@ -302,15 +302,15 @@
     </div>
 </section>
 
-    @stop
+@stop
 
-    @section('scripts')
+@section('scripts')
 
-    <script type="text/javascript">
-        //Create the XHR Object
+<script type="text/javascript">
+    //Create the XHR Object
      let xhr = new XMLHttpRequest;
      //Call the open function, GET-type of request, url, true-asynchronous
-     xhr.open('GET', "http://localhost/code-art/public/api/special/services", true)
+     xhr.open('GET', "{{url('api/special/services')}}", true)
      //call the onload
      xhr.onload = function()
      {
@@ -326,16 +326,16 @@
      
      for(var x=0;x<obj.data.length;x++)
      {
-       attr+=' <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 services-item-col-div">';
+        attr+=' <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 services-item-col-div">';
         attr+= '<div class="services-item-col"> <div class="services-item"><div class="services-item-header">';
-     attr+= ' <div class="on-item-option" onclick="addToFav(1)" data-toggle="popover" data-trigger="hover" data-placement="left" data-content="اضف الى قائمة المفضلة">';
-     attr+= '<i class="far fa-heart fav-icon"></i> </div> <a href="service-details.html">';
+        attr+= ' <div class="on-item-option" onclick="addToFav(1)" data-toggle="popover" data-trigger="hover" data-placement="left" data-content="اضف الى قائمة المفضلة">';
+        attr+= '<i class="far fa-heart fav-icon"></i> </div> <a href="service-details.html">';
         attr+= ' <img src="./assets/imgs/services-item-2.png" alt="" width="100%;" /> </a> </div>';
         attr+= '  <div class="services-item-info"><a href="service-details.html"> <span class="item-name">'+obj.data[x].name+' </span> </a>';
-      attr+= '<div class="item-details"><span>تصميم مواقع بطريقة محترفة ومتميزة</span> <br /><br />';
-     attr+= ' <a href="serviceProfile_User.html"> <span class="services-provider">مقدم الخدمة: اسامة عسكر</span> </a>';
-     attr+= ' </div>  </div> </div> <div class="services-item-footer">';
-     attr+= ' <a href="service-details.html" class="btn services-item-btn">اطلب الآن</a>  </div> </div>  </div>';
+        attr+= '<div class="item-details"><span>تصميم مواقع بطريقة محترفة ومتميزة</span> <br /><br />';
+        attr+= ' <a href="serviceProfile_User.html"> <span class="services-provider">مقدم الخدمة: اسامة عسكر</span> </a>';
+        attr+= ' </div>  </div> </div> <div class="services-item-footer">';
+        attr+= ' <a href="service-details.html" class="btn services-item-btn">اطلب الآن</a>  </div> </div>  </div>';
      
 
     
@@ -355,5 +355,7 @@
      // 404: ERROR
      // 403: FORBIDDEN
      
-     </script>
-    @stop
+</script>
+@stop
+
+
