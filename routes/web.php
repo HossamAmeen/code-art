@@ -33,7 +33,43 @@ Route::get('/fav',function () {
 Route::get('/cart',function () {
     return view('cart');
 });
+Route::get('/details',function () {
+    return view('servicedetails');
+});
+
+Route::get('/term',function () {
+    return view('term');
+});
+
    
+Route::get('/privacystatement',function () {
+    return view('privacystatement');
+});
+Route::get('/question',function () {
+    return view('question');
+});
+Route::get('/howwork',function () {
+    return view('howwork');
+});
+
+Route::get('/aboutus',function () {
+    return view('aboutus');
+});
+
+Route::get('/login',function () {
+    return view('login');
+});
+
+Route::get('/register',function () {
+    return view('register');
+});
+
+
+
+Route::get('/categoryofservice',function () {
+    return view('categoryOfService');
+});
+
 // Route::get('/',function () {
 //     return view('index');
 // });

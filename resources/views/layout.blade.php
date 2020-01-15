@@ -24,6 +24,10 @@
 
 	<!-- new-services -->
 	<link rel="stylesheet" href="{{asset('../public/css/new-services.css')}}"/>
+
+	<!--service-->
+	<link rel="stylesheet" href="{{asset('../public/css/service-item.css')}}" />
+	<link rel="stylesheet" href="{{asset('../public/css/service-item-2.css')}}" />
 </head>
 
 <body>
@@ -131,7 +135,7 @@
 				<li class="nav-item dropdown">
 					<a class="nav-link dropDown-navLink_login dropdown-toggle" href="#" role="button" id=""
 						data-toggle="" aria-haspopup="false" aria-expanded="false" data-target="">
-						<span class="navbar-link-span">اهلا عمر <i class="fas fa-angle-down"></i>
+						{{-- <span class="navbar-link-span">اهلا عمر <i class="fas fa-angle-down"></i> --}}
 						</span>
 					</a>
 					<div class="dropdown-menu user_card-dropdown" aria-labelledby="">
@@ -161,18 +165,18 @@
 							<div class="footer-link-ul">
 								<ul class="list-group">
 									<li class="list-group-item">
-										<a class="footer-link-item" href="about-us.html"><i
+										<a class="footer-link-item" href="{{ url('aboutus') }}"><i
 												class="orange-square fas fa-square"></i>من
 											نحن</a>
 									</li>
 									<li class="list-group-item">
-										<a class="footer-link-item" href="how-it-work.html"><i
+										<a class="footer-link-item" href="{{ url('howwork') }}"><i
 												class="orange-square fas fa-square"></i>كيف
 											يعمل
 											الموقع</a>
 									</li>
 									<li class="list-group-item">
-										<a class="footer-link-item" href="questions.html"><i
+										<a class="footer-link-item" href="{{ url('question') }}"><i
 												class="orange-square fas fa-square"></i>الاسئلة
 											الشائعة</a>
 									</li>
@@ -183,13 +187,13 @@
 							<div class="footer-link-ul">
 								<ul class="list-group">
 									<li class="list-group-item">
-										<a class="footer-link-item" href="terms-of-use.html"><i
+										<a class="footer-link-item" href="{{ url('term') }}"><i
 												class="orange-square fas fa-square"></i>شروط
 											الاستخدام
 										</a>
 									</li>
 									<li class="list-group-item">
-										<a class="footer-link-item" href="privacy-statement.html"><i
+										<a class="footer-link-item" href="{{ url('privacystatement') }}"><i
 												class="orange-square fas fa-square"></i>بيان
 											الخصوصية</a>
 									</li>
@@ -203,21 +207,20 @@
 					</div>
 					<div class="col-lg-3 col-md-4 col-sm-12 footer-top-left">
 						<img width="90px" src="{{asset('../public/imgs/logo.png')}}" />
-						<p>
-							اختبار اختبار ختبار اختبار ختبار اختبار ختبار اختبار ختبار
-							اختبار
+						<p id="desc">
+						
 						</p>
 					</div>
 					<div class="col-lg-1 col-md-0 col-sm-0"></div>
 				</div>
 				<div class="footer-mdl">
 					<div class="row">
-						<div class="col-12 sm-icon-div">
+						<div class="col-12 sm-icon-div" id="link">
+							<a id="yot"><img id="im1" /></a>
+							 <a id="whats"><img id="im2" /></a>
+							 <a id="twit"><img id="im3" /></a>
+							<a id="inst"><img id="inst"  /></a>
 						
-							<a><img src="{{asset('../public/imgs/youtybeicon.png')}}" /></a>
-							<a><img src="{{asset('../public/imgs/whatsappicon.png')}}" /></a>
-							<a><img src="{{asset('../public/imgs/twittericon.png')}}" /></a>
-							<a><img src="{{asset('../public/imgs/instagramicon.png')}}" /></a>
 						</div>
 						<div class="chatting-div">
 							<a href="#"><span class="chatting-btn"><i class="fas fa-comments pl-2"></i>
@@ -259,45 +262,126 @@
 
 	</script>
 	  <script >
-	 
-		//Create the XHR Object
-		let dropdown = document.getElementById('dropdownservice');
-     let xhr1 = new XMLHttpRequest;
-     //Call the open function, GET-type of request, url, true-asynchronous
-     xhr1.open('GET', "http://localhost/code-art/public/api/categories", true)
-     //call the onload
-     xhr1.onload = function()
-     {
-        var attr="";
-        //check if the status is 200(means everything is okay)
-        if (this.status === 200)
-            {
-             console.log(JSON.parse(this.responseText));
-     
-                var obj=JSON.parse(this.responseText);
+				
+					//Create the XHR Object
+					let dropdown = document.getElementById('dropdownservice');
+				let xhr1 = new XMLHttpRequest;
+				//Call the open function, GET-type of request, url, true-asynchronous
+				xhr1.open('GET', "http://localhost/code-art/public/api/categories", true)
+				//call the onload
+				xhr1.onload = function()
+				{
+					var attr="";
+					//check if the status is 200(means everything is okay)
+					if (this.status === 200)
+						{
+						console.log(JSON.parse(this.responseText));
+				
+							var obj=JSON.parse(this.responseText);
+						
 			
-   
-				for (let i = 0; i < obj.data.length; i++) {
-         attr+='<a class="dropdown-item" href="{{ url('service') }}"  data-id='+obj.data[i].id+'><i class="nav-link-icon fas fa-palette"></i>'+obj.data[i].name+'</a>';
-		
-		}
-    
-		$("#dropdownservice").append(attr);
-			}
-   
-     
-     }
-            
-     //call send
-     
-     
-     xhr1.send();
-     //Common Types of HTTP Statuses
-     // 200: OK
-     // 404: ERROR
-     // 403: FORBIDDEN
+							for (let i = 0; i < obj.data.length; i++) {
+					attr+='<a class="dropdown-item" id="service" href="{{ url('categoryofservice') }}"  data-id='+obj.data[i].id+'><i class="nav-link-icon fas fa-palette"></i>'+obj.data[i].name+'</a>';
+					
+					}
+				
+					$("#dropdownservice").append(attr);
+						}
+			
+				
+				}
+						
+				//call send
+				
+				
+				xhr1.send();
+				//Common Types of HTTP Statuses
+				// 200: OK
+				// 404: ERROR
+				// 403: FORBIDDEN
 
-     </script>
+	 </script>
+
+<script>
+        
+           
+	$(document).on('click', '#service', function(){
+		var service_id = $(this).attr('data-id');
+		 localStorage.setItem("serviceid",service_id);
+	
+		
+
+});        
+
+</script>
+	 <script>
+
+		 		//Create the XHR Object
+				
+				let xhrlayout = new XMLHttpRequest;
+				//Call the open function, GET-type of request, url, true-asynchronous
+				xhrlayout.open('GET', "http://localhost/code-art/public/api/configration", true)
+				//call the onload
+				xhrlayout.onload = function()
+				{
+					var attr="";
+					//check if the status is 200(means everything is okay)
+					if (this.status === 201 || this.status === 200)
+						{
+						console.log(JSON.parse(this.responseText));
+				
+							var obj=JSON.parse(this.responseText);
+						
+			         
+					    
+							document.getElementById('desc').innerHTML=obj.data[0].description; 
+							  
+							if(obj.data[0].youtube !=null)
+							{
+							
+								$("#yot").attr("href", obj.data[0].youtube);
+								$("#im1").attr("src", "../public/imgs/youtybeicon.png");
+							
+							}
+							if(obj.data[0].whatsapp !=null)
+							{
+							
+								$("#whats").attr("href", obj.data[0].whatsapp);
+								$("#im2").attr("src", "../public/imgs/whatsappicon.png");
+							
+							}
+						
+							if(obj.data[0].twitter !=null)
+							{
+							
+								$("#twit").attr("href", obj.data[0].twitter);
+								$("#im3").attr("src", "../public/imgs/twittericon.png");
+							
+							}
+							if(obj.data[0].instagram !=null)
+							{
+							
+								$("#inst").attr("href", obj.data[0].instagram);
+								$("#im4").attr("src", "../public/imgs/instagramicon.png");
+							
+							}
+							
+							}
+					
+					
+			
+				
+				}
+						
+				//call send
+				
+				
+				xhrlayout.send();
+				//Common Types of HTTP Statuses
+				// 200: OK
+				// 404: ERROR
+				// 403: FORBIDDEN
+		 </script>
 
 	     @yield ('scripts')
 </body>

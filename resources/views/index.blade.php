@@ -4,11 +4,12 @@
 <section>
     <div class="bd-example">
         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" data-interval="10000">
-            <ol class="carousel-indicators">
+            <ol class="carousel-indicators" id="slidermain">
                 <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleCaptions" data-slide-to="1" class=""></li>
             </ol>
-            <div class="carousel-inner">
+            <div class="carousel-inner" id="slider">
+                  
                 <div class="carousel-item active">
                     <img src="{{asset('../public/imgs/carouselImg.png')}}" class="d-block w-100" alt="..." />
                     <div class="carousel-caption carousel-caption-l d-md-block">
@@ -304,10 +305,83 @@
 
 @stop
 
-@section('scripts')
-
+    @section('scripts')
+ {{-- Slider
 <script type="text/javascript">
     //Create the XHR Object
+ let xhr3 = new XMLHttpRequest;
+ //Call the open function, GET-type of request, url, true-asynchronous
+ xhr3.open('GET', "http://localhost/code-art/public/api/sliders", true)
+ //call the onload
+ xhr3.onload = function()
+ {
+    var attr="";
+    var attr1="";
+    //check if the status is 200(means everything is okay)
+    if (this.status === 200)
+        {
+         console.log(JSON.parse(this.responseText));
+ 
+            var obj=JSON.parse(this.responseText);
+         //  alert(obj[1].name);
+            //return server response as an object with JSON.parse
+ 
+ for(var x=0;x<obj.data.length;x++)
+ {
+//   if(x==0)
+//  { attr+='<li data-target="#carouselExampleCaptions" data-slide-to="'+obj.data[x].id+'" class="active"></li>'}
+// else
+// {
+    attr+='<li data-target="#carouselExampleCaptions" data-slide-to="'+obj.data[x].id+'" class=""></li>'
+// }
+
+ }
+    
+  $("#slidermain").append(attr);
+ 
+  for(var i=0;i<obj.data.length;i++)
+  {
+      var img="localhost/code-art/public/"+obj.data[i].image;
+    // if(i==0)
+    //  { attr1+='<div class="carousel-item active"><img src="{{asset('+img+')}}" class="d-block w-100" alt="..." />';
+    //     attr1+='<div class="carousel-caption carousel-caption-l d-md-block"> <h1><span class="carousel-info-hdr-l"><b> كودآرت</b></span>';
+    //     attr1+='</h1><div class="carousel-info-l"> <p>كل ما هو جديد في عالم التصميم</p></div>';
+    //     attr1+='<a class="carousel-link-l">اطلب الآن <i class="fas fa-arrow-left pr-2"></i></a> </div>';
+    //     attr1+='<div class="carousel-caption carousel-caption-r d-md-block"> <h1><span class="carousel-info-hdr-r"><b> عرض خاص</b></span></h1>';
+    //     attr1+='<div class="carousel-info-r"><p>  خصم  <span class="carousel-info-r-offer">30% </span> على كل       خدمة </p>';
+    //     attr1+=' </div> </div> </div>'
+        
+    //     }
+    //     else
+    //     {
+            attr1+='<div class="carousel-item "><img src="'+img+'" class="d-block w-100" alt="..." />';
+        attr1+='<div class="carousel-caption carousel-caption-l d-md-block"> <h1><span class="carousel-info-hdr-l"><b> كودآرت</b></span>';
+        attr1+='</h1><div class="carousel-info-l"> <p>كل ما هو جديد في عالم التصميم</p></div>';
+        attr1+='<a class="carousel-link-l">اطلب الآن <i class="fas fa-arrow-left pr-2"></i></a> </div>';
+        attr1+='<div class="carousel-caption carousel-caption-r d-md-block"> <h1><span class="carousel-info-hdr-r"><b> عرض خاص</b></span></h1>';
+        attr1+='<div class="carousel-info-r"><p>  خصم  <span class="carousel-info-r-offer">30% </span> على كل       خدمة </p>';
+        attr1+=' </div> </div> </div>'
+        // }
+
+  }
+  $("#slider").append(attr1);
+ }
+        }
+ //call send
+ 
+ 
+ xhr3.send();
+ //Common Types of HTTP Statuses
+ // 200: OK
+ // 404: ERROR
+ // 403: FORBIDDEN
+ 
+ </script> --}}
+
+
+{{--  Special services --}}
+    <script type="text/javascript">
+        //Create the XHR Object
      let xhr = new XMLHttpRequest;
      //Call the open function, GET-type of request, url, true-asynchronous
      xhr.open('GET', "{{url('api/special/services')}}", true)
@@ -328,14 +402,14 @@
      {
         attr+=' <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 services-item-col-div">';
         attr+= '<div class="services-item-col"> <div class="services-item"><div class="services-item-header">';
-        attr+= ' <div class="on-item-option" onclick="addToFav(1)" data-toggle="popover" data-trigger="hover" data-placement="left" data-content="اضف الى قائمة المفضلة">';
-        attr+= '<i class="far fa-heart fav-icon"></i> </div> <a href="service-details.html">';
-        attr+= ' <img src="./assets/imgs/services-item-2.png" alt="" width="100%;" /> </a> </div>';
-        attr+= '  <div class="services-item-info"><a href="service-details.html"> <span class="item-name">'+obj.data[x].name+' </span> </a>';
-        attr+= '<div class="item-details"><span>تصميم مواقع بطريقة محترفة ومتميزة</span> <br /><br />';
-        attr+= ' <a href="serviceProfile_User.html"> <span class="services-provider">مقدم الخدمة: اسامة عسكر</span> </a>';
-        attr+= ' </div>  </div> </div> <div class="services-item-footer">';
-        attr+= ' <a href="service-details.html" class="btn services-item-btn">اطلب الآن</a>  </div> </div>  </div>';
+     attr+= ' <div class="on-item-option" onclick="addToFav(1)" data-toggle="popover" data-trigger="hover" data-placement="left" data-content="اضف الى قائمة المفضلة">';
+     attr+= '<i class="far fa-heart fav-icon"></i> </div> <a class="order_button" href="{{ url('details') }}" data-id='+obj.data[x].id+'>';
+        attr+= ' <img src="http://localhost/code-art/public/'+obj.data[x].image+'" alt="" width="100%;" /> </a> </div>';
+        attr+= '  <div class="services-item-info"><a class="order_button" href="{{ url('details') }}" data-id='+obj.data[x].id+'> <span class="item-name">'+obj.data[x].name+' </span> </a>';
+      attr+= '<div class="item-details"><span>تصميم مواقع بطريقة محترفة ومتميزة</span> <br /><br />';
+     attr+= ' <a href="serviceProfile_User.html"> <span class="services-provider">مقدم الخدمة: اسامة عسكر</span> </a>';
+     attr+= ' </div>  </div> </div> <div class="services-item-footer">';
+     attr+= ' <a href="{{ url('details') }}"  class="btn services-item-btn order_button" data-id='+obj.data[x].id+'>اطلب الآن</a>  </div> </div>  </div>';
      
 
     
@@ -355,7 +429,23 @@
      // 404: ERROR
      // 403: FORBIDDEN
      
-</script>
-@stop
+     </script>
 
 
+{{-- order --}}
+
+
+<script>
+    $(document).ready(function(){
+      $(document).on('click', '.order_button', function(){
+   // product id will be here
+   var service_id = $(this).attr('data-id');
+   
+   localStorage.setItem("storageName",service_id);
+   
+   
+      });
+    });
+   
+   </script>
+    @stop
