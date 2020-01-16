@@ -45,7 +45,7 @@ class ClientController extends Controller
     }
     public function getAcount()
     {
-        
+        return response()->json(Client::find(Auth::guard('client-api')->user()->id), 200);
     }
     public function updateProfile(Request $request)
     {

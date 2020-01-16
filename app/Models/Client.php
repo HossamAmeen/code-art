@@ -14,5 +14,5 @@ class Client extends Authenticatable
     use HasApiTokens, Notifiable;
 
     protected $fillable = ["email","user_name","phone","password","country_id","city_id"];
-
+    protected $hidden = ["password"];
 }

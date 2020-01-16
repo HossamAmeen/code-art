@@ -18,12 +18,12 @@ class HomeController extends Controller
 
     public function showSliders()
     {
-      return $this->APIResponse( Slider::get(), null, 200);
+      return $this->APIResponse( \App\Models\Slider::get(), null, 200);
     }
 
     public function showAdds()
     {
-        return $this->APIResponse( Adds::get(), null, 200);
+        return $this->APIResponse( \App\Models\Adds::get(), null, 200);
     }
     public function complaint(Request $request)
     {
@@ -33,12 +33,12 @@ class HomeController extends Controller
     }
     public function showCategories()
     {
-       return $this->APIResponse( Category::with('services')->get(), null, 200);
+       return $this->APIResponse( \App\Models\Category::with('services')->get(), null, 200);
     }
 
     public function showServices(Request $request)
     {
-        return $this->APIResponse( ServiceCategory::where('category_id' , $request->category_id)->get('id','name'), null, 200);
+        return $this->APIResponse( \App\Models\ServiceCategory::where('category_id' , $request->category_id)->get('id','name'), null, 200);
     }
     public function showCountries()
     {
@@ -76,8 +76,13 @@ class HomeController extends Controller
         // ->get()
         // ->groupBy('service_id');
         return $orders;
-    //    $bestSellerServices =  \App\Models\Order::where('special' , 1)->limit(4)->get();
+      //    $bestSellerServices =  \App\Models\Order::where('special' , 1)->limit(4)->get();
 
         return $this->APIResponse( null, null, 200);
+    }
+
+    public function getConfigration()
+    {
+        return $this->APIResponse( \App\Models\Configration::find(1), null, 200);
     }
 }

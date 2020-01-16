@@ -33,6 +33,7 @@ Route::namespace('APIs')->group(function () {
         Route::post("register" , "ClientController@register");
         Route::put("client/update/profile" , "ClientController@updateProfile");
         Route::post("client/login" , "ClientController@login");
+        Route::get("account" , "ClientController@getAcount");
         Route::get("cart" , "ClientController@cart");
         Route::get("orders" , "ClientController@showOrders");
         Route::get("wishlists" , "ClientController@wishlist");
@@ -43,6 +44,7 @@ Route::namespace('APIs')->group(function () {
         Route::get("services" , "HomeController@showServices");
         Route::get("special/services" , "HomeController@showSpecialServices");
         Route::get("bestseller/services" , "HomeController@showBestSellerServices");
+        Route::get("configration" , "HomeController@getConfigration");
         Route::get("countries" , "HomeController@showCountries");
         Route::get("cities" , "HomeController@showCities");
 
