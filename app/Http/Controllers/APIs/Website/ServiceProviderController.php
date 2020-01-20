@@ -4,6 +4,7 @@ namespace App\Http\Controllers\APIs\Website;
 
 use App\Http\Controllers\APIResponseTrait;
 use App\Http\Controllers\Controller;
+use App\Models\ServiceCategory;
 use App\Models\ServiceComment;
 use App\Models\ServiceProvider;
 use App\Models\ServiceProviderService;
@@ -54,8 +55,8 @@ class ServiceProviderController extends Controller
 
     public function get_service_provider_service(Request $request)
     {
-        $serviceProviderService = ServiceProviderService::where('service_provider_id', Auth::user()->id)
-            ->where('service_category_id', $request->service_category_id)->get();
+        $serviceProviderService = ServiceProviderService::where('service_provider_id', $request->service_provider_id)
+            ->where('service_category_id', $request->service_category_id)->first();
 
         return $this->APIResponse($serviceProviderService, null, 200);
     }
@@ -63,14 +64,14 @@ class ServiceProviderController extends Controller
     public function get_service_provider(Request $request)
     {
         $serviceProviders = ServiceProviderService::with('service_provider')
-                ->where('service_category_id', $request->service_category_id)->get();
+                ->where('service_category_id', $request->category_service_id)->get();
 
         return $this->APIResponse($serviceProviders, null, 200);
     }
 
     public function get_suggest_addition(Request $request)
     {
-        $suggestAddition = SuggestAddition::where('service_category_id', $request->service_category_id)->get();
+        $suggestAddition = SuggestAddition::where('service_category_id', $request->category_service_id)->get();
 
         return $this->APIResponse($suggestAddition, null, 200);
     }
@@ -114,6 +115,20 @@ class ServiceProviderController extends Controller
         $comments = ServiceComment::where('service_category_id', $request->service_category_id)->get();
 
         return $this->APIResponse($comments, null, 200);
+    }
+
+    public function get_category(Request $request)
+    {
+        $categoryService = ServiceCategory::where('category_id', $request->category_id)->get();
+
+        return $this->APIResponse($categoryService, null, 200);
+    }
+
+    public function get_category_service(Request $request)
+    {
+        $categoryService = ServiceCategory::where('category_id', $request->category_id)->get();
+
+        return $this->APIResponse($categoryService, null, 200);
     }
 
     public function sendResponse($response)
