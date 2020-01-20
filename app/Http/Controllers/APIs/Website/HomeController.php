@@ -38,7 +38,8 @@ class HomeController extends Controller
 
     public function showServices(Request $request)
     {
-        return $this->APIResponse( \App\Models\ServiceCategory::where('category_id' , $request->category_id)->get('id','name'), null, 200);
+
+        return $this->APIResponse( \App\Models\ServiceCategory::where('category_id' , $request->category_id)->get(['id','name']), null, 200);
     }
     public function showCountries()
     {

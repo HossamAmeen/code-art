@@ -14,7 +14,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\Dashboard\ClientRequest;
 
 class ClientController extends Controller
-{   
+{
     use APIResponseTrait;
 
     public function register(ClientRequest $request)
@@ -33,7 +33,7 @@ class ClientController extends Controller
     public function login()
     {
         $credentials = request(['email', 'password']);
-        
+
         if(!Auth::guard('client')->attempt($credentials, false, false)){
             $error = "Unauthorized";
             return $this->APIResponse(null, $error, 400);
@@ -41,7 +41,7 @@ class ClientController extends Controller
         $client = Client::where("email", request('email'))->first();
         $success['token'] =  $client->createToken('token')->accessToken;
         return response()->json($success, 200);
-       
+
     }
     public function getAcount()
     {
@@ -54,7 +54,7 @@ class ClientController extends Controller
         {
             $request['password'] = bcrypt($request->password);
         }
-       
+
         $client->update($request->all());
 
         return $this->APIResponse(null, null, 200);
@@ -65,7 +65,7 @@ class ClientController extends Controller
                         ->with('service')
                         ->get();
 
-        return $this->APIResponse($wishlists, null, 201);               
+        return $this->APIResponse($wishlists, null, 201);
     }
     public function showOrders()
     {
@@ -74,7 +74,7 @@ class ClientController extends Controller
         ->with('service')
         ->get();
 
-        return $this->APIResponse($carts, null, 201); 
+        return $this->APIResponse($carts, null, 201);
     }
 
     public function cart()
@@ -84,8 +84,7 @@ class ClientController extends Controller
                         ->with('service')
                         ->get();
 
-        return $this->APIResponse($carts, null, 201); 
+        return $this->APIResponse($carts, null, 201);
     }
-    
-}
 
+}
