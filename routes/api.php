@@ -52,14 +52,14 @@ Route::namespace('APIs')->group(function () {
         Route::post('service-provider/login', 'ServiceProviderController@login');
         Route::middleware('auth:service-provider-api')->group(function () {
             Route::get('service-provider/service-type/', 'ServiceProviderController@get_service_type');
-            Route::get('service-provider/service-provider-service/', 'ServiceProviderController@get_service_provider_service');
-            Route::get('service-category/service-provider/', 'ServiceProviderController@get_service_provider');
-            Route::get('service-category/suggest-addition/', 'ServiceProviderController@get_suggest_addition');
             Route::post('service-provider-service/add', 'ServiceProviderController@add_service_provider_service');
-            Route::get('service-category/comments', 'ServiceProviderController@get_service_category_comments');
-
-
         });
+        Route::get('category/service/', 'ServiceProviderController@get_category_service');
+        Route::get('category/category-service/', 'ServiceProviderController@get_service_provider');
+        Route::get('service-provider/service-provider-service/', 'ServiceProviderController@get_service_provider_service');
+        Route::get('service-category/suggest-addition/', 'ServiceProviderController@get_suggest_addition');
+        Route::get('service-category/comments', 'ServiceProviderController@get_service_category_comments');
+
 
     });
 
