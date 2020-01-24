@@ -63,7 +63,7 @@ class ServiceProviderController extends Controller
     public function get_service_provider(Request $request)
     {
         $serviceProviders = ServiceProviderService::with('service_provider')
-                ->where('service_category_id', $request->service_category_id)->get();
+                ->where('service_category_id', $request->service_category_id)->first();
 
         return $this->APIResponse($serviceProviders, null, 200);
     }
