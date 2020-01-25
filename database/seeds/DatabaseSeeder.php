@@ -15,6 +15,15 @@ class DatabaseSeeder extends Seeder
         factory('App\Models\City', 10)->create();
         factory('App\Models\Category', 10)->create();
         factory('App\Models\ServiceCategory', 50)->create();
+        \App\Models\ServiceProvider::create([
+            "email" =>"service_provider@service_provider.com",
+            "name" =>"name",
+            "phone" => "01010000098",
+            "image" => 'ss.jpg',
+            "country" =>1,
+            "city" =>1,
+            'password' => bcrypt('password'), // password
+        ]);
         factory('App\Models\ServiceProvider', 10)->create();
         factory('App\Models\ServiceProviderService', 10)->create();
         $this->call([
