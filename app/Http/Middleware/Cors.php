@@ -7,7 +7,7 @@ class Cors
 {
     public function handle($request, Closure $next)
     {
-        header("Access-Control-Allow-Origin:*");
+        header("Access-Control-Allow-Origin: *");
 
         $headers = [
             'Access-Control-Allow-Methods' => 'POST, GET, OPTIONS, PUT, DELETE',
@@ -21,8 +21,8 @@ class Cors
         $response = $next($request);
         foreach($headers as $key => $value)
         {
-           $response->header($key, $value);
-            // $response->headers->set($key, $value);
+//            $response->header($key, $value);
+            $response->headers->set($key, $value);
 
         }
         return $response;
