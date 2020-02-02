@@ -122,7 +122,7 @@ $factory->define(App\Models\ServiceProviderService::class, function (Faker $fake
         'description' => $faker->sentence,
         'rate' => $faker->randomDigit,
         'discount' => $faker->randomDigit,
-        'image' => 'imahe.jpg',
+        'image' => 'image.jpg',
         'overview' => $faker->sentence,
         'title' => $faker->title,
         'program' => $faker->sentence,

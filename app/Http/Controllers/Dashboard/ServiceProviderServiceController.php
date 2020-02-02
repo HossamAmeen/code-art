@@ -18,7 +18,7 @@ class ServiceProviderServiceController extends BackEndController
         if($request->image)
         {
             $source = public_path($request->image);
-            $destination = "Service Provider Service" . substr($request->image, strpos($request->image, '/'));
+            $destination = "Service-Provider-Service" . substr($request->image, strpos($request->image, '/'));
             $request['image'] = $destination;
             copy($source, $destination);
         }
