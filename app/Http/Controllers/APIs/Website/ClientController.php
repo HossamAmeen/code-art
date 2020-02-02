@@ -61,6 +61,7 @@ class ClientController extends Controller
     }
     public function wishlist()
     {
+        // return Auth::guard('client-api')->user()->id ;
         $wishlists = WishList::where('client_id' , Auth::guard('client-api')->user()->id)
                         ->with('service')
                         ->get();

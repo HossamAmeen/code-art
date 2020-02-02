@@ -2,16 +2,7 @@
 
 use Illuminate\Http\Request;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
+
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
@@ -34,9 +25,8 @@ Route::namespace('APIs')->group(function () {
         Route::put("client/update/profile" , "ClientController@updateProfile");
         Route::post("client/login" , "ClientController@login");
         Route::get("account" , "ClientController@getAcount");
-        Route::get("cart" , "ClientController@cart");
-        Route::get("orders" , "ClientController@showOrders");
-        Route::get("wishlists" , "ClientController@wishlist");
+       
+       
         Route::post("complaint" , "HomeController@complaint");
         Route::get("categories" , "HomeController@showCategories");
         Route::get("sliders" , "HomeController@showSliders");
@@ -48,6 +38,11 @@ Route::namespace('APIs')->group(function () {
         Route::get("countries" , "HomeController@showCountries");
         Route::get("cities" , "HomeController@showCities");
 
+        Route::middleware('auth:client-api')->group(function () {
+            Route::get("wishlists" , "ClientController@wishlist");
+            Route::get("cart" , "ClientController@cart");
+            Route::get("orders" , "ClientController@showOrders");
+        });
 
         Route::post('service-provider/login', 'ServiceProviderController@login');
         Route::middleware('auth:service-provider-api')->group(function () {
