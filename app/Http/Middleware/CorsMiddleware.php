@@ -3,7 +3,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class Cors
+class CorsMiddleware
 {
     public function handle($request, Closure $next)
     {
