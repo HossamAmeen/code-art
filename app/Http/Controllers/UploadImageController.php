@@ -17,6 +17,14 @@ class UploadImageController extends Controller
           mkdir($destinationPath);
       }
      $image->save($destinationPath.$fileName,60);
+
+     $array = [
+      'data' =>'temps/'.$fileName,
+      'status' =>  "success" ,
+      'error' =>null,
+  ];
+
+  return response($array , 200);
      return 'temps/'.$fileName;
    }
 }
