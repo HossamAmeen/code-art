@@ -24,7 +24,8 @@ class AddsController extends BackEndController
         }
 
         $this->model->create($request->all());
-        return $this->APIResponse(null, null, 201);
+        session()->flash('action', 'تم الاضافه بنجاح');
+        return redirect()->route($this->getClassNameFromModel().'.index');
     }
 
     public function update(Request $request, $id)
@@ -41,7 +42,8 @@ class AddsController extends BackEndController
 
         $add->update($request->all());
 
-        return $this->APIResponse(null, null, 200);
+        session()->flash('action', 'تم التحديث بنجاح');
+        return redirect()->route($this->getClassNameFromModel().'.index');
     }
 
 

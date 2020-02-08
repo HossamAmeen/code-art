@@ -12,8 +12,11 @@ return [
     | these language lines according to your application's requirements.
     |
     */
+    'user_name' => "اسم المتسخدم خطأ" ,
 
-    'failed' => 'These credentials do not match our records.',
+    'email' => 'البريد الاكلتروني خطأ',
+    'password' => 'كلمة المرور خطأ',
+    'failed' => 'اسم المستخدم هذا خطأ او غير مسجل',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
 
 ];
