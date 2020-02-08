@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Http\Controllers\BackEndController;
 use App\Models\ServiceQuestion;
 use App\Models\ServiceQuestionBoolean;
 use App\Models\ServiceQuestionFile;
@@ -31,7 +30,7 @@ class ServiceQuestionController extends BackEndController
                 ]);
         }
 
-        return $this->APIResponse(null, null, 201);
+        return redirect()->route($this->getClassNameFromModel().'.index');
     }
 
     public function update(Request $request, $id)
@@ -39,7 +38,7 @@ class ServiceQuestionController extends BackEndController
         $serviceType = $this->model::find($id);
         $serviceType->update($request->all());
 
-        return $this->APIResponse(null, null, 200);
+        return redirect()->route($this->getClassNameFromModel().'.index');
     }
 
 }

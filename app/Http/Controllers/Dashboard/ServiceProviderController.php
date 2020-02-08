@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Http\Controllers\BackEndController;
 use Illuminate\Http\Request;
 use App\Models\ServiceProvider;
 use Hash;
@@ -27,7 +26,7 @@ class ServiceProviderController extends BackEndController
         $request['password'] = Hash::make('password');
         $this->model->create($request->all());
 
-        return $this->APIResponse(null, null, 201);
+        return redirect()->route($this->getClassNameFromModel().'.index');
     }
 
     public function update(Request $request, $id)
@@ -44,6 +43,6 @@ class ServiceProviderController extends BackEndController
 
         $add->update($request->all());
 
-        return $this->APIResponse(null, null, 200);
+        return redirect()->route($this->getClassNameFromModel().'.index');
     }
 }

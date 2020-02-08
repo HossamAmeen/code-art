@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Dashboard;
 use App\Models\Slider;
 use Illuminate\Http\Request;
-use App\Http\Controllers\BackEndController;
 
 class SliderController extends BackEndController
 {
@@ -18,10 +17,10 @@ class SliderController extends BackEndController
             $destination = "upload/".$this->pluralModelName().substr($request->image, strpos($request->image , '/') ) ;
             rename( $request->image, $destination );
         }
-        $request['image'] = $destination ; 
+        $request['image'] = $destination ;
         // return $request->image ;
         $this->model->create($request->all());
-        return $this->APIResponse(null, null, 201);
+        return redirect()->route($this->getClassNameFromModel().'.index');
     }
 
     public function update(Request $request, $id)
@@ -32,6 +31,11 @@ class SliderController extends BackEndController
         }
         $category = $this->model::find($id);
         $category->update($request->all());
-        return $this->APIResponse(null, null, 200);
+        return redirect()->route($this->getClassNameFromModel().'.index');
+    }
+
+    protected function with()
+    {
+        return ['service'];
     }
 }

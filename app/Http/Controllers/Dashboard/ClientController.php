@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Dashboard;
 use App\Models\Client;
 use Illuminate\Http\Request;
-use App\Http\Controllers\BackEndController;
 
 class ClientController extends BackEndController
 {
@@ -16,8 +15,8 @@ class ClientController extends BackEndController
     {
         $request['password'] = bcrypt($request['password']);
         $this->model->create($request->all());
-        
-        return $this->APIResponse(null, null, 201);
+
+        return redirect()->route($this->getClassNameFromModel().'.index');
     }
 
     public function update(Request $request, $id)
@@ -28,9 +27,9 @@ class ClientController extends BackEndController
         {
             $request['password'] = bcrypt($request->password);
         }
-       
+
         $client->update($request->all());
 
-        return $this->APIResponse(null, null, 200);
+        return redirect()->route($this->getClassNameFromModel().'.index');
     }
 }

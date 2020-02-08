@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Models\ServiceType;
 use Illuminate\Http\Request;
-use App\Http\Controllers\BackEndController;
 
 class ServiceTypeController extends BackEndController
 {
@@ -17,7 +16,7 @@ class ServiceTypeController extends BackEndController
     {
         $this->model->create($request->all());
 
-        return $this->APIResponse(null, null, 201);
+        return redirect()->route($this->getClassNameFromModel().'.index');
     }
 
     public function update(Request $request, $id)
@@ -25,7 +24,12 @@ class ServiceTypeController extends BackEndController
         $serviceType = $this->model::find($id);
         $serviceType->update($request->all());
 
-        return $this->APIResponse(null, null, 200);
+        return redirect()->route($this->getClassNameFromModel().'.index');
+    }
+
+    protected function with()
+    {
+        return ['service_provider', 'service_provider_service'];
     }
 
 }

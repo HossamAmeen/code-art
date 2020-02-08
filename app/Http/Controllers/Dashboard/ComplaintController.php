@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Dashboard;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\BackEndController;
 use App\Models\Complaint;
 
 class ComplaintController extends BackEndController
@@ -17,7 +16,7 @@ class ComplaintController extends BackEndController
     {
         $this->model->create($request->all());
 
-        return $this->APIResponse(null, null, 201);
+        return redirect()->route($this->getClassNameFromModel().'.index');
     }
 
     public function update(Request $request, $id)
@@ -25,7 +24,7 @@ class ComplaintController extends BackEndController
         $complaint = $this->model::find($id);
         $complaint->update($request->all());
 
-        return $this->APIResponse(null, null, 200);
+        return redirect()->route($this->getClassNameFromModel().'.index');
     }
 
 

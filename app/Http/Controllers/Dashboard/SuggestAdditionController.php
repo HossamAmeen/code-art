@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Dashboard;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\BackEndController;
 use App\Models\SuggestAddition;
 
 class SuggestAdditionController extends BackEndController
@@ -15,16 +14,20 @@ class SuggestAdditionController extends BackEndController
 
     public function store(Request $request)
     {
-        
         $this->model->create($request->all());
 
-        return $this->APIResponse(null, null, 201);
+        return redirect()->route($this->getClassNameFromModel().'.index');
     }
 
     public function update(Request $request, $id)
     {
       $this->model::find($id)->update($request->all());
 
-     return $this->APIResponse(null, null, 200);
+        return redirect()->route($this->getClassNameFromModel().'.index');
+    }
+
+    function with()
+    {
+        return ['service_category'];
     }
 }

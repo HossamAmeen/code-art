@@ -6,7 +6,7 @@
     Route::resource('clients', 'ClientController')->except('edit');
     Route::resource('client-services', 'SliderController')->except('edit');
     Route::resource('question-answer', 'SliderController')->except('edit');
-    Route::resource('wishlist', 'WishlistController')->except('edit');
+    Route::resource('wishlists', 'WishlistController')->except('edit');
     Route::resource('countries', 'CountryController')->except('edit');
     Route::resource('cities', 'CityController')->except('edit');
     Route::resource('questions', 'QuestionController')->except('edit');

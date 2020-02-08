@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Models\WishList;
 use Illuminate\Http\Request;
-use App\Models\Category;
 
-class CategoryController extends BackEndController
+class WishlistController extends BackEndController
 {
-    public function __construct(Category $model)
+    public function __construct(WishList $model)
     {
         $this->model = $model;
     }
@@ -21,10 +21,13 @@ class CategoryController extends BackEndController
 
     public function update(Request $request, $id)
     {
-        $category = $this->model::find($id);
-        $category->update($request->all());
+        $this->model::find($id)->update($request->all());
 
         return redirect()->route($this->getClassNameFromModel().'.index');
     }
 
+    function with()
+    {
+        return ['client', 'service'];
+    }
 }

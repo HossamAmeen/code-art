@@ -25,8 +25,8 @@ Route::namespace('APIs')->group(function () {
         Route::put("client/update/profile" , "ClientController@updateProfile");
         Route::post("client/login" , "ClientController@login");
         Route::get("account" , "ClientController@getAcount");
-       
-       
+
+
         Route::post("complaint" , "HomeController@complaint");
         Route::get("categories" , "HomeController@showCategories");
         Route::get("sliders" , "HomeController@showSliders");
@@ -39,7 +39,7 @@ Route::namespace('APIs')->group(function () {
         Route::get("cities" , "HomeController@showCities");
 
         Route::middleware('auth:client-api')->group(function () {
-            Route::get("wishlists" , "ClientController@wishlist");
+            Route::get("wishlists" , "ClientController@wishlists");
             Route::get("cart" , "ClientController@cart");
             Route::get("orders" , "ClientController@showOrders");
         });
