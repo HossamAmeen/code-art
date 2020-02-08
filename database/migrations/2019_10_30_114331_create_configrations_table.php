@@ -18,6 +18,7 @@ class CreateConfigrationsTable extends Migration
             $table->bigIncrements('id');
             $table->string('email')->nullable();
             $table->string('address')->nullable();
+            $table->string('website_name')->nullable();
             $table->text('description')->nullable();
             $table->text('about_us')->nullable();
             $table->text('registration_conditions')->nullable();

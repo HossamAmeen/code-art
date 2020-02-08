@@ -13,29 +13,31 @@ class SliderController extends BackEndController
 
     public function store(Request $request)
     {
-        if($request->image){
-            $destination = "upload/".$this->pluralModelName().substr($request->image, strpos($request->image , '/') ) ;
-            rename( $request->image, $destination );
+       
+        $requestArray = $request->all();
+        if(isset($requestArray['image']) )
+        {
+            $fileName = $this->uploadImage($request );
+            $requestArray['image'] =  $fileName;
         }
-        $request['image'] = $destination ;
-        // return $request->image ;
-        $this->model->create($request->all());
+        $this->model->create($requestArray);
+        session()->flash('action', 'تم الاضافه بنجاح'); 
         return redirect()->route($this->getClassNameFromModel().'.index');
     }
 
     public function update(Request $request, $id)
     {
-        if($request->image){
-            $destination = "upload/".$this->pluralModelName().substr($request->image, strpos($request->image , '/') ) ;
-            copy( $request->image, $destination );
+        $row = $this->model->FindOrFail($id);
+        $requestArray = $request->all();
+       if(isset($requestArray['image']) )
+        {
+            $fileName = $this->uploadImage($request );
+            $requestArray['image'] =  $fileName;
         }
-        $category = $this->model::find($id);
-        $category->update($request->all());
+        $row->update($requestArray);
+        session()->flash('action', 'تم التحديث بنجاح');
         return redirect()->route($this->getClassNameFromModel().'.index');
     }
 
-    protected function with()
-    {
-        return ['service'];
-    }
+   
 }

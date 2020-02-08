@@ -24,7 +24,7 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>الخدمة</th>
+                                <th>الرابط</th>
                                 <th>الصورة</th>
                                 <th></th>
                             </tr>
@@ -33,8 +33,11 @@
                             @foreach ($rows as $item)
                                  <tr>
                                     <td> {{$row_num++}}</td>
-                                    <td>{{$item->service->name}}</td>
-                                     <td>{{$item->image}}</td>
+                                    <td>{{$item->link}}</td>
+                                  
+                        
+                                    <td>  <img src="{{asset($item->image)}}" height="60px" width="60px"></td>
+                                  
                                     <td>
                                      @include('back-end.shared.buttons.delete')
                                     </td>

@@ -22,7 +22,41 @@
                     > 
                 @csrf
                 @include('back-end.'.$folderName.'.form')    
-           
+              
+                @if(Auth::user()->role == 1 )
+                @php $input = "role"; @endphp
+                <div class="form-group">
+                    <label class="col-md-2 col-sm-2 col-xs-12 control-label">الصلاحيه</label>
+                
+                    <div class="col-md-5 col-sm-5 col-xs-12 ls-group-input">
+                        <div class="radio">
+                            <label class="radio">
+                                <input type="radio" name="{{ $input }}" id="optionsRadios1" value="1" @if ( isset($row)) @if($row->role
+                                == 1 ) checked @endif
+                                @else
+                                checked
+                                @endif >
+                                مسؤول
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label class="radio">
+                                <input type="radio" name="{{ $input }}" id="optionsRadios2" value="0" @if ( isset($row)) @if($row->role
+                                == 0 ) checked @endif
+                                @endif
+                                >
+                                موظف
+                            </label>
+                        </div>
+                    </div>
+                    @error($input)
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                </div>
+               
+                @endif
                 <div class="form-group">
                     <div class="col-lg-offset-2 col-lg-10">
                         <button class="btn btn-info" type="submit">  إضافه  </button>

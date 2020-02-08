@@ -1,5 +1,5 @@
 @extends('back-end.layout.app')
- @php $row_num = 1;   $pageTitle = "عرض الأخبار" @endphp  
+ @php $row_num = 1;   $pageTitle = "عرض الشكاوي" @endphp  
 @section('title')
    {{$pageTitle}}
 @endsection
@@ -9,9 +9,9 @@
     @component('back-end.layout.header')
         @slot('nav_title')
         {{$pageTitle}} 
-         <a href="{{ route($routeName.'.create') }}">  
+         {{-- <a href="{{ route($routeName.'.create') }}">  
             <button class="alert-success"> <i class="fa fa-plus"></i> </button>
-         </a>
+         </a> --}}
         @endslot  
     @endcomponent
     @component('back-end.shared.table' )
@@ -24,25 +24,31 @@
                         <thead>
                             <tr>
                             <th>#</th>
-                            <th>العنوان</th>
-                            <th> العنوان بالانجليزي</th>
-                                <th>الوصف</th>
-                                <th>الصورة</th>
-                                <th>المستخدم</th>
+                            <th>اسم مقدم الشكوي</th>
+                            <th> الهاتف</th>
+                                <th>الشكوي</th>
+                               
                                 <th></th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($rows as $item)
-                                 <tr>
+                                 <tr>  
                                     <td> {{$row_num++}}</td>
-                                    <td>{{$item->title}}</td>
-                                    <td>{{$item->en_title}}</td>
-                                    <td width="30%">{!!$item->description!!}</td>
-                                    <td>  <img src="{{asset("uploads/".$routeName.'/'.$item->image)}}" height="60px" width="60px"></td>
-                                    <td>{{ isset($item->user) ? $item->user->user_name : '' }}</td>
-                                    <td>
-                                     @include('back-end.shared.buttons.delete')
+                                    <td>{{$item->first_name}}</td>
+                                    <td>{{$item->phone}}</td>
+                                    <td>{{$item->message}}</td>
+                                     <td>
+                                        <form action="{{ route($routeName.'.destroy' , ['id' => $item]) }}" method="post">
+                                            {{ csrf_field() }}
+                                            {{ method_field('delete') }}
+                                            {{-- <a href="{{ route($routeName.'.edit' , ['id' => $item]) }}" rel="tooltip" title="" class="btn btn-info" data-original-title="Edit {{ $sModuleName }}">
+                                                    <i class="material-icons">تعديل</i>
+                                                </a> --}}
+                                            <button type="submit" rel="tooltip" title="" class="btn btn-danger"  onclick="check()" data-original-title="Remove {{ $sModuleName }}">
+                                                <i class="material-icons">حذف</i>
+                                            </button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach

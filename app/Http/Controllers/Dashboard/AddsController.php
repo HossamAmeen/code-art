@@ -14,33 +14,28 @@ class AddsController extends BackEndController
 
     public function store(Request $request)
     {
-        if($request->image)
+       
+        $requestArray = $request->all();
+        if(isset($requestArray['image']) )
         {
-            $source = public_path($request->image);
-            $destination = "Adds".substr($request->image, strpos($request->image , '/') ) ;
-            $request['image'] = $destination;
-            copy( $source, $destination );
+            $fileName = $this->uploadImage($request );
+            $requestArray['image'] =  $fileName;
         }
-
-        $this->model->create($request->all());
-        session()->flash('action', 'تم الاضافه بنجاح');
+        $this->model->create($requestArray);
+        session()->flash('action', 'تم الاضافه بنجاح'); 
         return redirect()->route($this->getClassNameFromModel().'.index');
     }
 
     public function update(Request $request, $id)
     {
-        $add = $this->model::find($id);
-
-        if($request->image)
+        $row = $this->model->FindOrFail($id);
+        $requestArray = $request->all();
+       if(isset($requestArray['image']) )
         {
-            $source = public_path($request->image);
-            $destination = "Adds".substr($request->image, strpos($request->image , '/') ) ;
-            $request['image'] = $destination;
-            copy( $source, $destination );
+            $fileName = $this->uploadImage($request );
+            $requestArray['image'] =  $fileName;
         }
-
-        $add->update($request->all());
-
+        $row->update($requestArray);
         session()->flash('action', 'تم التحديث بنجاح');
         return redirect()->route($this->getClassNameFromModel().'.index');
     }

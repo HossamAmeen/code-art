@@ -16,8 +16,8 @@ class CreateSlidersTable extends Migration
        
         Schema::create('sliders', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('service_id');
-            $table->string('image');
+            $table->string('link')->default('');
+            $table->string('image')->default('sliders.png');
             $table->timestamps();
         });
     }

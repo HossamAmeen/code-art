@@ -2,8 +2,8 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 use App\Models\User;
-use Illuminate\Support\Str;
 use Faker\Generator as Faker;
+use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +14,7 @@ use Faker\Generator as Faker;
 | your application. Factories provide a convenient way to generate new
 | model instances for testing / seeding your application's database.
 |
-*/
+ */
 function getCategory()
 {
     return App\Models\Category::pluck('id')->toArray();
@@ -40,35 +40,70 @@ function getServiceQuestion()
     return App\Models\ServiceQuestion::pluck('id')->toArray();
 }
 
-
 $factory->define(App\Models\User::class, function (Faker $faker) {
 
     return [
         'user_name' => $faker->name,
         'full_name' => $faker->name,
         'password' => '$2y$10$mXwEFI/nQub9PmCejn59zuozRujElm4bu5D01y.wXpciRnKjHRWNm', // admin
-        'email' => Str::random(10). $faker->email,
-        'role' => $faker->randomElement($array = range (0,1))
+        'email' => Str::random(10) . $faker->email,
+        'role' => $faker->randomElement($array = range(0, 1)),
     ];
 });
 
 $factory->define(App\Models\Configration::class, function (Faker $faker) {
     return [
+        "website_name" => "كودآرت",
         'email' => $faker->safeEmail,
-        'description' => $faker->sentence($nbWords = 6, $variableNbWords = true),
-        "about_us" => $faker->sentence($nbWords = 6, $variableNbWords = true),
-        'registration_conditions' => $faker->sentence($nbWords = 6, $variableNbWords = true),
+        'description' => "موقع متميز الخدمات والاداء العالي",
+
+        "about_us" => "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam neque excepturi nihil facere magnam hic laborum vero, soluta eum consectetur harum obcaecati aperiam unde eligendi impedit pariatur vitae esse nemo?
+
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam neque excepturi nihil facere magnam hic laborum vero, soluta eum consectetur harum obcaecati aperiam unde eligendi impedit pariatur vitae esse nemo?
+
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam neque excepturi nihil facere magnam hic laborum vero, soluta eum consectetur harum obcaecati aperiam unde eligendi impedit pariatur vitae esse nemo?
+
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam neque excepturi nihil facere magnam hic laborum vero, soluta eum consectetur harum obcaecati aperiam unde eligendi impedit pariatur vitae esse nemo?
+
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam neque excepturi nihil facere magnam hic laborum vero, soluta eum consectetur harum obcaecati aperiam unde eligendi impedit pariatur vitae esse nemo",
+
+        'registration_conditions' => "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam neque excepturi nihil facere magnam hic laborum vero, soluta eum consectetur harum obcaecati aperiam unde eligendi impedit pariatur vitae esse nemo?
+
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam neque excepturi nihil facere magnam hic laborum vero, soluta eum consectetur harum obcaecati aperiam unde eligendi impedit pariatur vitae esse nemo?
+                                        
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam neque excepturi nihil facere magnam hic laborum vero, soluta eum consectetur harum obcaecati aperiam unde eligendi impedit pariatur vitae esse nemo?
+                                        
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam neque excepturi nihil facere magnam hic laborum vero, soluta eum consectetur harum obcaecati aperiam unde eligendi impedit pariatur vitae esse nemo?
+                                        
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam neque excepturi nihil facere magnam hic laborum vero, soluta eum consectetur harum obcaecati aperiam unde eligendi impedit pariatur vitae esse nemo",
+        "how_work"=> "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam neque excepturi nihil facere magnam hic laborum vero, soluta eum consectetur harum obcaecati aperiam unde eligendi impedit pariatur vitae esse nemo?
+
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam neque excepturi nihil facere magnam hic laborum vero, soluta eum consectetur harum obcaecati aperiam unde eligendi impedit pariatur vitae esse nemo?
+                        
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam neque excepturi nihil facere magnam hic laborum vero, soluta eum consectetur harum obcaecati aperiam unde eligendi impedit pariatur vitae esse nemo?
+                        
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam neque excepturi nihil facere magnam hic laborum vero, soluta eum consectetur harum obcaecati aperiam unde eligendi impedit pariatur vitae esse nemo?
+                        
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam neque excepturi nihil facere magnam hic laborum vero, soluta eum consectetur harum obcaecati aperiam unde eligendi impedit pariatur vitae esse nemo",
+
+        "privacy" => "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam neque excepturi nihil facere magnam hic laborum vero, soluta eum consectetur harum obcaecati aperiam unde eligendi impedit pariatur vitae esse nemo?
+
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam neque excepturi nihil facere magnam hic laborum vero, soluta eum consectetur harum obcaecati aperiam unde eligendi impedit pariatur vitae esse nemo?
+                        
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam neque excepturi nihil facere magnam hic laborum vero, soluta eum consectetur harum obcaecati aperiam unde eligendi impedit pariatur vitae esse nemo?
+                        
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam neque excepturi nihil facere magnam hic laborum vero, soluta eum consectetur harum obcaecati aperiam unde eligendi impedit pariatur vitae esse nemo?
+                        
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam neque excepturi nihil facere magnam hic laborum vero, soluta eum consectetur harum obcaecati aperiam unde eligendi impedit pariatur vitae esse nemo",
+
         'phone' => $faker->e164PhoneNumber,
-        'address' =>$faker->address ,
+        'address' => $faker->address,
         'facebook' => "https://www.facebook.com/UROClinicDrAhmedReda/",
         'twitter' => "https://twitter.com/",
         'instagram' => "https://www.instagram.com/", //
-        'youtube' =>"https://www.youtube.com" ,
+        'youtube' => "https://www.youtube.com",
     ];
 });
-
-
-
 
 $factory->define(App\Models\Category::class, function (Faker $faker) {
     return [

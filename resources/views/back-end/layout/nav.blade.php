@@ -3,7 +3,7 @@
       <!--Logo text start-->
       <div class="header-logo">
         <a href="{{route('home')}}" title="">
-                <h1>{{$configration->title}}</h1>
+                <h1>{{$configration->website_name}}</h1>
             </a>
         </div>
       <!--Logo text End-->

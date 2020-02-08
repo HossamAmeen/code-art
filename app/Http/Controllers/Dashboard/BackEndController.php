@@ -54,6 +54,7 @@ class BackEndController extends Controller
         $routeName = $folderName;
         $append = $this->append();
 
+        // return $append;
         // return  request()->segment(3);
         return view('back-end.' . $folderName . '.create' , compact(
             'pageTitle',
@@ -104,7 +105,7 @@ class BackEndController extends Controller
              mkdir($destinationPath);
          }
         $image->save($destinationPath.$fileName);
-        return $fileName;
+        return 'uploads/'.$this->getClassNameFromModel().'/'. $fileName;
     }
     protected function filter($rows)
     {

@@ -20,6 +20,6 @@ class ConfigrationController extends BackEndController
     {
         $configration = Configration::find($id);
         $configration->update($request->all());
-
+        return redirect()->route("configrations.edit" , ['id' => 1 ] );
     }
 }
