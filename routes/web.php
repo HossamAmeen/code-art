@@ -44,11 +44,12 @@ Route::prefix('admin')->group(function () {
             Route::resource('servicequestions', 'ServiceQuestionController');
             Route::resource('serviceproviders', 'ServiceProviderController');
             // Route::resource('adds', 'AddsController');
+            Route::resource('servicecategories', 'ServiceCategoryController');
 
             Route::resource('news', 'ArticleController');
             Route::resource('articles', 'ArticleController');
             Route::resource('galleries', 'GalleryController');
-       
+
             Route::resource('videos', 'VideoController');
         });
 

@@ -1,8 +1,8 @@
-@php $input = "suggestion"; @endphp
+@php $input = "question"; @endphp
 <div class="form-group">
-    <label class="col-lg-2 control-label">الاقتراح</label>
+    <label class="col-lg-2 control-label">السؤال</label>
     <div class="col-lg-10">
-        <input type="email" name="{{ $input }}" value="{{ isset($row) ? $row->{$input} : '' }}"
+        <input type="text" name="{{ $input }}" value="{{ isset($row) ? $row->{$input} : '' }}"
                class="form-control" required>
         @error($input)
         <span class="invalid-feedback" role="alert">
@@ -12,12 +12,16 @@
     </div>
 </div>
 
-@php $input = "price"; @endphp
+@php $input = "type"; @endphp
  <div class="form-group">
-    <label class="col-lg-2 control-label">السعر</label>
+    <label class="col-lg-2 control-label">نوع الاجابة</label>
      <div class="col-lg-10">
-         <input type="text" name="{{ $input }}" value="{{ isset($row) ? $row->{$input} : '' }}"
-           class="form-control" required>
+         <select name="{{$input}}">
+             <option value="text">Text</option>
+             <option value="multi_choice">Multiple Choice</option>
+             <option value="boolean">True or False</option>
+             <option value="file">File</option>
+         </select>
            @error($input)
            <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -26,12 +30,16 @@
     </div>
  </div>
 
-@php $input = "service_category_id"; @endphp
+@php $input = "choices[]"; @endphp
 <div class="form-group">
-    <label class="col-lg-2 control-label">السعر</label>
+    <label class="col-lg-2 control-label"> الاجابات</label>
     <div class="col-lg-10">
         <input type="text" name="{{ $input }}" value="{{ isset($row) ? $row->{$input} : '' }}"
-               class="form-control" required>
+               class="form-control"><br>
+        <input type="text" name="{{ $input }}" value="{{ isset($row) ? $row->{$input} : '' }}"
+               class="form-control"><br>
+        <input type="text" name="{{ $input }}" value="{{ isset($row) ? $row->{$input} : '' }}"
+               class="form-control"><br>
         @error($input)
         <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -39,3 +47,18 @@
         @enderror
     </div>
 </div>
+
+@php $input = "image"; @endphp
+<div class="form-group">
+    <label class="col-lg-2 control-label"> الملف</label>
+    <div class="col-lg-10">
+        <input type="file" name="{{ $input }}"
+               class="form-control">
+        @error($input)
+        <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+            </span>
+        @enderror
+    </div>
+</div>
+

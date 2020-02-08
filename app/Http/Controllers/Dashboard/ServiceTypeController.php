@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Models\ServiceProvider;
 use App\Models\ServiceType;
 use Illuminate\Http\Request;
 
@@ -27,9 +28,10 @@ class ServiceTypeController extends BackEndController
         return redirect()->route($this->getClassNameFromModel().'.index');
     }
 
-    protected function with()
+    public function append()
     {
-        return ['service_provider', 'service_provider_service'];
+        $data['service_providers'] = ServiceProvider::orderBy('id', 'DESC')->get();
+        return  $data ;
     }
 
 }

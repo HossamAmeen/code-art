@@ -35,6 +35,7 @@ class BackEndController extends Controller
         $pageDes = "Here you can add / edit / delete " .$moduleName;
         // return $rows;
         // return Auth::user()->role;
+
         return view('back-end.' . $routeName . '.index', compact(
             'rows',
             'pageTitle',

@@ -26,6 +26,7 @@
                                 <th>#</th>
                                 <th>مقدم الخدمة</th>
                                 <th>السعر</th>
+                                <th>مدة العمل</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -33,9 +34,13 @@
                             @foreach ($rows as $item)
                                  <tr>
                                     <td> {{$row_num++}}</td>
-                                    <td>{{$item->service_provider->name}}</td>
+                                     @if(isset($item->service_provider))
+                                         <td>{{$item->service_provider->name}}</td>
+                                     @else
+                                         <td>لا يوجد</td>
+                                     @endif
                                      <td>{{$item->price}}</td>
-                                     <td>{{$item->date}}</td>
+                                     <td>{{$item->days}}</td>
                                     <td>
                                      @include('back-end.shared.buttons.delete')
                                     </td>

@@ -1,5 +1,5 @@
 @extends('back-end.layout.app')
- @php $row_num = 1;   $pageTitle = "عرض الاضافات المقترحة" @endphp
+ @php $row_num = 1;   $pageTitle = "عرض تصنيف الخدمة" @endphp
 @section('title')
    {{$pageTitle}}
 @endsection
@@ -24,9 +24,9 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>الاقتراح</th>
-                                <th>السعر</th>
-                                <th>نوع الخدمة</th>
+                                <th>الاسم</th>
+                                <th>سعر التوصيل</th>
+                                <th>النوع</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -34,21 +34,11 @@
                             @foreach ($rows as $item)
                                  <tr>
                                     <td> {{$row_num++}}</td>
-                                    <td>{{$item->suggestion}}</td>
-                                     <td>{{$item->price}}</td>
-                                     @if(isset($item->service_category))
-                                         <td>{{$item->service_category->name}}</td>
-                                     @else
-                                         <td>لا يوجد</td>
-                                     @endif
-                                    <td>
-                                        <form action="{{ route($routeName.'.destroy' , ['id' => $item]) }}" method="post">
-                                            {{ csrf_field() }}
-                                            {{ method_field('delete') }}
-                                            <button type="submit" rel="tooltip" title="" class="btn btn-danger"  onclick="check()" data-original-title="Remove {{ $sModuleName }}">
-                                                <i class="material-icons">حذف</i>
-                                            </button>
-                                        </form>
+                                    <td>{{$item->name}}</td>
+                                     <td>{{$item->delivery_price}}</td>
+                                     <td>{{$item->category->name}}</td>
+                                     <td>
+                                     @include('back-end.shared.buttons.delete')
                                     </td>
                                 </tr>
                             @endforeach
