@@ -39,16 +39,16 @@ $factory->define(App\Models\City::class, function (Faker $faker) {
 
 $factory->define(App\Models\Slider::class, function (Faker $faker) {
     return [
-        "service_id" => $faker->randomElement(getServices()), 
-        "image" => "upload/sliders/slider.png",
+      
+        "image" => "uploads/sliders/sliders.png",
        
     ];
 });
 
 $factory->define(App\Models\Adds::class, function (Faker $faker) {
     return [
-        "service_category_id" => $faker->randomElement(getServices()), 
-        "image" => "upload/sliders/slider.png",
+       
+        "image" => "uploads/adds/adds.png",
     ];
 });
 

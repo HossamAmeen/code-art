@@ -6,10 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Slider extends Model
 {
-    protected $fillable = [ 'service_id', 'image'];
+    protected $fillable = [ 'link', 'image'];
 
-    public function service()
-    {
-        return $this->belongsTo(ServiceCategory::class , "service_category_id");
-    }
+   
 }

@@ -19,11 +19,12 @@
                 {{-- <div class="panel panel-default"> --}}
 
                     <div class="panel-body">
-                        <form class="form-horizontal ls_form ls_form_horizontal" action="{{route('configrations.update', ['id' => $row])}}" method="POST">
+                        <form class="form-horizontal ls_form ls_form_horizontal" action="{{route('configrations.update', ['id' => $row])}}"
+                             method="POST">
                             @csrf
                             {{ method_field('put') }}
 
-                            @php $input = "title"; @endphp
+                            @php $input = "website_name"; @endphp
                             <div class="form-group">
                                 <label class="col-lg-2 control-label">اسم الموقع</label>
 
@@ -37,7 +38,7 @@
                                       @enderror
                                 </div>
                             </div>
-                            @php $input = "en_title"; @endphp
+                            {{-- @php $input = "en_title"; @endphp
                             <div class="form-group">
                                 <label class="col-lg-2 control-label"> اسم الموقع بالانجليزي</label>
 
@@ -50,7 +51,7 @@
                                       </span>
                                       @enderror
                                 </div>
-                            </div>
+                            </div> --}}
                             @php $input = "email"; @endphp
                             <div class="form-group">
                                 <label class="col-lg-2 control-label">البريد</label>
@@ -65,7 +66,7 @@
                                       @enderror
                                 </div>
                             </div>
-                            @php $input = "home_description"; @endphp
+                            @php $input = "description"; @endphp
                             <div class="form-group">
                                 <label class="col-lg-2 control-label">وصف الرئيسيه</label>
 
@@ -79,9 +80,9 @@
                                       @enderror
                                 </div>
                             </div>
-                            @php $input = "en_home_description"; @endphp
+                            @php $input = "address"; @endphp
                             <div class="form-group">
-                                <label class="col-lg-2 control-label"> وصف الرئيسيه بالانجليزي</label>
+                                <label class="col-lg-2 control-label"> العنوان</label>
 
                                 <div class="col-lg-10">
                                     <input type="text" name="{{ $input }}"  value="{{ isset($row) ? $row->{$input} : Request::old($input) }} "
@@ -110,7 +111,7 @@
                                       @enderror
                                 </div>
                             </div>
-                            @php $input = "video"; @endphp
+                            {{-- @php $input = "video"; @endphp
                             <div class="form-group">
                                 <label class="col-lg-2 control-label">رابط الفديو الأول</label>
 
@@ -137,10 +138,10 @@
                                       </span>
                                       @enderror
                                 </div>
-                            </div>
+                            </div> --}}
                              @php $input = "youtube"; @endphp
                             <div class="form-group">
-                                <label class="col-lg-2 control-label">رابط قناة اليوتيوب</label>
+                                <label class="col-lg-2 control-label">يوتيوب</label>
 
                                 <div class="col-lg-10">
                                     <input type="text" name="{{ $input }}"  value="{{ isset($row) ? $row->{$input} : Request::old($input) }} "
@@ -154,7 +155,7 @@
                             </div>
                             @php $input = "facebook"; @endphp
                             <div class="form-group">
-                                <label class="col-lg-2 control-label">facebook account</label>
+                                <label class="col-lg-2 control-label">فيس بوك</label>
 
                                 <div class="col-lg-10">
                                     <input type="text" name="{{ $input }}"  value="{{ isset($row) ? $row->{$input} : Request::old($input) }} "
@@ -168,7 +169,7 @@
                             </div>
                             @php $input = "twitter"; @endphp
                             <div class="form-group">
-                                <label class="col-lg-2 control-label">twitter account</label>
+                                <label class="col-lg-2 control-label">تويتر </label>
 
                                 <div class="col-lg-10">
                                     <input type="text" name="{{ $input }}"  value="{{ isset($row) ? $row->{$input} : Request::old($input) }} "
@@ -182,7 +183,7 @@
                             </div>
                             @php $input = "instagram"; @endphp
                             <div class="form-group">
-                                <label class="col-lg-2 control-label">instagram account</label>
+                                <label class="col-lg-2 control-label">انستجرام </label>
 
                                 <div class="col-lg-10">
                                     <input type="text" name="{{ $input }}"  value="{{ isset($row) ? $row->{$input} : Request::old($input) }} "
@@ -197,7 +198,7 @@
 
 
                             <label class="col-md-2 control-label">من نحن</label><br><br>
-                            @php $input = "description"; @endphp
+                            @php $input = "about_us"; @endphp
                             <div class="panel-body no-padding" >
                                        <textarea class="summernote"style="margin-right: 25%"  name="{{ $input }}"  id="demo"  rows="10" cols="100" >
                                                 {{ isset($row) ? $row->{$input} : '' }}
@@ -209,8 +210,8 @@
                             </span>
                             @enderror
 
-                            <label class="col-md-2 control-label">من نحن بالانجليزي</label><br><br>
-                            @php $input = "en_description"; @endphp
+                            <label class="col-md-2 control-label">شروط الاستخدام</label><br><br>
+                            @php $input = "registration_conditions"; @endphp
                             <div class="panel-body no-padding" >
                                        <textarea class="summernote"style="margin-right: 25%"  name="{{ $input }}"  id="demo"  rows="10" cols="100" >
                                                 {{ isset($row) ? $row->{$input} : '' }}
@@ -222,7 +223,30 @@
                             </span>
                             @enderror
 
-
+                            <label class="col-md-2 control-label">كيف يعمل الموقع</label><br><br>
+                            @php $input = "how_work"; @endphp
+                            <div class="panel-body no-padding" >
+                                       <textarea class="summernote"style="margin-right: 25%"  name="{{ $input }}"  id="demo"  rows="10" cols="100" >
+                                                {{ isset($row) ? $row->{$input} : '' }}
+                               </textarea>
+                            </div><br>
+                            @error($input)
+                            <span class="invalid-feedback" role="alert">
+                                     <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                            <label class="col-md-2 control-label">بيان الخصوصية</label><br><br>
+                            @php $input = "privacy"; @endphp
+                            <div class="panel-body no-padding" >
+                                       <textarea class="summernote"style="margin-right: 25%"  name="{{ $input }}"  id="demo"  rows="10" cols="100" >
+                                                {{ isset($row) ? $row->{$input} : '' }}
+                               </textarea>
+                            </div><br>
+                            @error($input)
+                            <span class="invalid-feedback" role="alert">
+                                     <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                             <div class="form-group">
                                 <div class="col-lg-offset-2 col-lg-10">
                                     <button  class="btn btn-primary" type="submit">تحديث</button>

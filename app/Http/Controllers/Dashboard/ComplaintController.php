@@ -16,7 +16,7 @@ class ComplaintController extends BackEndController
     public function store(Request $request)
     {
         $this->model->create($request->all());
-
+        session()->flash('action', 'تم الاضافه بنجاح');
         return redirect()->route($this->getClassNameFromModel().'.index');
     }
 
@@ -24,7 +24,7 @@ class ComplaintController extends BackEndController
     {
         $complaint = $this->model::find($id);
         $complaint->update($request->all());
-
+        session()->flash('action', 'تم التحديث بنجاح');
         return redirect()->route($this->getClassNameFromModel().'.index');
     }
 

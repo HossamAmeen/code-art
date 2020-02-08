@@ -26,7 +26,7 @@ Route::prefix('admin')->group(function () {
             Route::resource('users', 'UserController');
             Route::resource('adds', 'AddsController');
             Route::resource('categories', 'CategoryController');
-            Route::resource('categoryQuestions', 'CategoryQuestionController');
+            Route::resource('categoryquestions', 'CategoryQuestionController');
             Route::resource('clients', 'ClientController');
             Route::resource('complaints', 'ComplaintController');
             Route::resource('questions', 'QuestionController');

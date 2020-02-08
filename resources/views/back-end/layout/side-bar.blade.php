@@ -67,14 +67,19 @@
             </a>
         
         </li>
+        <li class="{{is_active('sliders')}}">
+            <a href="{{route('sliders.index')}}"  class="{{is_active('sliders')}}">
+                <i class="far fa-newspaper"></i><span>الصور المتحركة</span>
+            </a>
+        </li>
         <li class="{{is_active('categories')}}">
             <a href="{{route('categories.index')}}"  class="{{is_active('categories')}}">
                     <i class="far fa-newspaper"></i><span>فئات الخدمات</span>
             </a>
         
         </li>
-        <li class="{{is_active('categoryQuestions')}}">
-            <a href="{{route('categoryQuestions.index')}}"  class="{{is_active('categoryQuestions')}}">
+        <li class="{{is_active('categoryquestions')}}">
+            <a href="{{route('categoryquestions.index')}}"  class="{{is_active('categoryquestions')}}">
                     <i class="far fa-newspaper"></i><span>فئات الأسالة </span>
             </a>
         
@@ -95,11 +100,7 @@
                 <i class="far fa-newspaper"></i><span>الاضافات المقترحة</span>
             </a>
         </li>
-        <li class="{{is_active('sliders')}}">
-            <a href="{{route('sliders.index')}}"  class="{{is_active('sliders')}}">
-                <i class="far fa-newspaper"></i><span>الصور المتحركة</span>
-            </a>
-        </li>
+       
         <li class="{{is_active('servicetypes')}}">
             <a href="{{route('servicetypes.index')}}"  class="{{is_active('servicetypes')}}">
                 <i class="far fa-newspaper"></i><span>نوع الخدمة</span>
@@ -115,11 +116,7 @@
                 <i class="far fa-newspaper"></i><span>مزودين الخدمة</span>
             </a>
         </li>
-        <li class="{{is_active('adds')}}">
-            <a href="{{route('adds.index')}}"  class="{{is_active('adds')}}">
-                <i class="far fa-newspaper"></i><span>الاعلانات</span>
-            </a>
-        </li>
+       
         <li class="{{is_active('complaints')}}">
             <a href="{{route('complaints.index')}}"  class="{{is_active('complaints')}}">
                     <i class="far fa-newspaper"></i><span>الشكاوي</span>
