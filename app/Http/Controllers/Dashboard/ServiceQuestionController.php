@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Models\ServiceQuestion;
 use App\Models\ServiceQuestionMultipleChoice;
 use Illuminate\Http\Request;
+use Image;
 
 class ServiceQuestionController extends BackEndController
 {
@@ -27,7 +28,7 @@ class ServiceQuestionController extends BackEndController
         }
         if($request->type == 'file')
         {
-            $fileName = $this->uploadImage($request->file);
+            $fileName = $this->uploadImage($request);
             ServiceQuestionMultipleChoice::create([
                 'choice' => $fileName,
                 'service_question_id' => $question->id

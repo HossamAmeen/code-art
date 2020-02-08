@@ -101,11 +101,6 @@
             </a>
         </li>
 
-        <li class="{{is_active('servicetypes')}}">
-            <a href="{{route('servicetypes.index')}}"  class="{{is_active('servicetypes')}}">
-                <i class="far fa-newspaper"></i><span>نوع الخدمة</span>
-            </a>
-        </li>
         <li class="{{is_active('servicequestions')}}">
             <a href="{{route('servicequestions.index')}}"  class="{{is_active('servicequestions')}}">
                 <i class="far fa-newspaper"></i><span>الاسئلة</span>
