@@ -1,5 +1,11 @@
 @extends('back-end.layout.app')
-@php $pageTitle = "إضافه نوع الخدمات " @endphp
+@php
+if($row->role == 1 )
+ $pageTitle = " تصنيف الخدمة " . $row->user_name ;
+ else {
+    $pageTitle = " تصنيف الخدمة "  . $row->user_name;
+ }
+ @endphp
 @section('title')
     {{ $pageTitle }}
 @endsection
@@ -9,25 +15,35 @@
     @component('back-end.layout.header')
         @slot('nav_title')
             {{ $pageTitle }}
+            {{-- <a href="{{ route($routeName.'.create') }}">
+                    <button class="alert-success"> <i class="fa fa-plus"></i> </button>
+            </a> --}}
         @endslot
     @endcomponent
 
         @component('back-end.shared.create')
-            <form id="defaultForm" method="post" class="form-horizontal ls_form" action="{{ route($routeName.'.store') }}"
-                    data-bv-message="This value is not valid"
-                    data-bv-feedbackicons-valid="fa fa-check"
-                    data-bv-feedbackicons-invalid="fa fa-bug"
-                    data-bv-feedbackicons-validating="fa fa-refresh"
-                    enctype="multipart/form-data"
-                    >
+        @if (session()->get('action') )
+            <div class="alert alert-success">
+                <strong>{{session()->get('action')}}</strong>
+            </div>
+        @endif
+        <form id="defaultForm" method="post" class="form-horizontal ls_form" action="{{ route($routeName.'.update' , ['id' => $row]) }}"
+                data-bv-message="This value is not valid"
+                data-bv-feedbackicons-valid="fa fa-check"
+                data-bv-feedbackicons-invalid="fa fa-bug"
+                data-bv-feedbackicons-validating="fa fa-refresh"
+                enctype="multipart/form-data"
+                >
                 @csrf
+                {{method_field('PUT')}}
                 @include('back-end.'.$folderName.'.form')
 
+                <img src="{{asset($row->image)}}" height="300px" width="300px" style="margin:0 10%;"> <br><br>
                 <div class="form-group">
                     <div class="col-lg-offset-2 col-lg-10">
-                        <button class="btn btn-info" type="submit">  إضافه  </button>
+                        <button class="btn btn-info" type="submit">  تعديل  </button>
                     </div>
-                </div>
+                 </div>
              </form>
         @endcomponent
 @endsection

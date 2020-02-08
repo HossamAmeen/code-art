@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\ServiceCategory;
 
@@ -16,12 +17,10 @@ class ServiceCategoryController extends BackEndController
     {
         if($request->image)
         {
-            $source = public_path($request->image);
-            $destination = "Service Category".substr($request->image, strpos($request->image , '/') ) ;
-            $request['image'] = $destination;
-            copy( $source, $destination );
+            $fileName = $this->uploadImage($request );
+            $request['image'] = $fileName;
         }
-
+        $request['special'] = 1;
         $this->model->create($request->all());
 
         return redirect()->route($this->getClassNameFromModel().'.index');
@@ -32,14 +31,18 @@ class ServiceCategoryController extends BackEndController
         $serviceCategory = $this->model::find($id);
         if($request->image)
         {
-            $source = public_path($request->image);
-            $destination = "Service Category".substr($request->image, strpos($request->image , '/') ) ;
-            $request['image'] = $destination;
-            copy( $source, $destination );
+            $fileName = $this->uploadImage($request );
+            $request['image'] = $fileName;
         }
         $serviceCategory->update($request->all());
 
         return redirect()->route($this->getClassNameFromModel().'.index');
+    }
+
+    public function append()
+    {
+        $data['categories'] = Category::orderBy('id', 'DESC')->get();
+        return  $data ;
     }
 
 }

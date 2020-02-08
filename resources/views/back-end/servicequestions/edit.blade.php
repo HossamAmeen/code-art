@@ -1,9 +1,9 @@
 @extends('back-end.layout.app')
 @php
 if($row->role == 1 )
- $pageTitle = " الاضافات المقترحة " . $row->user_name ;
+ $pageTitle = " السؤال " . $row->user_name ;
  else {
-    $pageTitle = " الاضافات المقترحة "  . $row->user_name;
+    $pageTitle = " السؤال "  . $row->user_name;
  }
  @endphp
 @section('title')

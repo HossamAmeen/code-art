@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Models\Client;
+use App\Models\ServiceProviderService;
 use App\Models\WishList;
 use Illuminate\Http\Request;
 
@@ -26,8 +28,10 @@ class WishlistController extends BackEndController
         return redirect()->route($this->getClassNameFromModel().'.index');
     }
 
-    function with()
+    public function append()
     {
-        return ['client', 'service'];
+        $data['clients'] = Client::orderBy('id', 'DESC')->get();
+        $data['services'] = ServiceProviderService::orderBy('id', 'DESC')->get();
+        return  $data ;
     }
 }

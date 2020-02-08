@@ -3,11 +3,9 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Models\ServiceQuestion;
-use App\Models\ServiceQuestionBoolean;
-use App\Models\ServiceQuestionFile;
 use App\Models\ServiceQuestionMultipleChoice;
-use App\Models\ServiceQuestionText;
 use Illuminate\Http\Request;
+use Image;
 
 class ServiceQuestionController extends BackEndController
 {
@@ -20,7 +18,6 @@ class ServiceQuestionController extends BackEndController
     {
         $question = $this->model->create($request->all());
         $request['service_question_id'] = $question->id;
-
         if($request->type == 'multi_choice')
         {
             foreach ($request['choices'] as $choice)
@@ -28,6 +25,14 @@ class ServiceQuestionController extends BackEndController
                     'choice' => $choice,
                     'service_question_id' => $question->id
                 ]);
+        }
+        if($request->type == 'file')
+        {
+            $fileName = $this->uploadImage($request);
+            ServiceQuestionMultipleChoice::create([
+                'choice' => $fileName,
+                'service_question_id' => $question->id
+            ]);
         }
 
         return redirect()->route($this->getClassNameFromModel().'.index');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Models\ServiceCategory;
 use Illuminate\Http\Request;
 use App\Models\SuggestAddition;
 
@@ -26,8 +27,9 @@ class SuggestAdditionController extends BackEndController
         return redirect()->route($this->getClassNameFromModel().'.index');
     }
 
-    function with()
+    public function append()
     {
-        return ['service_category'];
+        $data['service_category'] = ServiceCategory::orderBy('id', 'DESC')->get();
+        return  $data ;
     }
 }

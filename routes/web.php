@@ -41,15 +41,15 @@ Route::prefix('admin')->group(function () {
             Route::resource('wishlists', 'WishlistController');
             Route::resource('suggestadditions', 'SuggestAdditionController');
             Route::resource('sliders', 'SliderController');
-            Route::resource('servicetypes', 'ServiceTypeController');
             Route::resource('servicequestions', 'ServiceQuestionController');
             Route::resource('serviceproviders', 'ServiceProviderController');
             // Route::resource('adds', 'AddsController');
+            Route::resource('servicecategories', 'ServiceCategoryController');
 
             Route::resource('news', 'ArticleController');
             Route::resource('articles', 'ArticleController');
             Route::resource('galleries', 'GalleryController');
-       
+
             Route::resource('videos', 'VideoController');
         });
 

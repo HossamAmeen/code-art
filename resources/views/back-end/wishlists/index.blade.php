@@ -35,12 +35,26 @@
                             @foreach ($rows as $item)
                                  <tr>
                                     <td> {{$row_num++}}</td>
+                                     @if(isset($item->client))
                                     <td>{{$item->client->user_name}}</td>
+                                     @else
+                                         <td>لا يوجد</td>
+                                     @endif
+                                     @if(isset($item->service))
                                     <td>{{$item->service->title}}</td>
+                                     @else
+                                         <td>لا يوجد</td>
+                                     @endif
                                      <td>{{$item->price}}</td>
                                      <td>{{$item->date}}</td>
                                     <td>
-                                     @include('back-end.shared.buttons.delete')
+                                        <form action="{{ route($routeName.'.destroy' , ['id' => $item]) }}" method="post">
+                                            {{ csrf_field() }}
+                                            {{ method_field('delete') }}
+                                            <button type="submit" rel="tooltip" title="" class="btn btn-danger"  onclick="check()" data-original-title="Remove {{ $sModuleName }}">
+                                                <i class="material-icons">حذف</i>
+                                            </button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach

@@ -17,10 +17,8 @@ class ServiceProviderController extends BackEndController
     {
         if($request->image)
         {
-            $source = public_path($request->image);
-            $destination = "Service Provider".substr($request->image, strpos($request->image , '/') );
-            $request['image'] = $destination;
-            copy( $source, $destination );
+            $fileName = $this->uploadImage($request );
+            $request['image'] =  $fileName;
         }
 
         $request['password'] = Hash::make('password');
