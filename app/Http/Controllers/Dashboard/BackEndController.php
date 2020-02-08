@@ -9,14 +9,14 @@ use Image, Carbon, File;
 
 class BackEndController extends Controller
 {
-    
+
     protected $model;
 
-   
+
     public function __construct(Model $model)
     {
         $this->model = $model;
-       
+
     }
 
     public function index()
@@ -33,7 +33,7 @@ class BackEndController extends Controller
         $routeName = $this->getClassNameFromModel();
         $pageTitle = "Control ".$moduleName;
         $pageDes = "Here you can add / edit / delete " .$moduleName;
-        // return $rows; 
+        // return $rows;
         // return Auth::user()->role;
         return view('back-end.' . $routeName . '.index', compact(
             'rows',
@@ -81,7 +81,7 @@ class BackEndController extends Controller
         $folderName = $this->getClassNameFromModel();
         $routeName = $folderName;
         $append = $this->append();
-        // return $row; 
+        // return $row;
         return view('back-end.' . $folderName . '.edit', compact(
             'row',
             'pageTitle',
@@ -92,14 +92,14 @@ class BackEndController extends Controller
         ))->with($append);
     }
     protected function uploadImage($request , $height = 400 , $width = 400){
-       
+
         $photo = $request->file('image');
         $fileName = time().str_random('10').'.'.$photo->getClientOriginalExtension();
         $destinationPath = public_path('uploads/'.$this->getClassNameFromModel().'/');
         $image = Image::make($photo->getRealPath())->resize($height, $width);
 
             // return $destinationPath;
-           
+
          if(!is_dir($destinationPath) ){
              mkdir($destinationPath);
          }

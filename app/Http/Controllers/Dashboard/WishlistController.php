@@ -12,6 +12,11 @@ class WishlistController extends BackEndController
         $this->model = $model;
     }
 
+    protected function append()
+    {
+        return ['client'];
+    }
+
     public function store(Request $request)
     {
         $this->model->create($request->all());
