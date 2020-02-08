@@ -36,6 +36,14 @@ Route::prefix('admin')->group(function () {
             Route::resource('clients', 'ClientController');
             Route::resource('complaints', 'ComplaintController');
             Route::resource('questions', 'QuestionController');
+            Route::resource('users', 'UserController');
+            Route::resource('wishlists', 'WishlistController');
+            Route::resource('suggestadditions', 'SuggestAdditionController');
+            Route::resource('sliders', 'SliderController');
+            Route::resource('servicetypes', 'ServiceTypeController');
+            Route::resource('servicequestions', 'ServiceQuestionController');
+            Route::resource('serviceproviders', 'ServiceProviderController');
+            // Route::resource('adds', 'AddsController');
 
             Route::resource('news', 'ArticleController');
             Route::resource('articles', 'ArticleController');

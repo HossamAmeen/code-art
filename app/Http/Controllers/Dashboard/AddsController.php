@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Dashboard;
 
 use Illuminate\Http\Request;
-
 use App\Models\Adds;
 
 class AddsController extends BackEndController

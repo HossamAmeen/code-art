@@ -18,6 +18,7 @@ class ClientController extends BackEndController
         $this->model->create($request->all());
         
         session()->flash('action', 'تم الاضافه بنجاح'); 
+
         return redirect()->route($this->getClassNameFromModel().'.index');
     }
 
@@ -38,6 +39,14 @@ class ClientController extends BackEndController
         $row->update($requestArray);
 
         session()->flash('action', 'تم التحديث بنجاح');
+        $client = $this->model::find($id);
+        if(isset($request->password))
+        {
+            $request['password'] = bcrypt($request->password);
+        }
+
+        $client->update($request->all());
+
         return redirect()->route($this->getClassNameFromModel().'.index');
     }
 }

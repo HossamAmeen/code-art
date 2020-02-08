@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Models\WishList;
 use Illuminate\Http\Request;
 
-use App\Models\Complaint;
-
-class ComplaintController extends BackEndController
+class WishlistController extends BackEndController
 {
-    public function __construct(Complaint $model)
+    public function __construct(WishList $model)
     {
         $this->model = $model;
     }
@@ -22,12 +21,13 @@ class ComplaintController extends BackEndController
 
     public function update(Request $request, $id)
     {
-        $complaint = $this->model::find($id);
-        $complaint->update($request->all());
+        $this->model::find($id)->update($request->all());
 
         return redirect()->route($this->getClassNameFromModel().'.index');
     }
 
-
+    function with()
+    {
+        return ['client', 'service'];
+    }
 }
-

@@ -1,5 +1,5 @@
 @extends('back-end.layout.app')
- @php $row_num = 1;   $pageTitle = "عرض الإعلانات" @endphp  
+ @php $row_num = 1;   $pageTitle = "عرض انواع الخدمات" @endphp
 @section('title')
    {{$pageTitle}}
 @endsection
@@ -8,11 +8,11 @@
 
     @component('back-end.layout.header')
         @slot('nav_title')
-        {{$pageTitle}} 
-         <a href="{{ route($routeName.'.create') }}">  
+        {{$pageTitle}}
+         <a href="{{ route($routeName.'.create') }}">
             <button class="alert-success"> <i class="fa fa-plus"></i> </button>
          </a>
-        @endslot  
+        @endslot
     @endcomponent
     @component('back-end.shared.table' )
                     @if (session()->get('action') )
@@ -24,7 +24,8 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>الصورة</th>
+                                <th>مقدم الخدمة</th>
+                                <th>السعر</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -32,11 +33,9 @@
                             @foreach ($rows as $item)
                                  <tr>
                                     <td> {{$row_num++}}</td>
-                                    <td>{{$item->service->title}}</td>
-                                  
-                        
-                                    <td>  <img src="{{asset("uploads/".$routeName.'/'.$item->image)}}" height="60px" width="60px"></td>
-                                  
+                                    <td>{{$item->service_provider->name}}</td>
+                                     <td>{{$item->price}}</td>
+                                     <td>{{$item->date}}</td>
                                     <td>
                                      @include('back-end.shared.buttons.delete')
                                     </td>
