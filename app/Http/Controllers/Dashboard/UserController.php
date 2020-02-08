@@ -56,9 +56,6 @@ class UserController extends BackEndController
         $requestArray['user_id'] = Auth::user()->id;
         $row->update($requestArray);
 
-        $data=[
-            "message" => "update account for this email "
-         ];
         
   
         session()->flash('action', 'تم التحديث بنجاح');

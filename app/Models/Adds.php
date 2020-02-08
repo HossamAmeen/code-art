@@ -9,6 +9,11 @@ class Adds extends Model
     protected $table = 'adds';
 
     protected $fillable = [
-        'service_id', 'image'
+        'service_category_id', 'image'
     ];
+
+    public function service()
+    {
+        return $this->belongsTo(ServiceProviderService::class , "service_category_id");
+    }
 }

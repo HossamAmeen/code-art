@@ -54,18 +54,44 @@
         
         </li>
         @endif
-        <li class="{{is_active('videos')}}">
-            <a href="{{route('videos.index')}}"  class="{{is_active('videos')}}">
-                    <i class="fa fa-image"></i><span>فديوهات</span>
+        <li class="{{is_active('clients')}}">
+            <a href="{{route('clients.index')}}"  class="{{is_active('clients')}}">
+                    <i class="far fa-newspaper"></i><span>العملاء</span>
             </a>
         
         </li>
-        <li class="{{is_active('news')}}">
-            <a href="{{route('news.index')}}"  class="{{is_active('news')}}">
-                    <i class="far fa-newspaper"></i><span>الأخبار</span>
+
+        <li class="{{is_active('adds')}}">
+            <a href="{{route('adds.index')}}"  class="{{is_active('adds')}}">
+                    <i class="far fa-newspaper"></i><span>الإعلانات</span>
             </a>
         
         </li>
+        <li class="{{is_active('categories')}}">
+            <a href="{{route('categories.index')}}"  class="{{is_active('categories')}}">
+                    <i class="far fa-newspaper"></i><span>فئات الخدمات</span>
+            </a>
+        
+        </li>
+        <li class="{{is_active('categoryQuestions')}}">
+            <a href="{{route('categoryQuestions.index')}}"  class="{{is_active('categoryQuestions')}}">
+                    <i class="far fa-newspaper"></i><span>فئات الأسالة </span>
+            </a>
+        
+        </li>
+        <li class="{{is_active('questions')}}">
+            <a href="{{route('questions.index')}}"  class="{{is_active('questions')}}">
+                    <i class="far fa-newspaper"></i><span>الأسالة</span>
+            </a>
+        
+        </li>
+        <li class="{{is_active('complaints')}}">
+            <a href="{{route('complaints.index')}}"  class="{{is_active('complaints')}}">
+                    <i class="far fa-newspaper"></i><span>الشكاوي</span>
+            </a>
+        
+        </li>
+      
         <li class="{{is_active('articles')}}">
             <a href="{{route('articles.index')}}"  class="{{is_active('articles')}}">
                     <i class="fa fa-image"></i><span>المقالات</span>

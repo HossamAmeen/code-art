@@ -47,7 +47,7 @@ $factory->define(App\Models\Slider::class, function (Faker $faker) {
 
 $factory->define(App\Models\Adds::class, function (Faker $faker) {
     return [
-        "service_id" => $faker->randomElement(getServices()), 
+        "service_category_id" => $faker->randomElement(getServices()), 
         "image" => "upload/sliders/slider.png",
     ];
 });

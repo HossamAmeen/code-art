@@ -67,7 +67,7 @@ class BackEndController extends Controller
     public function destroy($id)
     {
         $this->model->FindOrFail($id)->delete();
-
+        session()->flash('action', 'تم الحذف بنجاح');
         return redirect()->route($this->getClassNameFromModel() . '.index');
     }
 

@@ -40,7 +40,7 @@
   </div>    
   @php $input = "password"; @endphp
   <div class="form-group">
-      <label class="col-lg-2 control-label">كلمة السر {{$pageDes}}</label>
+      <label class="col-lg-2 control-label">كلمة السر </label>
        <div class="col-lg-10">
          <input type="password" name="{{ $input }}"
             class="form-control"

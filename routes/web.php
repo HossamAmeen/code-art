@@ -24,12 +24,23 @@ Route::prefix('admin')->group(function () {
             Route::get('/', 'ConfigrationController@index');
             Route::resource('configrations', 'ConfigrationController');
             Route::resource('users', 'UserController');
-            Route::resource('users', 'UserController');
+            Route::resource('adds', 'AddsController');
+            Route::resource('categories', 'CategoryController');
+            Route::resource('categoryQuestions', 'CategoryQuestionController');
+            Route::resource('clients', 'ClientController');
+            Route::resource('complaints', 'ComplaintController');
+            Route::resource('questions', 'QuestionController');
+            Route::resource('clients', 'ClientController');
+            Route::resource('complaints', 'ComplaintController');
+            Route::resource('questions', 'QuestionController');
+            Route::resource('clients', 'ClientController');
+            Route::resource('complaints', 'ComplaintController');
+            Route::resource('questions', 'QuestionController');
 
-            Route::resource('news', 'NewsController');
+            Route::resource('news', 'ArticleController');
             Route::resource('articles', 'ArticleController');
             Route::resource('galleries', 'GalleryController');
-            Route::resource('questions', 'QuestionController');
+       
             Route::resource('videos', 'VideoController');
         });
 

@@ -15,7 +15,7 @@ class CreateAddsTable extends Migration
     {
         Schema::create('adds', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('service_id');
+            $table->integer('service_category_id');
             $table->string('image');
             $table->timestamps();
         });

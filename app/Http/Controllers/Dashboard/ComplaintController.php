@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\BackEndController;
+
 use App\Models\Complaint;
 
 class ComplaintController extends BackEndController

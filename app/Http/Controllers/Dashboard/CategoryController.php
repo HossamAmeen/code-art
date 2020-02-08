@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Http\Controllers\BackEndController;
+// use App\Http\Controllers\BackEndController;
 use Illuminate\Http\Request;
 use App\Models\Category;
 
@@ -17,7 +17,8 @@ class CategoryController extends BackEndController
     {
         $this->model->create($request->all());
 
-        return $this->APIResponse(null, null, 201);
+        session()->flash('action', 'تم الاضافه بنجاح');
+        return redirect()->route($this->getClassNameFromModel().'.index');
     }
 
     public function update(Request $request, $id)
@@ -25,7 +26,8 @@ class CategoryController extends BackEndController
         $category = $this->model::find($id);
         $category->update($request->all());
 
-        return $this->APIResponse(null, null, 200);
+        session()->flash('action', 'تم التحديث بنجاح');
+        return redirect()->route($this->getClassNameFromModel().'.index');
     }
 
 }
