@@ -1,0 +1,131 @@
+                                                /* new-services */
+.new-services {
+  padding: 70px 50px !important;
+}
+
+.new-serivces-item-col {
+  margin: 40px 20px;
+}
+
+.new-serivces-item-col-r-1 {
+  margin-left: 40px;
+}
+
+.new-serivces-item-col-l-2 {
+  margin-right: 40px;
+}
+
+.new-services-item {
+  padding: 30px 10px;
+  background-color: white;
+  box-shadow: 2px 4px 8px #c2c2c2;
+  display: flex;
+  align-items: center;
+  border-radius: 50px 0px 50px 0px;
+  text-align: center;
+}
+
+.new-serivces-item-1 {
+  border: #1486d3 2px solid;
+  color: #0071bc;
+}
+
+.new-serivces-item-2 {
+  border: red 2px solid;
+  color: red;
+}
+
+.new-serivces-item-3 {
+  border: orange 2px solid;
+  color: orange;
+}
+
+.new-serivces-item-4 {
+  border: green 2px solid;
+  color: green;
+}
+
+.new-services-item .new-services-item-hdr {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.new-services-item .new-services-item-info {
+  color: #8b8b8b;
+  font-size: 16px;
+}
+
+@media (max-width: 1100px) {
+  .new-services-item {
+    padding: 20px 0px;
+  }
+}
+
+@media (max-width: 992px) {
+  .new-services-item .new-services-item-hdr {
+    font-size: 23px;
+  }
+
+  .new-services-item .new-services-item-info {
+    font-size: 16px;
+  }
+
+  .new-services-item img {
+    margin-top: 20px;
+    width: 40%;
+  }
+
+  .new-serivces-item-col {
+    margin: 40px 50px;
+  }
+}
+
+@media (max-width: 700px) {
+  .new-services {
+    padding: 60px 20px !important;
+  }
+
+  .new-services-item .new-services-item-hdr {
+    font-size: 20px;
+  }
+
+  .new-services-item .new-services-item-info {
+    font-size: 14px;
+  }
+
+  .new-services-item img {
+    margin-top: 20px;
+    width: 50%;
+  }
+
+  .new-serivces-item-col {
+    margin: 30px 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .services-item-col-div {
+    width: 50%;
+  }
+
+  .new-serivces-item-col-row {
+    width: 50%;
+  }
+
+  .new-services-item .new-services-item-hdr {
+    font-size: 15px;
+  }
+
+  .new-services-item .new-services-item-info {
+    font-size: 10px;
+  }
+
+  .new-services-item img {
+    margin-top: 20px;
+    width: 50%;
+  }
+
+  .new-serivces-item-col {
+    margin: 30px 8px;
+  }
+}

@@ -18,7 +18,16 @@ class CreateOrdersTable extends Migration
             $table->double('price');
             $table->integer('amount');
             $table->integer('status');
-          
+          /**
+           *  1 => معلق
+           * 
+           * 2 => تم القبول 
+           * 
+           * 3 => تحت التنفيذ
+           * 
+           * 4 => تم التنفيذ 
+           * 
+           */
             $table->bigInteger('client_id')->unsigned()->nullable();
             $table->foreign('client_id')->references('id')->on('clients')->onUpdate('set null')
             ->onDelete('set null');

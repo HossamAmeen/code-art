@@ -13,8 +13,8 @@ class DatabaseSeeder extends Seeder
     {
         factory('App\Models\Country', 10)->create();
         factory('App\Models\City', 10)->create();
-        factory('App\Models\Category', 10)->create();
-        factory('App\Models\ServiceCategory', 50)->create();
+        // factory('App\Models\Category', 5)->create();
+        factory('App\Models\ServiceCategory', 15)->create();
         \App\Models\ServiceProvider::create([
             "email" =>"service_provider@service_provider.com",
             "name" =>"name",

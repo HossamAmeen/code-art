@@ -1,0 +1,240 @@
+.section-login hr {
+    border-bottom: 1px solid #ababab;
+}
+
+.login {
+    padding: 30px 240px;
+}
+
+.login-div {
+    margin: 30px 40px;
+    transition: 0.4s;
+}
+
+.login .login-div .login-div-body {
+    background-color: white;
+    padding: 35px 20px;
+
+}
+
+.login-div-body .item {
+    border: 40px solid #eceff4;
+    padding: 30px 50px 30px 50px;
+}
+
+.form-item {
+    margin-top: 30px;
+}
+
+.data-cell-label-title {
+    color: #7e7e7e;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px 0px;
+    position: relative;
+    top: 25px;
+    background-color: white;
+    padding: 10px;
+    right: 10px;
+}
+
+.data-cell-label {
+    background-color: #eff3f6;
+    padding: 10px;
+    width: 100%;
+    margin-top: 10px;
+    font-weight: 0px !important;
+}
+
+.login-hdr{
+    font-size: 25px;
+    font-weight: bold;
+    color: #968e99;
+    margin-bottom: 10px;
+}
+.txtBox-name {
+    background-color: transparent !important;
+    border: none !important;
+    border: 1px solid #b9b9b9 !important;
+    border-radius: 0px !important;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 15px;
+    height: auto;
+    color: rgb(129, 129, 129);
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.form-control.is-invalid,
+.was-validated .form-control:invalid,
+.custom-select.is-valid,
+.form-control.is-valid,
+.was-validated .custom-select:valid,
+.was-validated .form-control:valid {
+    background-image: unset !important;
+    padding-right: 20px;
+}
+
+.form-control.is-invalid,
+.was-validated .form-control:invalid {
+    border-color: red !important;
+    background-position: left;
+}
+.btn-submit {
+    background-color: #1a87fe !important;
+    color: white;
+    border-color: #1a87fe !important;
+    font-weight: bold;
+    padding: 13px 0px 13px;
+    margin-top: 20px;
+    transition: 0.5s;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    border-radius: 0px !important;
+}
+.btn-submit:hover {
+    color: white;
+    background-color: #1774d6 !important;
+    border-radius: 20px !important;
+    width: 50%;
+}
+
+.btn-submit:focus {
+    box-shadow: unset !important;
+    color: white !important;
+}
+
+.forgetPass, .newAccount{
+    color: #1775da;
+    transition: 0.4s;
+}
+.forgetPass:hover, .newAccount:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+.btn-submit-div {
+    display: flex;
+    margin-top: 0px;
+}
+.data-lable {
+    font-size: 15px;
+}
+
+
+.newAccount-options p{
+    text-align: center;
+    font-size: 19px;
+    color: #7e7e7e;
+}
+.newAccount-icon-div{
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+.newAccount-icon-div a{
+    margin-right: 20px;
+    margin-left: 20px;
+    border-radius: 50%;
+    width: 40px;
+}
+
+
+.newAccount-icon-div a img{ 
+    border-radius: 50%;
+    width: 40px;
+}
+
+@media (max-width: 1100px) {
+    .login {
+        padding: 30px 40px;
+    }
+}
+
+@media (max-width: 992px) {
+    .login-div {
+        margin: 50px 20px;
+    }
+
+    .data-cell {
+        margin-top: 10px;
+
+    }
+
+    .form-item-cell {
+        margin-top: 15px;
+    }
+
+    .data-cell-label-title {
+        font-size: 14px;
+        margin-bottom: 3px 0px;
+    }
+
+    .data-lable {
+        font-size: 13px;
+    }
+
+    .login .login-div .login-div-body {
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 900px) {
+    .login {
+        border-width: 7px;
+    }
+    .login-div-body .item {
+        border: 20px solid #eceff4;
+        padding: 30px 50px 30px 50px;
+    }
+    
+}
+
+@media (max-width: 767px) {
+    .login {
+        padding: 10px 10px;
+    }
+
+    .data-cell-label-title {
+        font-size: 13px;
+    }
+
+    .data-lable {
+        font-size: 12px;
+    }
+    .login-div-body .item {
+        border: 10px solid #eceff4;
+        padding: 30px 30px 30px 30px;
+    }
+
+    .login-div {
+        margin: 30px 20px;
+    }
+    .btn-submit{
+        width: 100%;
+    }
+    .btn-submit:hover{
+        width: 100%;
+    }
+}
+
+@media (max-width: 575px) {
+    .login .login-div .login-div-body {
+        padding: 10px 0px;
+    }
+
+    .newAccount-icon-div a img{ 
+        border-radius: 50%;
+        width: 30px;
+    }
+}
+
+@media (max-width: 450px) {
+    .login {
+        padding: 10px 0px;
+    }
+}

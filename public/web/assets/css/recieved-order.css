@@ -1,0 +1,157 @@
+.section-recieved-order hr{
+  border-bottom:1px solid #ababab;
+}
+
+
+.section-recieved-order{
+  background-color: #ebebeb;
+}
+
+.recieved-order {
+  padding: 80px 30px;
+}
+
+.recieved-order-div{
+  margin: 30px 40px;
+  transition: 0.4s;
+  box-shadow: 2px 8px 17px #848484;
+}
+.recieved-order .recieved-order-div .recieved-order-div-hdr{
+  background-color: #39b54a;
+  padding: 10px 20px;
+}
+.recieved-order .recieved-order-div .recieved-order-div-hdr p{
+  margin-bottom: 0;
+  color:white;
+  font-size: 22px; 
+  font-weight: bold;
+}
+
+
+
+
+
+
+.recieved-order .recieved-order-div .recieved-order-div-body{
+  background-color: white;
+  padding: 35px 20px;
+}
+
+.recieved-order-div-body .item{
+  padding: 10px 0px 20px 0px;
+}
+
+.form-item{
+  margin-top: 30px;
+}
+
+.data-cell-label-title{
+  color:#662d91;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px 0px;
+}
+.data-cell-label{
+  background-color:#eff3f6;
+  padding: 10px;
+  width: 100%;
+  margin-top: 10px;
+  font-size: 13px;
+  font-weight: 0px !important;
+}
+.data-cell-label-days{
+  font-size: 10px;
+}
+
+.data-lable{
+  font-size: 15px;
+}
+
+.data-cell-label-price{
+  background-color: #ff0440;
+  color: white;
+}
+
+.actionBtn{
+  border-radius: 0px;
+  padding: 7px 40px;
+  font-size: 14px;
+  width: 100%;
+}
+.phoneInfo{
+  color:rgb(121, 121, 121);
+}
+.refuse-btn{
+  background-color: rgb(221, 221, 221);
+}
+.refuse-btn:hover{
+  background-color: rgb(177, 177, 177);
+}
+@media (max-width: 1100px) {
+  .recieved-order {
+    padding: 30px 40px;
+  }
+  .recieved-order .recieved-order-div .recieved-order-div-hdr p{
+    font-size: 19px; 
+  }
+}
+@media (max-width: 992px) {
+  .recieved-order-div{
+    margin: 50px 20px;
+  }
+  .data-cell{
+    margin-top: 10px;
+
+  }
+  .form-item-cell{
+    margin-top: 15px;
+  }
+  .data-cell-label-title{
+    font-size: 14px;
+    margin-bottom: 3px 0px;
+  }
+  .data-lable{
+    font-size: 13px;
+  }
+  .recieved-order .recieved-order-div .recieved-order-div-body{
+    padding: 10px 40px;
+  }
+  .hideMe{
+    display: none;
+  }
+}
+@media (max-width: 900px) {
+  .recieved-order {
+    border-width: 7px;
+  }
+  .recieved-order .recieved-order-div .recieved-order-div-hdr p{
+    font-size: 17px; 
+  }
+}
+
+@media (max-width: 767px) {
+  .recieved-order {
+    padding: 10px 10px;
+  }
+  .recieved-order .recieved-order-div .recieved-order-div-hdr p{
+    font-size: 14px; 
+  }
+  .data-cell-label-title{
+    font-size: 13px;
+  }
+  .data-lable{
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 575px) {
+  .recieved-order .recieved-order-div .recieved-order-div-body{
+    padding: 10px 30px;
+  }
+}
+
+@media (max-width: 450px) {
+  .recieved-order {
+    padding: 10px 0px;
+  }
+}

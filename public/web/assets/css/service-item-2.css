@@ -1,0 +1,514 @@
+.service-details .additional-order {
+    background-color: #f7f9fe;
+    margin: 50px 20px;
+    padding: 40px;
+}
+
+.service-details .additional-order p {
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.service-details .additional-order .additional-seleceOption {
+    width: 100%;
+    padding-top: 0px;
+    padding-bottom: 3px;
+    background-color: #39b54a;
+    color: white;
+    margin-bottom: 0;
+    height: 30px;
+    border-radius: 0px;
+    border-color: #39b54a;
+}
+
+.service-details .additional-order .additional-seleceOption:focus {
+    box-shadow: none !important;
+}
+
+.service-details .additional-order .additional-seleceOption option {
+    background-color: #39b54a;
+    color: white;
+    border-color: #39b54a;
+    font-size: 15px;
+}
+
+.service-details .additional-order .grey-span {
+    color: grey;
+}
+
+.service-details-bottom .nav-details .nav-tabs {
+    background-color: #d6d6d6;
+    padding: 0px 33px;
+    border: 0px !important;
+    transition: 0.4s;
+}
+
+.service-details-bottom .nav-details .nav-tabs .nav-item .nav-link {
+    color: black !important;
+    font-size: 16px;
+    font-weight: bold;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    border: 0px !important;
+}
+
+.service-details-bottom .nav-details .nav-tabs .nav-item .active {
+    color: #39b54a !important;
+    background-color: transparent !important;
+    border-radius: 0px !important;
+    border: none !important;
+}
+
+.service-details-bottom .nav-details .nav-tabs .nav-item .active:after {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 15px solid #6ab64c;
+    content: " ";
+    position: relative;
+    bottom: -66px;
+    left: 50%;
+}
+
+.service-details-bottom .nav-details .nav-info-container {
+    padding: 60px 50px;
+}
+
+.service-details-bottom .nav-details .nav-info-container .nav-info-hdr {
+    color: #0071bc;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.service-details-bottom .nav-details .nav-info-container .nav-info-details {
+    line-height: 35px;
+    color: #848484;
+}
+
+.service-details-bottom .nav-details .nav-info-container .nav-info-specification {
+    background-color: #662d91;
+    color: white;
+    margin: 20px 0px;
+    padding: 0px 0px 0px 0px;
+    font-size: 14px;
+}
+
+.service-details-bottom .nav-details .nav-info-container .nav-info-specification .specification-tbl-hdr {
+    padding: 30px 20px 20px 10px;
+}
+
+.service-details-bottom .nav-details .nav-info-container .nav-info-specification .specification-tbl-info {
+    padding: 10px 20px 35px 10px;
+    color: #c8c2c2 !important;
+}
+
+.service-details-bottom .nav-details .nav-info-container .nav-info-rating {
+    background-color: #662d91;
+    color: white;
+    margin: 20px 0px;
+    font-size: 14px;
+}
+
+.nav-info-rating {
+    padding-right: 35px;
+}
+
+.service-details-bottom .nav-details .nav-info-container .nav-info-rating .rating-tbl-hdr-rating {
+    padding: 35px 10px 5px 10px;
+}
+
+.service-details-bottom .nav-details .nav-info-container .nav-info-rating .rating-tbl-hdr-rating .rate-value {
+    text-align: center !important;
+    font-size: 30px;
+    font-weight: bold;
+    color: #f7931e !important;
+    margin-bottom: 2px;
+}
+
+.service-details-bottom .nav-details .nav-info-container .nav-info-rating .rating-tbl-hdr-rating .item-rating {
+    text-align: center !important;
+    font-size: 18px;
+    color: white !important;
+}
+
+.service-details-bottom .nav-details .nav-info-container .nav-info-rating .rating-tbl-hdr-rating .item-rating .active {
+    color: #f7931e !important;
+}
+
+.cell-row-rating {
+    border-left: 2px dashed white !important;
+}
+
+.service-details-bottom .nav-details .nav-info-container .nav-info-rating .rating-tbl-info-rating p {
+    text-align: center !important;
+    padding: 0px 20px 15px 10px;
+}
+
+.rating-progress-div {
+    padding: 20px 35px 20px 20px;
+}
+
+.service-details-bottom .nav-details .nav-info-container .nav-info-rating .rating-progress {
+    padding: 3px;
+}
+
+.service-details-bottom .nav-details .nav-info-container .nav-info-rating .rating-progress .progress-item {
+    height: 8px;
+    width: 40%;
+    display: inline-flex !important;
+}
+
+.service-details-bottom .nav-details .nav-info-container .nav-info-rating .rating-progress .progress-item .progress-bar {
+    background-color: #f7931e !important;
+}
+
+.service-details-bottom .nav-details .nav-info-container .nav-info-rating .rating-progress .progress-item-details {
+    display: inline-flex !important;
+    margin-right: 10px;
+    color: #f7931e !important;
+    font-weight: bold;
+    font-size: 15px;
+}
+.service-details-bottom .nav-details .nav-info-container .nav-info-rating .rating-progress .progress-item-details-count {
+    color: white;
+    display: inline-flex !important;
+    margin-right: 50px;
+    font-size: 18px;
+}
+
+/* 11111 */
+.service-details-bottom .nav-details .nav-info-container .nav-info-div-2{
+    background-color: #d6d6d6;
+    margin-top: 50px;
+    padding-bottom: 50px;
+}
+.service-details-bottom .nav-details .nav-info-container .nav-info-div-2 .hdr {
+    margin-bottom: 50px;
+}
+.service-details-bottom .nav-details .nav-info-container .nav-info-div-2 .hdr .title-rating-comments{
+    background-color: red;
+    border-radius: 0px !important;
+    padding: 12px 30px;
+    color:white;
+    cursor: auto !important;
+    font-size: 14px;
+}
+.service-details-bottom .nav-details .nav-info-container .nav-info-div-2 .hdr .title-rating-comments:focus{
+    box-shadow: none !important;
+}
+
+.service-details-bottom .nav-details .nav-info-container .nav-info-div-2 .comment-div{
+    margin: 10px 40px ;
+    background-color: #d6d6d6;
+    padding: 20px;
+}
+
+.service-details-bottom .nav-details .nav-info-container .nav-info-div-2 .comment-div .comment-body{
+    margin: 10px 30px;
+    background-color: white;
+    padding: 15px 15px;
+    box-shadow: 7px 7px 10px gray;
+}
+.service-details-bottom .nav-details .nav-info-container .nav-info-div-2 .comment-div .comment-body .item-rating{
+    display: inline;
+}
+
+.service-details-bottom .nav-details .nav-info-container .nav-info-div-2 .comment-div .comment-body .item-rating .item-rate-star{
+    font-size: 17px;
+    color: #b1b1b1;
+}
+.service-details-bottom .nav-details .nav-info-container .nav-info-div-2 .comment-div .comment-body .item-rating .active{
+    color: #f7931e !important;
+}
+
+.service-details-bottom .nav-details .nav-info-container .nav-info-div-2 .comment-div .comment-body .item-rating .rating-value{
+    color: #f7931e !important;
+    font-size: 15px;
+    margin-right: 20px;
+    font-weight: bold;
+}
+.service-details-bottom .nav-details .nav-info-container .nav-info-div-2 .comment-div .comment-body .rate-comment-date{
+    background-color: #0071bc;
+    padding: 6px 20px;
+    color:white;
+    position: relative;
+    bottom: 28px;
+    right: 70%;
+}
+.service-details-bottom .nav-details .nav-info-container .nav-info-div-2 .comment-div .comment-body label.rate-comment-date2{
+    color:rgb(151, 151, 151);
+    float: left !important;
+    display: block !important;
+    margin-bottom: 0px;
+}
+
+.service-details-bottom .nav-details .nav-info-container .nav-info-div-2 .comment-div .comment-body .comment-content .rate-comment-username{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+}
+
+.service-details-bottom .nav-details .nav-info-container .nav-info-div-2 .comment-div .comment-body .comment-content .comment-text{
+    padding: 2px;
+}
+
+
+@media (max-width: 1000px) {
+    .service-details .additional-order {
+        margin: 50px 15px;
+    }
+
+    .service-details-bottom .nav-details .nav-info-container .nav-info-specification {
+        font-size: 13px;
+    }
+    .service-details-bottom .nav-details .nav-info-container .nav-info-div-2 .comment-div{
+        margin: 0px 10px ;
+        background-color: #d6d6d6;
+        padding: 20px;
+    }
+    
+}
+
+@media (max-width: 768px) {
+    .service-details .additional-order .grey-span {
+        line-height: 50px;
+    }
+
+    .service-details .additional-order .additional-row {
+        font-size: 14px;
+    }
+
+    .cell-info {
+        width: 50% !important;
+    }
+
+    .col-cell-info {
+        flex: auto !important;
+        border: 0px !important;
+        text-align: center !important;
+    }
+
+    .col-cell-info-1 {
+        max-width: 40% !important;
+    }
+
+    .col-cell-info-2 {
+        max-width: 60% !important;
+    }
+    .service-details-bottom .nav-details .nav-info-container .nav-info-div-2 .hdr {
+        margin-bottom: 30px;
+    }
+    .service-details-bottom .nav-details .nav-info-container .nav-info-div-2 .hdr .title-rating-comments{
+        padding: 10px 20px;
+    }
+    .service-details-bottom .nav-details .nav-info-container .nav-info-div-2 .comment-div .comment-body label.rate-comment-date2{
+        font-size: 13px;
+    }
+
+}
+
+@media (max-width: 630px) {
+    .col-cell-info {
+        border: 0px !important;
+    }
+
+    .col-cell-info-1 {
+        max-width: 100% !important;
+    }
+
+    .col-cell-info-2 {
+        max-width: 100% !important;
+    }
+    .service-details-bottom .nav-details .nav-info-container .nav-info-div-2 .comment-div .comment-body .item-rating .item-rate-star{
+        font-size: 15px;
+    }
+    .service-details-bottom .nav-details .nav-info-container .nav-info-div-2 .comment-div .comment-body .item-rating .rating-value{
+        font-size: 13px;
+    }
+    .service-details-bottom .nav-details .nav-info-container .nav-info-div-2 .comment-div{
+        margin: 0px 0px ;
+        padding: 10px;
+    }
+    .service-details-bottom .nav-details .nav-info-container .nav-info-div-2 .comment-div .comment-body{
+        margin: 7px 20px;
+        background-color: white;
+        padding: 15px 15px;
+        box-shadow: 4px 4px 10px gray;
+    }
+    
+    
+}
+
+@media (max-width: 575px) {
+    .service-details-bottom .nav-details .nav-tabs .nav-item .nav-link {
+        font-size: 13px;
+    }
+
+    .service-details .additional-order {
+        padding: 30px;
+    }
+
+    .service-details-bottom .nav-details .nav-tabs .nav-item .active:after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-top: 10px solid #6ab64c;
+        bottom: -55px;
+    }
+
+    .service-details .additional-order .grey-span {
+        line-height: 40px;
+    }
+
+    .service-details .additional-order p {
+        font-size: 15px;
+    }
+
+    .service-details-bottom .nav-details .nav-info-container {
+        padding: 40px 40px;
+    }
+
+    .service-details-bottom .nav-details .nav-info-container .nav-info-hdr {
+        font-size: 13px;
+    }
+
+    .service-details-bottom .nav-details .nav-info-container .nav-info-details {
+        line-height: 30px;
+        font-size: 13px;
+    }
+
+    .cell-info {
+        width: 50% !important;
+    }
+
+    .service-details-bottom .nav-details .nav-info-container .nav-info-specification {
+        margin: 20px 0px;
+        font-size: 12px;
+    }
+
+    .service-details-bottom .nav-details .nav-info-container .nav-info-specification .specification-tbl-hdr {
+        padding: 30px 10px 20px 10px;
+    }
+
+    .service-details-bottom .nav-details .nav-info-container .nav-info-specification .specification-tbl-info {
+        padding: 1px 10px 30px 10px;
+        color: #c8c2c2 !important;
+    }
+
+    .service-details-bottom .nav-details .nav-info-container .nav-info-rating {
+        margin: 20px 0px;
+        font-size: 13px;
+    }
+
+    .service-details-bottom .nav-details .nav-info-container .nav-info-rating .rating-tbl-hdr-rating {
+        padding: 20px 10px 5px 10px;
+    }
+
+    .service-details-bottom .nav-details .nav-info-container .nav-info-rating .rating-tbl-hdr-rating .rate-value {
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    .service-details-bottom .nav-details .nav-info-container .nav-info-rating .rating-tbl-hdr-rating .item-rating {
+        text-align: center !important;
+        font-size: 18px;
+        color: white !important;
+    }
+
+    .service-details-bottom .nav-details .nav-info-container .nav-info-rating .rating-tbl-info-rating p {
+        padding: 0px 20px 0px 0px;
+    }
+
+    .rating-progress-div {
+        padding: 10px 35px 30px 20px;
+    }
+
+    .service-details-bottom .nav-details .nav-info-container .nav-info-rating .rating-progress {
+        padding: 2px;
+    }
+
+    .service-details-bottom .nav-details .nav-info-container .nav-info-rating .rating-progress .progress-item {
+        height: 6px;
+        width: 50%;
+    }
+
+    .service-details-bottom .nav-details .nav-info-container .nav-info-rating .rating-progress .progress-item-details {
+        font-size: 14px;
+    }
+
+    .service-details-bottom .nav-details .nav-info-container .nav-info-rating .rating-progress .progress-item-details-count {
+        font-size: 14px;
+    }
+    .service-details-bottom .nav-details .nav-info-container .nav-info-div-2{
+        margin-top: 20px !important;
+    }
+    .service-details-bottom .nav-details .nav-info-container .nav-info-div-2 .hdr .title-rating-comments{
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+    .service-details-bottom .nav-details .nav-info-container .nav-info-div-2 .comment-div .comment-body .comment-content .rate-comment-username{
+        font-size: 15px;
+        padding-top: 25px;
+    }
+    .service-details-bottom .nav-details .nav-info-container .nav-info-div-2 .comment-div .comment-body .item-rating .item-rate-star{
+        font-size: 10px;
+    }
+    .service-details-bottom .nav-details .nav-info-container .nav-info-div-2 .comment-div .comment-body label.rate-comment-date2{
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 440px) {
+    .service-details-bottom .nav-details .nav-tabs .nav-item .active:after {
+        border-left: 0px solid transparent !important;
+        border-right: 0px solid transparent !important;
+        border-top: 0px solid transparent !important;
+    }
+
+    .service-details .additional-order .additional-row {
+        font-size: 12px;
+    }
+
+    .service-details .additional-order .grey-span {
+        line-height: 35px;
+    }
+
+    .service-details .additional-order {
+        padding: 25px;
+    }
+
+    .service-details-bottom .nav-details .nav-info-container {
+        padding: 30px 30px;
+    }
+
+    .service-details-bottom .nav-details .nav-info-container .nav-info-hdr {
+        font-size: 12px;
+    }
+
+    .service-details-bottom .nav-details .nav-info-container .nav-info-details {
+        line-height: 30px;
+        font-size: 12px;
+    }
+    .service-details-bottom .nav-details .nav-info-container .nav-info-div-2 .comment-div .comment-body .comment-content .rate-comment-username{
+        font-size: 14px;
+        padding-top: 25px;
+    }
+}
+
+@media (max-width: 350px) {
+    .service-details-bottom .nav-details .nav-tabs .nav-item .nav-link {
+        font-size: 12px;
+    }
+
+    .service-details-bottom .nav-details .nav-tabs .nav-item .active:after {
+        border-left: 0px solid transparent !important;
+        border-right: 0px solid transparent !important;
+        border-top: 0px solid transparent !important;
+    }
+
+    .service-details-bottom .nav-details .nav-info-container {
+        padding: 20px 25px;
+    }
+}

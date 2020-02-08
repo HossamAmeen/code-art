@@ -1,0 +1,167 @@
+.section-profits hr {
+    border-bottom: 1px solid #ababab;
+}
+
+.section-profits {
+    background-color: #ebebeb;
+}
+
+.profits {
+    padding: 80px 70px;
+}
+
+.profits-div {
+    margin: 30px 40px;
+    transition: 0.4s;
+    box-shadow: 2px 8px 17px #848484;
+}
+
+.profits .profits-div .profits-div-hdr {
+    background-color: #39b54a;
+    padding: 10px 20px;
+}
+
+.profits .profits-div .profits-div-hdr p {
+    margin-bottom: 0;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.profits .profits-div .profits-div-body {
+    background-color: white;
+    color: black;
+    padding: 70px 20px;
+}
+
+.profits-div-body .item {
+    padding: 10px 20px 20px 20px;
+}
+.col-body{
+    padding: 0px 40px;
+}
+.form-item {
+    margin-top: 30px;
+}
+
+.data-cell-label-title {
+    color: #662d91;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px 0px;
+}
+
+.data-cell-label {
+    background-color: #eff3f6;
+    padding: 10px;
+    width: 100%;
+    margin-top: 10px;
+    font-weight: 0px !important;
+}
+
+.data-lable {
+    font-size: 15px;
+}
+
+.data-cell-label-price {
+    background-color: #ff0440;
+    color: black;
+}
+
+.payWay-div {
+    margin-bottom: 20px;
+    padding: 0px 50px;
+}
+
+.payWay-div p {
+    color: black;
+    font-size: 18px;
+    text-align: center;
+}
+
+.col-hdr {
+    background-color: #0071bc;
+    color: white;
+}
+
+.col-hdr p {
+    background-color: #0071bc;
+    padding: 10px 0px;
+    font-size: 15px;
+    color: white;
+}
+.priceText p{
+    padding-top: 30px;
+    color: red !important;
+    font-weight: bold;
+}
+.infoPriceTexr{
+    padding-top: 20px;
+    font-size: 14px !important;
+}
+@media (max-width: 1100px) {
+    .profits {
+        padding: 30px 40px;
+    }
+    .profits .profits-div .profits-div-hdr p {
+        font-size: 19px;
+    }
+}
+
+@media (max-width: 992px) {
+    .profits-div {
+        margin: 50px 20px;
+    }
+    .data-cell {
+        margin-top: 10px;
+    }
+    .form-item-cell {
+        margin-top: 15px;
+    }
+    .data-cell-label-title {
+        font-size: 14px;
+        margin-bottom: 3px 0px;
+    }
+    .data-lable {
+        font-size: 13px;
+    }
+    .profits .profits-div .profits-div-body {
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 900px) {
+    .profits {
+        border-width: 7px;
+    }
+    .profits .profits-div .profits-div-hdr p {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 767px) {
+    .profits {
+        padding: 10px 10px;
+    }
+    .profits .profits-div .profits-div-hdr p {
+        font-size: 14px;
+    }
+    .data-cell-label-title {
+        font-size: 13px;
+    }
+    .data-lable {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 575px) {
+    .profits .profits-div .profits-div-body {
+        padding: 10px 0px;
+    }
+}
+
+@media (max-width: 450px) {
+    .profits {
+        padding: 10px 0px;
+    }
+}

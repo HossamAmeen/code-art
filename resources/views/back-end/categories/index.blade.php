@@ -25,7 +25,7 @@
                             <tr>
                             <th>#</th>
                             <th>اسم الفئه</th>
-                          
+                            <th> الايكونة</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -35,7 +35,7 @@
                                     <td> {{$row_num++}}</td>
                                     <td>{{$item->name}}</td>
                                     
-                                   
+                                    <td>{{$item->icon}}</td>
                                     <td>
                                      @include('back-end.shared.buttons.delete')
                                     </td>

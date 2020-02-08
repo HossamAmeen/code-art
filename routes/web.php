@@ -34,6 +34,7 @@ Route::prefix('admin')->group(function () {
             Route::resource('complaints', 'ComplaintController');
             Route::resource('questions', 'QuestionController');
             Route::resource('clients', 'ClientController');
+            Route::get('orders/{client_id}', 'ClientController@show');
             Route::resource('complaints', 'ComplaintController');
             Route::resource('questions', 'QuestionController');
             Route::resource('users', 'UserController');
@@ -54,4 +55,7 @@ Route::prefix('admin')->group(function () {
 
     });
 });
+
+Route::namespace ('WebSite')->group(function () {
 Route::get('/', 'HomeController@index')->name('home');
+});

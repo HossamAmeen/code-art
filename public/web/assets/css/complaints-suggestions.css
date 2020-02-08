@@ -1,0 +1,208 @@
+.section-suggestions hr{
+  border-bottom:1px solid #ababab;
+}
+
+
+.section-suggestions{
+  background-color: white;
+}
+
+.suggestions {
+  padding: 80px 70px;
+}
+
+.suggestions-div{
+  margin: 30px 40px;
+  transition: 0.4s;
+  box-shadow: 2px 8px 17px #848484;
+}
+.suggestions .suggestions-div .suggestions-div-hdr{
+  background-color: #662d91;
+  padding: 30px 30px;
+}
+.suggestions .suggestions-div .suggestions-div-hdr p{
+  margin-bottom: 0;
+  color:#f7931e;
+  font-size: 22px; 
+  font-weight: bold;
+}
+.suggestions .suggestions-div .suggestions-div-hdr hr{
+  margin-bottom: 0;
+  background-color: #f7931e;
+  border-color: #f7931e;
+  width: 18%;
+  float: right;
+}
+
+
+
+
+
+
+
+.suggestions .suggestions-div .suggestions-div-body{
+  background-color: #662d91;
+  padding: 10px 20px 20px;
+}
+
+.suggestions-div-body .item{
+  padding: 10px 20px 20px 20px;
+}
+
+.form-item{
+  margin-top: 30px;
+}
+
+.data-cell .txtBox-name{
+  background-color: transparent !important;
+  border:none !important;
+  border-bottom: 1px solid #b9b9b9 !important;
+  border-radius: 0px !important;
+  padding-right: 90px;
+  color:white;
+  font-size: 16px;
+  font-weight: bold;
+}
+.form-control.is-invalid, .was-validated .form-control:invalid, .custom-select.is-valid, .form-control.is-valid, .was-validated .custom-select:valid, .was-validated .form-control:valid{
+  background-image: unset !important;
+  padding-right: 90px !important;
+}
+.form-control.is-invalid, .was-validated .form-control:invalid {
+  border-color: red !important;
+  background-position: left;
+}
+
+div.data-cell .txtBox-name:focus{
+  box-shadow: unset !important;
+}
+
+.data-cell .cmboBox{
+  padding-right: 20px !important;
+  padding-top: 40px;
+  background-color: #b9b9b9 !important;
+  border: 0px !important;
+  color:black;
+}
+.was-validated textarea.form-control:valid, textarea.form-control.is-valid,
+.was-validated textarea.form-control:invalid, textarea.form-control.is-invalid{
+  padding-right: 20px !important;
+  border-color: red !important;
+  background-position: left;
+}
+
+.data-cell-label-title{
+  color:#fcee21;
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
+  top: 38px;
+}
+
+.lbl-cmboBox {
+  margin-right: 20px;
+}
+
+.data-cell-label{
+  background-color:#eff3f6;
+  padding: 10px;
+  width: 100%;
+  margin-top: 10px;
+  font-weight: 0px !important;
+}
+.btn-submit{
+  background-color: #fcee21 !important;
+  border-radius: 0px !important;
+  color:black;
+  border-radius: 0px !important;
+  border-color: #fcee21 !important;
+  font-weight: bold;
+  padding: 7px 70px;
+  margin-top: 20px;
+  transition: 0.4s;
+}
+.btn-submit:hover{
+  color:black;
+  padding: 7px 80px;
+}
+.btn-submit:focus{
+  box-shadow: unset !important;
+  color:black !important;
+}
+
+.data-lable{
+  font-size: 15px;
+}
+
+.invalid-lbl{
+  color:red;
+}
+
+.form-group{
+  margin-bottom: 0 !important;
+}
+
+@media (max-width: 1100px) {
+  .suggestions {
+    padding: 30px 40px;
+  }
+  .suggestions .suggestions-div .suggestions-div-hdr p{
+    font-size: 19px; 
+  }
+}
+@media (max-width: 992px) {
+  .suggestions-div{
+    margin: 50px 20px;
+  }
+  .data-cell{
+    margin-top: 10px;
+
+  }
+  .form-item-cell{
+    margin-top: 15px;
+  }
+  .data-cell-label-title{
+    font-size: 14px;
+    margin-bottom: 3px 0px;
+  }
+  .data-lable{
+    font-size: 13px;
+  }
+  .suggestions .suggestions-div .suggestions-div-body{
+    padding: 0px 20px 0px;
+  }
+}
+@media (max-width: 900px) {
+  .suggestions {
+    border-width: 7px;
+  }
+  .suggestions .suggestions-div .suggestions-div-hdr p{
+    font-size: 17px; 
+  }
+}
+
+@media (max-width: 767px) {
+  .suggestions {
+    padding: 10px 10px;
+  }
+  .suggestions .suggestions-div .suggestions-div-hdr p{
+    font-size: 14px; 
+  }
+  .data-cell-label-title{
+    font-size: 13px;
+  }
+  .data-lable{
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 575px) {
+  .suggestions .suggestions-div .suggestions-div-body{
+    padding: 10px 0px;
+  }
+}
+
+@media (max-width: 450px) {
+  .suggestions {
+    padding: 10px 0px;
+  }
+}

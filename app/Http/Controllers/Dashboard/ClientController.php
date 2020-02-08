@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 use App\Models\Client;
+use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -12,6 +13,26 @@ class ClientController extends BackEndController
         $this->model = $model;
     }
 
+    public function show($client_id)
+    {
+       
+        $rows = Order::where('client_id',$client_id)->orderBy('id', 'DESC')->get();
+        $moduleName = "orders";
+        $sModuleName = $this->getModelName();
+        $routeName = $this->getClassNameFromModel();
+        $pageTitle = "Control ".$moduleName;
+        $pageDes = "Here you can add / edit / delete " .$moduleName;
+        // return $rows; 
+        // return Auth::user()->role;
+        return view('back-end.orders.index', compact(
+            'rows',
+            'pageTitle',
+            'moduleName',
+            'pageDes',
+            'sModuleName',
+            'routeName'
+        ));
+    }
     public function store(Request $request)
     {
         $request['password'] = bcrypt($request['password']);

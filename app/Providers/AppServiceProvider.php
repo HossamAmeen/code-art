@@ -29,9 +29,10 @@ class AppServiceProvider extends ServiceProvider
     {
         try {
             DB::connection()->getPdo();
-            $configration = Configration::find(1);
+            $configration = \App\Models\Configration::find(1);
+            $servicesCategories = \App\Models\Category::all();
              View::share('configration',$configration );
-
+             View::share('servicesCategories',$servicesCategories );
         }
          catch (\Exception $e) {
           //  die("Could not connect to the database.  Please check your configuration. error:" . $e );
