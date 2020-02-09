@@ -78,35 +78,35 @@
             </a>
 
         </li>
-       
-      
-        <li class="{{is_active('wishlists')}}">
+        <li class="{{is_active('servicecategories')}}">
+            <a href="{{route('servicecategories.index')}}"  class="{{is_active('servicecategories')}}">
+                <i class="far fa-newspaper"></i><span> الخدمات</span>
+            </a>
+        </li>
+        <li class="{{is_active('servicequestions')}}">
+            <a href="{{route('servicequestions.index')}}"  class="{{is_active('servicequestions')}}">
+                <i class="fa fa-question"></i><span>الاسئلة </span>
+            </a>
+        </li>
+        {{-- <li class="{{is_active('wishlists')}}">
             <a href="{{route('wishlists.index')}}"  class="{{is_active('wishlists')}}">
                 <i class="far fa-newspaper"></i><span>القائمة المفضلة</span>
             </a>
-        </li>
+        </li> --}}
         <li class="{{is_active('suggestadditions')}}">
             <a href="{{route('suggestadditions.index')}}"  class="{{is_active('suggestadditions')}}">
                 <i class="far fa-newspaper"></i><span>الاضافات المقترحة</span>
             </a>
         </li>
 
-        <li class="{{is_active('servicequestions')}}">
-            <a href="{{route('servicequestions.index')}}"  class="{{is_active('servicequestions')}}">
-                <i class="far fa-newspaper"></i><span>الاسئلة</span>
-            </a>
-        </li>
+       
         <li class="{{is_active('serviceproviders')}}">
             <a href="{{route('serviceproviders.index')}}"  class="{{is_active('serviceproviders')}}">
                 <i class="far fa-newspaper"></i><span>مزودين الخدمة</span>
             </a>
         </li>
 
-        <li class="{{is_active('servicecategories')}}">
-            <a href="{{route('servicecategories.index')}}"  class="{{is_active('servicecategories')}}">
-                <i class="far fa-newspaper"></i><span>تصنيف الخدمات</span>
-            </a>
-        </li>
+       
 
         <li class="{{is_active('complaints')}}">
             <a href="{{route('complaints.index')}}"  class="{{is_active('complaints')}}">
@@ -115,12 +115,7 @@
 
         </li>
 
-        <li class="{{is_active('articles')}}">
-            <a href="{{route('articles.index')}}"  class="{{is_active('articles')}}">
-                    <i class="fa fa-image"></i><span>المقالات</span>
-            </a>
-
-        </li>
+       
         <li class="{{is_active('categoryquestions')}}">
             <a href="{{route('categoryquestions.index')}}"  class="{{is_active('categoryquestions')}}">
                     <i class="far fa-newspaper"></i><span>فئات الأسالة </span>

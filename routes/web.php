@@ -57,5 +57,25 @@ Route::prefix('admin')->group(function () {
 });
 
 Route::namespace ('WebSite')->group(function () {
-Route::get('/', 'HomeController@index')->name('home');
+    ///////////// home
+    Route::get('/', 'HomeController@index')->name('home');
+    Route::get('questions', 'HomeController@questions');
+    Route::post('complaint', 'HomeController@complaint');
+    Route::view('/about-us', 'web.home.about-us', ['pageTitle' => 'من نحن']);
+    Route::view('/how-work', 'web.home.how-it-work', ['pageTitle' => 'من نحن']);
+    Route::view('/terms-of-use', 'web.home.terms-of-use', ['pageTitle' => 'من نحن']);
+    Route::view('/privacy', 'web.home.privacy', ['pageTitle' => 'من نحن']);
+    Route::view('/contact', 'web.home.contact', ['pageTitle' => 'تواصل معانا']);
+    Route::view('/complaint', 'web.home.complaint', ['pageTitle' => 'الشكاوي']);
+
+    /////////////////////// client
+    Route::prefix('client')->group(function () {
+        // Route::view('register', 'web.client.register', ['pageTitle' => 'إنشاء حساب جديد']);
+        Route::view('login', 'web.client.login', ['pageTitle' => 'تسجيل دخول ']);
+        Route::any('register', 'ClientController@register');
+        Route::post('login', 'ClientController@login')->name('client/login');
+    });
+    Route::get('category/{category_id}', 'ClientController@category');
+    Route::get('services/{id}', 'ClientController@services');
+    Route::get('service-detials/{id}', 'ClientController@serviceDetials');
 });

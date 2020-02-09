@@ -17,9 +17,26 @@ class HomeController extends Controller
         $specialServices = ServiceCategory::where('special' , 1)->limit(4)->get();
         $firstAdd = Adds::all()->random(1);
         $secondAdd = Adds::all()->random(1);
+        // return $firstAdd;
         $MostRequestedServices = ServiceCategory::all()->random(4);
-        return view('web.index' , compact('pageTitle' ,'firstSlider', 'sliders' ,
+        return view('web.home.index' , compact('pageTitle' ,'firstSlider', 'sliders' ,
                                          'specialServices' , 'firstAdd' ,
                                           'secondAdd' , 'MostRequestedServices'));
     }
+
+    public function questions ()
+    {
+        $pageTitle = "الأسالة الشائعة" ;
+        $categories = \App\Models\CategoryQuestion::all();
+         return view('web.home.questions' , compact('pageTitle' , 'categories'));
+    }
+
+    public function complaint(Request $request)
+    {
+        // return $request->all();
+        \App\Models\Complaint::create( $request->all());
+
+        return redirect()->back();
+    }
+
 }

@@ -17,7 +17,7 @@ class CreateServiceCategoriesTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->double('delivery_price');
-            $table->boolean('special');
+            $table->boolean('special')->default(0);
             $table->string('image');
 
             $table->bigInteger('category_id')->unsigned()->nullable();

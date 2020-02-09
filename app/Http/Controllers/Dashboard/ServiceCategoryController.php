@@ -15,28 +15,34 @@ class ServiceCategoryController extends BackEndController
 
     public function store(Request $request)
     {
-        if($request->image)
-        {
-            $fileName = $this->uploadImage($request );
-            $request['image'] = $fileName;
-        }
-        $request['special'] = 1;
-        $this->model->create($request->all());
+        //    return $request->all();
 
-        return redirect()->route($this->getClassNameFromModel().'.index');
+        $requestArray = $request->all();
+        if (isset($requestArray['image'])) {
+            $fileName = $this->uploadImage($request);
+            $requestArray['image'] = $fileName;
+        }
+        $this->model->create($requestArray);
+        session()->flash('action', 'تم الاضافه بنجاح');
+
+        return redirect()->route($this->getClassNameFromModel() . '.index');
     }
 
-    public function update(Request $request, $id)
+    public function update($id, Request $request)
     {
-        $serviceCategory = $this->model::find($id);
-        if($request->image)
-        {
-            $fileName = $this->uploadImage($request );
-            $request['image'] = $fileName;
-        }
-        $serviceCategory->update($request->all());
 
-        return redirect()->route($this->getClassNameFromModel().'.index');
+        $row = $this->model->FindOrFail($id);
+        $requestArray = $request->all();
+        if (isset($requestArray['image'])) {
+            $fileName = $this->uploadImage($request);
+            $requestArray['image'] = $fileName;
+        }
+
+        $requestArray['user_id'] = Auth::user()->id;
+        $row->update($requestArray);
+
+        session()->flash('action', 'تم التحديث بنجاح');
+        return redirect()->route($this->getClassNameFromModel() . '.index');
     }
 
     public function append()

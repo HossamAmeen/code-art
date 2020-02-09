@@ -1,4 +1,20 @@
 @extends('web.layout.app')
+
+
+  @section('css')
+  <!-- carousel -->
+  <link rel="stylesheet" href="{{asset('web/assets/css/carousel.css')}}" />
+
+  <!-- services -->
+  <link rel="stylesheet" href="{{asset('web/assets/css/services-item.css')}}" />
+
+  <!-- offer-row -->
+  <link rel="stylesheet" href="{{asset('web/assets/css/offer-row.css')}}" />
+
+  <!-- new-services -->
+  <link rel="stylesheet" href="{{asset('web/assets/css/new-services.css')}}" />
+
+@endsection
 @section('content')
 
 
@@ -61,52 +77,43 @@
 									data-trigger="hover" data-placement="left" data-content="اضف الى قائمة المفضلة">
 									<i class="far fa-heart fav-icon"></i>
 								</div>
-								<a href="service-details.html">
-								<img src="{{$item->image}}" alt="" width="100%;" />
+								<a href="{{url('services/'.$item->id)}}">
+									<img src="{{$item->image}}" alt="" width="100%;" />
 								</a>
 							</div>
 							<div class="services-item-info">
-								<a href="service-details.html">
-									<span class="item-name">تصميم مواقع</span>
+								<a href="{{url('services/'.$item->id)}}">
+								<span class="item-name">{{$item->name}}</span>
 								</a>
 
-								<div class="item-details">
+								{{-- <div class="item-details">
 									<span>تصميم مواقع بطريقة محترفة ومتميزة</span>
 									<br /><br />
 									<a href="serviceProfile_User.html">
 										<span class="services-provider">مقدم الخدمة: اسامة عسكر</span>
 									</a>
-								</div>
+								</div> --}}
 							</div>
 						</div>
 						<div class="services-item-footer">
-							<a href="service-details.html" class="btn services-item-btn">اطلب الآن</a>
+							<a href="{{url('services/'.$item->id)}}" class="btn services-item-btn">اطلب الآن</a>
 						</div>
 					</div>
 				</div>
 				@endforeach
-				
-				
+
+
 			</div>
 		</div>
 	</div>
 </section>
 <section>
 	<div class="offer-row-container">
-		<div class="container-fluid offer-row">
-			<div class="row">
-				<div class="col-lg-6 col-md-12 col-sm-12">
-					<div class="offer-row-col">
-						<p class="offer-row-hdr">
-							خصومات كبيرة ومميزه لطلبك خدمتين أو اكثر
-						</p>
-						<p class="offer-percent">20%</p>
-						<button class="btn offer-btn">
-							اطلب الآن <i class="fas fa-arrow-left pr-2"></i>
-						</button>
-					</div>
-				</div>
-			</div>
+		
+		<div class="row">
+			@foreach ($firstAdd as $item)
+			<a href="{{$item->link}}"><img src="{{$item->image}}" alt="" width="100%;" /></a>
+			@endforeach
 		</div>
 	</div>
 </section>
@@ -127,87 +134,59 @@
 				</svg>
 			</div>
 			<div class="row">
+				@foreach ($MostRequestedServices as $item)
 				<div class="col-lg-6 col-md-6 col-sm-6 new-serivces-item-col-row ">
 					<div class="new-serivces-item-col new-serivces-item-col-r-1">
-						<a href="service-details.html">
+						<a href="{{url('services/'.$item->id)}}">
 							<div class="new-services-item new-serivces-item-1 row">
 								<div class="col-lg-6 col-md-12 col-sm-12">
-									<p class="new-services-item-hdr">تصميم مواقع</p>
-									<p class="new-services-item-info">تصميم مواقع بطريقة محترفة ومتميزة</p>
+									<p class="new-services-item-hdr">{{$item->name}}</p>
+									
 								</div>
 								<div class="col-lg-6 col-md-12 col-sm-12">
-									<img width="70%" src="./assets/imgs/services-item-2.png" />
+									<img width="70%" src="{{$item->image}}" />
 								</div>
 							</div>
 						</a>
 					</div>
 				</div>
-				<div class="col-lg-6 col-md-6 col-sm-6 new-serivces-item-col-row ">
-					<div class="new-serivces-item-col new-serivces-item-col-l-2">
-						<a href="service-details.html">
-							<div class="new-services-item new-serivces-item-2 row">
-								<div class="col-lg-6 col-md-12 col-sm-12">
-									<p class="new-services-item-hdr">تصميم مواقع</p>
-									<p class="new-services-item-info">تصميم مواقع بطريقة محترفة ومتميزة</p>
-								</div>
-								<div class="col-lg-6 col-md-12 col-sm-12">
-									<img width="70%" src="./assets/imgs/services-item-2.png" />
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<div class="col-lg-6 col-md-6 col-sm-6 new-serivces-item-col-row ">
-					<div class="new-serivces-item-col new-serivces-item-col-r-1">
-						<a href="service-details.html">
-							<div class="new-services-item new-serivces-item-3 row">
-								<div class="col-lg-6 col-md-12 col-sm-12">
-									<p class="new-services-item-hdr">تصميم مواقع</p>
-									<p class="new-services-item-info">تصميم مواقع بطريقة محترفة ومتميزة</p>
-								</div>
-								<div class="col-lg-6 col-md-12 col-sm-12">
-									<img width="70%" src="./assets/imgs/services-item-2.png" />
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				<div class="col-lg-6 col-md-6 col-sm-6 new-serivces-item-col-row ">
-					<div class="new-serivces-item-col new-serivces-item-col-l-2">
-						<a href="service-details.html">
-							<div class="new-services-item new-serivces-item-4 row">
-								<div class="col-lg-6 col-md-12 col-sm-12">
-									<p class="new-services-item-hdr">تصميم مواقع</p>
-									<p class="new-services-item-info">تصميم مواقع بطريقة محترفة ومتميزة</p>
-								</div>
-								<div class="col-lg-6 col-md-12 col-sm-12">
-									<img width="70%" src="./assets/imgs/services-item-2.png" />
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
+				@endforeach
+				
+				
 			</div>
 		</div>
 	</div>
 </section>
 <section>
-	<div class="offer-row-container">
-		<div class="container-fluid offer-row">
+	<section>
+		<div class="offer-row-container">
+			
 			<div class="row">
-				<div class="col-lg-6 col-md-12 col-sm-12">
-					<div class="offer-row-col">
-						<p class="offer-row-hdr">
-							خصومات كبيرة ومميزه لطلبك خدمتين أو اكثر
-						</p>
-						<p class="offer-percent">20%</p>
-						<button class="btn offer-btn">
-							اطلب الآن <i class="fas fa-arrow-left pr-2"></i>
-						</button>
-					</div>
-				</div>
+				@foreach ($secondAdd as $item)
+				<a href="{{$item->link}}"><img src="{{$item->image}}" alt="" width="100%;" /></a>
+				@endforeach
 			</div>
 		</div>
-	</div>
+	</section>
+	
 </section>
+@section('js')
+<script>
+	function addToFav(itemID) {
+			Swal.fire({
+				type: 'success',
+				title: 'تم  اضافة الخدمة الى المفضلة بنجاح',
+				showConfirmButton: false,
+				timer: 2000
+			})
+			// Swal.fire({
+			// 	type: 'error',
+			// 	title: 'حدث خطأ ما .. حاول مرة اخرى',
+			// 	showConfirmButton: false,
+			// 	timer: 2000
+			// })
+		}
+
+</script>
+@endsection
 @endsection

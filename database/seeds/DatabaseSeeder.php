@@ -11,25 +11,41 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        factory('App\Models\Country', 10)->create();
-        factory('App\Models\City', 10)->create();
-        // factory('App\Models\Category', 5)->create();
-        factory('App\Models\ServiceCategory', 15)->create();
-        \App\Models\ServiceProvider::create([
-            "email" =>"service_provider@service_provider.com",
-            "name" =>"name",
-            "phone" => "01010000098",
-            "image" => 'ss.jpg',
-            "country" =>1,
-            "city" =>1,
-            'password' => bcrypt('password'), // password
+        
+        \App\Models\Country::create([
+            "name" => "مصر",
+           
         ]);
-        factory('App\Models\ServiceProvider', 10)->create();
-        factory('App\Models\ServiceProviderService', 10)->create();
+        \App\Models\Country::create([
+            "name" => "السعوديه",
+        ]);
+        \App\Models\City::create([
+            "name" => "أسيوط",
+            "country_id" => 1,
+          
+        ]);
+        \App\Models\City::create([
+            "name" => "القاهره",
+            "country_id" => 1,
+        ]);
+        \App\Models\City::create([
+            "name" => "مكه",
+            "country_id" => 2,
+        ]);
+
+        \App\Models\City::create([
+            "name" => "الرياض",
+            "country_id" => 2,
+        ]);
+        // factory('App\Models\Category', 5)->create();
+        // factory('App\Models\Country', 10)->create();
+        // factory('App\Models\City', 10)->create();
+      
         $this->call([
             UserSeeder::class,
            ClientSeeder::class,
         ]);
+     
         factory('App\Models\Configration',1)->create();
         factory('App\Models\User', 10)->create();
 

@@ -58,8 +58,8 @@ $factory->define(App\Models\Client::class, function (Faker $faker) {
         "user_name" => $faker->name,
         "phone" =>$faker->e164PhoneNumber,
         'password' => bcrypt('Admin123$'), // password
-        "country_id" =>  $faker->randomElement(getCities()),
-        "city_id"=>  $faker->randomElement(getCountries()),
+        "country_id" =>  $faker->randomElement(getCountries()),
+        "city_id"=>  $faker->randomElement(getCities()),
     ];
 });
 

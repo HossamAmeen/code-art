@@ -15,4 +15,9 @@ class ServiceProviderService extends Model
     {
         return $this->belongsTo('App\Models\ServiceProvider', 'service_provider_id');
     }
+
+    public function service()
+    {
+        return $this->belongsTo('App\Models\ServiceCategory', 'service_category_id');
+    }
 }

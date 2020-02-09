@@ -16,8 +16,8 @@ class CreateServiceProviderServicesTable extends Migration
         Schema::create('service_provider_services', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->longText('description');
-            $table->double('discount');
-            $table->double('rate')->nullable();
+            $table->double('discount')->nullable();
+            $table->double('rate')->default(2.5);
             $table->string('image');
             $table->longText('overview');
             $table->string('title');

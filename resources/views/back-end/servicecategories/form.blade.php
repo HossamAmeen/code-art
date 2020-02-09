@@ -1,6 +1,6 @@
 @php $input = "name"; @endphp
 <div class="form-group">
-    <label class="col-lg-2 control-label">اسم تصنيف الخدمة</label>
+    <label class="col-lg-2 control-label">اسم  الخدمة</label>
     <div class="col-lg-10">
         <input type="text" name="{{ $input }}" value="{{ isset($row) ? $row->{$input} : '' }}" class="form-control"
                required>
@@ -33,6 +33,17 @@
         @enderror
     </div>
 </div>
+
+@php $input = "special"; @endphp
+<div class="form-group">
+    <label class="col-lg-2 control-label">مميزه </label>
+    <div class="col-lg-10">
+        <input type="checkbox" name="{{ $input }}" value="1" @if(isset($row) && $row->special == 1 ) checked @endif>  
+      
+       
+    </div>
+</div>
+
 @php $input = "delivery_price"; @endphp
 <div class="form-group">
     <label class="col-lg-2 control-label">سعر التوصيل </label>
