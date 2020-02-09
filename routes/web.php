@@ -67,7 +67,7 @@ Route::namespace ('WebSite')->group(function () {
     Route::view('/privacy', 'web.home.privacy', ['pageTitle' => 'من نحن']);
     Route::view('/contact', 'web.home.contact', ['pageTitle' => 'تواصل معانا']);
     Route::view('/complaint', 'web.home.complaint', ['pageTitle' => 'الشكاوي']);
-   
+
     /////////////////////// client
     Route::prefix('client')->group(function () {
         // Route::view('register', 'web.client.register', ['pageTitle' => 'إنشاء حساب جديد']);
@@ -76,6 +76,10 @@ Route::namespace ('WebSite')->group(function () {
         Route::post('login', 'ClientController@login')->name('client/login');
         Route::get('logout', 'ClientController@logout')->name('client/logout');
         Route::get('wishlist', 'ClientController@wishlist');
+    });
+    Route::prefix('service-provider')->group(function () {
+        Route::get('services', 'ServiceProviderController@services');
+        Route::get('services-details/{id}', 'ServiceProviderController@servicesDetails');
     });
     Route::get('category/{category_id}', 'ClientController@category');
     Route::get('services/{id}', 'ClientController@services');
