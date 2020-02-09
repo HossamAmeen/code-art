@@ -65,6 +65,21 @@ class ClientController extends Controller
         }
         $client = Client::where("email", request('email'))->first();
         return redirect()->route('home');
-        return Auth::guard('client')->user()->id;
+      
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::guard('client')->logout();
+
+        // return Auth::guard('client')->id;
+        return redirect()->route('home');
+    }
+
+    public function wishlist()
+    {
+        $pageTitle = "القائمه المفضلة" ;
+        $wishlists = \App\Models\Wishlist::all();
+        return view('web.client.wishlist' , compact('pageTitle', 'wishlists' ));
     }
 }

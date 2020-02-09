@@ -96,9 +96,10 @@
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0 icon-bigscreen">
+                @if (!Auth::guard('client')->guest())
                 <ul class="navbar-nav" style="display: inline-block;">
                     <li class="nav-item form-nav">
-                        <a class="nav-link" href="fav-items.html">
+                        <a class="nav-link" href="{{url('client/wishlist')}}">
                             <i class="nav-link-icon fas fa-heart"></i>
                         </a>
                         <a class="nav-link" href="cart.html">
@@ -106,6 +107,7 @@
                                 class="nav-link-icon fas fa-shopping-cart"></i>
                         </a>
                     </li>
+                    @endif
                 </ul>
                 <input class=" form-control navbar-search-textbox" type="search" placeholder="بحث ... "
                     aria-label="Search" />
@@ -141,7 +143,7 @@
                             المفضلة</a>
                         <a class="dropdown-item" href="settings.html"><i class="nav-link-icon fas fa-edit"></i> تعديل
                             البيانات</a>
-                        <a class="dropdown-item" href="login.html"><i class="nav-link-icon fas fa-sign-out-alt"></i>
+                        <a class="dropdown-item" href="{{url('client/logout')}}"><i class="nav-link-icon fas fa-sign-out-alt"></i>
                             تسجيل
                             الخروج</a>
                     </div>
