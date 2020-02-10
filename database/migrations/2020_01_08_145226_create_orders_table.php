@@ -29,6 +29,13 @@ class CreateOrdersTable extends Migration
            * 4 => تم التنفيذ 
            * 
            */
+
+            $table->bigInteger('service_provider_id')->unsigned()->nullable();
+            $table->foreign('service_provider_id')->references('id')->on('service_providers')->onDelete('cascade');
+           
+            $table->bigInteger('service_type_id')->unsigned()->nullable();
+            $table->foreign('service_type_id')->references('id')->on('service_types')->onDelete('cascade');
+
             $table->bigInteger('client_id')->unsigned()->nullable();
             $table->foreign('client_id')->references('id')->on('clients')->onUpdate('set null')
             ->onDelete('set null');

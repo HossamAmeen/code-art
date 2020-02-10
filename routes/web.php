@@ -67,7 +67,10 @@ Route::namespace ('WebSite')->group(function () {
     Route::view('/privacy', 'web.home.privacy', ['pageTitle' => 'من نحن']);
     Route::view('/contact', 'web.home.contact', ['pageTitle' => 'تواصل معانا']);
     Route::view('/complaint', 'web.home.complaint', ['pageTitle' => 'الشكاوي']);
-   
+
+    Route::get('category/{category_id}', 'ClientController@category');
+    Route::get('services/{id}', 'ClientController@services');
+    Route::get('service-detials/{id}', 'ClientController@serviceDetials');
     /////////////////////// client
     Route::prefix('client')->group(function () {
         // Route::view('register', 'web.client.register', ['pageTitle' => 'إنشاء حساب جديد']);
@@ -87,11 +90,22 @@ Route::namespace ('WebSite')->group(function () {
         Route::get('delete/cart/{id}', 'ClientController@deleteCart');
     });
     
-
-    Route::get('category/{category_id}', 'ClientController@category');
-    Route::get('services/{id}', 'ClientController@services');
-    Route::get('service-detials/{id}', 'ClientController@serviceDetials');
-
     /////////////////// service provider service
-    Route::post('serviceProvider/login', 'ServiceProviderController@login')->name('serviceProvider/login');
+    Route::prefix('service-provider')->group(function () {
+        Route::post('login', 'ServiceProviderController@login')->name('serviceProvider/login');
+        Route::get('logout', 'ServiceProviderController@logout')->name('serviceProvider/logout');
+        Route::get('/', 'ServiceProviderController@servicesForProvider')->name('serviceProvider/home');
+        Route::any('account', 'ServiceProviderController@account');
+        Route::get('orders', 'ServiceProviderController@orders');
+        Route::get('show-categories', 'ServiceProviderController@showCategories');
+        Route::get('show-services/{id}', 'ServiceProviderController@showServices');
+        Route::any('add-service/{id}', 'ServiceProviderController@addService');
+        Route::any('delete-service/{id}', 'ServiceProviderController@deleteService');
+        Route::any('change-service/{id}', 'ServiceProviderController@changeVisionService');
+        Route::any('change-status-order/{id}/{status}', 'ServiceProviderController@changeStatusOrder');
+        Route::any('edit-service/{id}', 'ServiceProviderController@updateService');
+        Route::get('services-details/{id}', 'ServiceProviderController@servicesDetails');
+
+    });
+   
 });

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\WebSite;
 use App\Models\ServiceCategory;
+use App\Models\ServiceType;
 use App\Models\Client;
 use Auth;
 use Illuminate\Support\Facades\Hash;
@@ -35,7 +36,17 @@ class ClientController extends Controller
         $pageTitle = "مزود الخدمة" ;
         $service = \App\Models\ServiceProviderService::findOrFail($service_id);
         $suggestAdditions = \App\Models\SuggestAddition::where('service_category_id' , $service->service_category_id)->get();
-        return view('web.client.service_details' , compact('pageTitle', 'service' , 'suggestAdditions'));
+
+        $servicesType = ServiceType::where('service_provider_service_id', $service_id)->get();
+        $prices = array();
+        $days = array();
+        $serviceId = array();
+        foreach ($servicesType as $type) {
+            $serviceId[] = $type->id;
+            $prices[] = $type->price;
+            $days[] = $type->days;
+        }
+        return view('web.client.service_details' , compact('pageTitle', 'service' , 'suggestAdditions' ,'serviceId', 'prices' , 'days'));
     }
 
     public function register(Request $request)
@@ -95,7 +106,7 @@ class ClientController extends Controller
            
         }
            
-            $pageTitle = "تجسيل حساب جديد" ;
+            $pageTitle = "تعديل بيانات الحساب " ;
             $cities = \App\Models\City::all();
             $countries = \App\Models\Country::all();
             return view('web.client.settings' , compact('pageTitle', 'cities' , 'countries' , 'client'));
@@ -130,7 +141,7 @@ class ClientController extends Controller
         return redirect()->back();
     }
 
-    public function addToOrder($id)
+    public function addToOrder($id , Request $request)
     {
         $service = \App\Models\ServiceProviderService::findOrFail($id);
         $order = new \App\Models\Order();
@@ -142,11 +153,13 @@ class ClientController extends Controller
         return redirect()->back();
     }
 
-    public function addToCart($id)
+    public function addToCart($id , Request $request )
     {
+        return $request->serviceType;
         $cart = new \App\Models\Cart();
         $cart->service_id =$id ;
         $cart->client_id = Auth::guard('client')->user()->id;
+        $cart->amount = $request->amount ;
         $cart->save();
         return redirect()->back();
     }

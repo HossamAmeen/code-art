@@ -93,6 +93,8 @@ $factory->define(App\Models\Order::class, function (Faker $faker) {
         "status" =>  $faker->randomElement(array(1,2,3,4)),
         "client_id" => $faker->randomElement(getClients()),
         "service_id" => $faker->randomElement(getServiceProviderService()),
+        'service_provider_id' => $faker->randomElement(getServiceProvider()),
+        "service_type_id" =>  $faker->randomElement(array(1,2,3,4)),
     ];
 });
 
@@ -100,6 +102,7 @@ $factory->define(App\Models\Cart::class, function (Faker $faker) {
     return [
         "client_id" => $faker->randomElement(getClients()),
         "service_id" => $faker->randomElement(getServiceProviderService()),
+        "service_type_id" =>  $faker->randomElement(array(1,2,3,4)),
     ];
 });
 

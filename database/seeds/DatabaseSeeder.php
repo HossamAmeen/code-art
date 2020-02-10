@@ -52,7 +52,7 @@ class DatabaseSeeder extends Seeder
         factory('App\Models\LastWork', 10)->create();
         factory('App\Models\Complaint', 10)->create();
 
-         factory('App\Models\ServiceType', 10)->create();
+         
          factory('App\Models\ServiceProviderWallet', 10)->create();
         factory('App\Models\ServiceQuestion', 10)->create();
 

@@ -16,6 +16,10 @@ class CreateCartsTable extends Migration
         Schema::create('carts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->date('date')->default(date("Y-m-d"));
+            $table->integer('amount')->default(1);
+            $table->bigInteger('service_type_id')->unsigned()->nullable();
+            $table->foreign('service_type_id')->references('id')->on('service_types')->onDelete('cascade');
+
             $table->bigInteger('client_id')->unsigned()->nullable();
             $table->foreign('client_id')->references('id')->on('clients')->onUpdate('set null')
             ->onDelete('set null');

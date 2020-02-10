@@ -156,6 +156,7 @@ $factory->define(App\Models\ServiceProviderService::class, function (Faker $fake
         'service_provider_id' => $faker->randomElement(getServiceProvider()),
         'service_category_id' => $faker->randomElement(getServiceCategory()),
         'description' => $faker->sentence,
+        'is_hidden' =>$faker->boolean,
         'rate' => $faker->randomDigit,
         'price' => $faker->randomDigit,
         'discount' => $faker->randomDigit,
@@ -179,7 +180,7 @@ $factory->define(App\Models\ServiceType::class, function (Faker $faker) {
     return [
         'price' => $faker->randomDigit,
         'days' => $faker->randomDigit,
-        'service_provider_id' => $faker->randomElement(getServiceProvider()),
+       
         'service_provider_service_id' => $faker->randomElement(getServiceProviderService()),
     ];
 });

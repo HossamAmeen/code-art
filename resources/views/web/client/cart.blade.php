@@ -38,17 +38,10 @@
 									<div class="col-lg-2 col-md-6 col-sm-6 col-xs-12 div-4">
 										<label class="price-lbl">{{$item->service->price}} ريال</label>
 									</div>
-									{{-- <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12 div-4">
+									<div class="col-lg-2 col-md-6 col-sm-6 col-xs-12 div-4">
 										<label>العدد</label>
-										<select class="form-control deliver-count-dropdown"
-											id="exampleFormControlSelect1">
-											<option>1</option>
-											<option>2</option>
-											<option>3</option>
-											<option>4</option>
-											<option>5</option>
-										</select>
-									</div> --}}
+										<input type="number" value="{{$item->amount}}" style="background-color: dimgrey">
+									</div>
 								</div>
 								<div class="row">
 									<div class="col-lg-3 col-md-6 col-sm-6 div-1-actions"></div>
@@ -75,7 +68,7 @@
 
 
 
-							<div class="">
+							{{-- <div class="">
 								<div class="additional-order">
 									<p>اضافات مقترحة</p>
 									<br>
@@ -128,7 +121,7 @@
 										</div>
 									</div>
 								</div>
-							</div>
+							</div> --}}
 
 							<div class="cartDone-div">
 								<button class="btn cartDone-btn" id="finishCartBuying"><i

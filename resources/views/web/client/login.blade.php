@@ -32,7 +32,7 @@
 														<label for="name-form" class="data-cell-label-title">البريد
 															الالكتروني</label>
 														<input type="email" class="form-control txtBox-name"
-															name="email" id="name-form" value="" required>
+															name="email" id="name-form"  required>
 														<div class="invalid-feedback invalid-lbl">البريد الالكتروني
 															مطلوب</div>
 													</div>
@@ -46,7 +46,7 @@
 														<label for="phone-form" class="data-cell-label-title">كلمة
 															المرور</label>
 														<input type="password" class="form-control txtBox-name"
-															name="password" id="phone-form" value="" required>
+															name="password" id="phone-form"  required>
 														<div class="invalid-feedback invalid-lbl"> كلمة المرور
 															مطلوبة</div>
 													</div>
@@ -73,7 +73,8 @@
 												</div>
 												<div class="col-lg-12">
 													<div class="btn-submit-div">
-														<button class="btn btn-secondary btn-submit" type="submit" formaction="{{url('serviceProvider/login')}}">سجل
+														<button class="btn btn-secondary btn-submit" type="submit"
+														 formaction="{{url('service-provider/login')}}">سجل
 															الدخول ك مقدم خدمة</button>
 													</div>
 												</div>

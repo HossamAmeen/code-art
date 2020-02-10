@@ -18,6 +18,7 @@
 </head>
 
 <body>
+    @if (Auth::guard('service-provider')->guest())
     <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand" href="{{url('/')}}">
             <img src="{{asset('web/assets/imgs/logo.png')}}" width="42" height="60" alt="" />
@@ -107,8 +108,9 @@
                                 class="nav-link-icon fas fa-shopping-cart"></i>
                         </a>
                     </li>
-                    @endif
+
                 </ul>
+                @endif
                 <input class=" form-control navbar-search-textbox" type="search" placeholder="بحث ... "
                     aria-label="Search" />
                 <button class="btn navbar-search-btn my-2 my-sm-0" type="submit">
@@ -126,34 +128,135 @@
                         </span>
                     </a>
                     @else
-                    <a class="nav-link dropDown-navLink_login dropdown-toggle" href="{{url('client/login')}}" role="button" id=""
-                        data-toggle="" aria-haspopup="false" aria-expanded="false" data-target="">
-                        <span class="navbar-link-span">                           
-                            تسجيل دخول 
+                    <a class="nav-link dropDown-navLink_login dropdown-toggle" href="{{url('client/login')}}"
+                        role="button" id="" data-toggle="" aria-haspopup="false" aria-expanded="false" data-target="">
+                        <span class="navbar-link-span">
+                            تسجيل دخول
                         </span>
                     </a>
                     @endif
                     @if (!Auth::guard('client')->guest())
                     <div class="dropdown-menu user_card-dropdown" aria-labelledby="">
-                        <a class="dropdown-item" href="{{url('client/orders')}}"><i class="nav-link-icon fas fa-shopping-bag"></i>
+                        <a class="dropdown-item" href="{{url('client/orders')}}"><i
+                                class="nav-link-icon fas fa-shopping-bag"></i>
                             الطلبات</a>
-                        <a class="dropdown-item" href="{{url('client/cart')}}"><i class="nav-link-icon fas fa-shopping-cart"></i> سلة
+                        <a class="dropdown-item" href="{{url('client/cart')}}"><i
+                                class="nav-link-icon fas fa-shopping-cart"></i> سلة
                             الشراء </a>
-                        <a class="dropdown-item" href="{{url('client/wishlist')}}"><i class="nav-link-icon fas fa-heart"></i>
+                        <a class="dropdown-item" href="{{url('client/wishlist')}}"><i
+                                class="nav-link-icon fas fa-heart"></i>
                             المفضلة</a>
-                        <a class="dropdown-item" href="{{url('client/account')}}"><i class="nav-link-icon fas fa-edit"></i> تعديل
+                        <a class="dropdown-item" href="{{url('client/account')}}"><i
+                                class="nav-link-icon fas fa-edit"></i> تعديل
                             البيانات</a>
-                        <a class="dropdown-item" href="{{url('client/logout')}}"><i class="nav-link-icon fas fa-sign-out-alt"></i>
+                        <a class="dropdown-item" href="{{url('client/logout')}}"><i
+                                class="nav-link-icon fas fa-sign-out-alt"></i>
                             تسجيل
                             الخروج</a>
                     </div>
                     @endif
                 </li>
             </ul>
-           
+
         </div>
     </nav>
+    @else
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="{{url('/')}}">
+            <img src="{{asset('web/assets/imgs/logo.png')}}" width="42" height="60" alt="" />
+        </a>
+        <form class="form-inline mr-auto icon-smallscreen">
+            <ul class="navbar-nav" style="display: inline-block;">
+                <li class="nav-item form-nav">
+                    <a class="nav-link" href="{{url('client/wishlist')}}">
+                        <i class="nav-link-icon fas fa-heart"></i>
+                    </a>
+                    <a class="nav-link" href="{{url('client/cart')}}">
+                        <i class=" cartHasNotification fas fa-circle"></i><i
+                            class="nav-link-icon fas fa-shopping-cart"></i>
+                    </a>
+                </li>
+            </ul>
+            <input class=" form-control navbar-search-textbox" type="search" placeholder="بحث ... "
+                aria-label="Search" />
+            <button class="btn navbar-search-btn my-2 my-sm-0" type="submit">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{url('service-provider')}}"><i class="nav-link-icon fas fa-home"></i>
+                        <span class="navbar-link-span">الرئيسية</span>
+                    </a>
+                </li>
 
+
+                <li class="nav-item ">
+                    <a class="nav-link" href="{{url('contact')}}"><i class="nav-link-icon fas fa-headset"></i>
+                        <span class="navbar-link-span">تواصل معنا</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"></a>
+                </li>
+                <li class="nav-item form-ul-item">
+                    <form class="form-inline form-ul">
+                        <input class=" form-control navbar-search-textbox form-ul-item-textbox" type="search"
+                            placeholder="بحث ... " aria-label="Search" />
+                        <button class="btn navbar-search-btn form-ul-item-srchBtn my-2 my-sm-0" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0 icon-bigscreen">
+
+                <input class=" form-control navbar-search-textbox" type="search" placeholder="بحث ... "
+                    aria-label="Search" />
+                <button class="btn navbar-search-btn my-2 my-sm-0" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+
+            <ul class="navbar-nav" style="display: inline-block;">
+                <li class="nav-item dropdown">
+                    @if (!Auth::guard('service-provider')->guest())
+                    <a class="nav-link dropDown-navLink_login dropdown-toggle" href="#" role="button" id=""
+                        data-toggle="" aria-haspopup="false" aria-expanded="false" data-target="">
+                        <span class="navbar-link-span">اهلا {{Auth::guard('service-provider')->user()->name}}<i
+                                class="fas fa-angle-down"></i>
+                        </span>
+                    </a>
+                    @else
+                    
+                    @endif
+                    @if (!Auth::guard('service-provider')->guest())
+                    <div class="dropdown-menu user_card-dropdown" aria-labelledby="">
+						<a class="dropdown-item" href="{{url('service-provider')}}"><i class="nav-link-icon fas fa-box-open"></i>
+							خدماتي</a>
+						<a class="dropdown-item" href="{{url('service-provider/orders')}}"><i
+								class="nav-link-icon fas fa-shopping-bag"></i> الطلبات الواردة</a>
+						{{-- <a class="dropdown-item" href="{{url('service-provider/orders')}}"><i class="nav-link-icon fas fa-dollar-sign"></i>
+							الرصيد والارباح </a> --}}
+						<a class="dropdown-item" href="{{url('service-provider/account')}}"><i class="nav-link-icon fas fa-edit"></i> تعديل
+							البيانات</a>
+						<a class="dropdown-item" href="{{url('service-provider/logout')}}"><i class="nav-link-icon fas fa-sign-out-alt"></i>
+							تسجيل
+							الخروج</a>
+					</div>
+                   
+                    @endif
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+    @endif
     @yield('content')
 
     <footer>

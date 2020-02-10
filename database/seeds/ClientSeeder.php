@@ -68,7 +68,7 @@ class ClientSeeder extends Seeder
             'name' => "أسامة عسكر", 
             'email' => 'osama@gmail.com', 
             'password' =>  bcrypt('admin'),
-            'image' => " ",
+            'image' => 'uploads\servicecategories\services.png',
              'country'=>2,
               'city' => 1,
               'phone' => "01010079798",
@@ -98,6 +98,31 @@ class ClientSeeder extends Seeder
         factory('App\Models\WishList', 10)->create();
         // factory('App\Models\', 10)->create();
         factory('App\Models\Question', 10)->create();
+        \App\Models\ServiceType::create([
+            'price' => 1, 
+            'days' =>  2,
+            'service_provider_service_id' => 1, 
+            
+           
+            
+        ]);
+        \App\Models\ServiceType::create([
+            'price' => 3, 
+            'days' =>  4,
+            'service_provider_service_id' => 1, 
+            
+           
+            
+        ]);
+        \App\Models\ServiceType::create([
+            'price' => 5, 
+            'days' =>  6,
+            'service_provider_service_id' => 1, 
+            
+           
+            
+        ]);
+        factory('App\Models\ServiceType', 10)->create();
         factory('App\Models\Order', 100)->create();
         factory('App\Models\Cart', 100)->create();
         \App\Models\SuggestAddition::create([

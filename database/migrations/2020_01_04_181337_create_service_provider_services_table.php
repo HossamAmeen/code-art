@@ -18,11 +18,12 @@ class CreateServiceProviderServicesTable extends Migration
             $table->longText('description');
             $table->double('discount')->nullable();
             $table->double('rate')->default(2.5);
+            $table->boolean('is_hidden')->default(false);
             $table->double('price');
             $table->string('image');
-            $table->longText('overview');
+            $table->longText('overview')->nullable();
             $table->string('title');
-            $table->string('program');
+            $table->string('program')->nullable();
 
             $table->bigInteger('service_provider_id')->unsigned()->nullable();
             $table->foreign('service_provider_id')->references('id')->on('service_providers')->onDelete('cascade');

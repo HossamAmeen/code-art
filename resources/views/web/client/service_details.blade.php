@@ -86,24 +86,30 @@
 									</p>
 
 									<div class="btn-group btn-group-toggle" data-toggle="buttons">
-										<label class="btn btn-light priceBtn active">
-											<input type="radio" name="price-form" id="price-Class-1-form"
-												autocomplete="off" value="75" checked> 75 ريال
+										<label class="btn btn-light priceBtn active" onclick="changeOffer(1)">
+											<input type="radio" name="serviceType" id="price-Class-1-form"
+											 autocomplete="off" value="{{$serviceId[0]}}" checked> {{$prices[0]}} ريال
 										</label>
-										<label class="btn btn-light priceBtn">
-											<input type="radio" name="price-form" id="price-Class-1-form"
-												autocomplete="off" value="100"> 100 ريال
+										<label class="btn btn-light priceBtn" onclick="changeOffer(2)">
+											<input type="radio" name="serviceType" id="price-Class-1-form" 
+											autocomplete="off" value="{{$serviceId[1]}}"> {{$prices[1]}} ريال
 										</label>
-										<label class="btn btn-light priceBtn">
-											<input type="radio" name="price-form" id="price-Class-1-form"
-												autocomplete="off" value="150"> 150 ريال
+										<label class="btn btn-light priceBtn" onclick="changeOffer(3)">
+											<input type="radio" name="serviceType" id="price-Class-1-form" 
+											autocomplete="off" value="{{$serviceId[2]}}"> {{$prices[2]}} ريال
 										</label>
 									</div>
-
+									
 									<div class="deliver-day">
-										<span class="service-info-details-deliver-day">ميعاد التسليم&nbsp;
-											&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3
-											أيام</span>
+										<span class="service-info-details-deliver-day" id="offer-1" style="display: block;">
+											ميعاد التسليم &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {{$days[0]}} أيام
+										</span>
+										<span class="service-info-details-deliver-day" id="offer-2" style="display: none;">
+											ميعاد التسليم &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {{$days[1]}} أيام
+										</span>
+										<span class="service-info-details-deliver-day" id="offer-3" style="display: none;">
+											ميعاد التسليم &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {{$days[2]}} أيام
+										</span>
 									</div>
 
 									<div class="deliver-count">
@@ -112,14 +118,10 @@
 										<div class="service-info-details-deliver-count row">
 											<div
 												class=" btn-group col-lg-4 col-md-4 col-sm-4 col-xs-4 count-div-col count-div-col-1">
-												<select class="form-control deliver-count-dropdown" name="count-form"
-													id="count-form">
-													<option>1</option>
-													<option>2</option>
-													<option>3</option>
-													<option>4</option>
-													<option>5</option>
-												</select>
+												<input type="number"
+																		class="form-control txtBox-name"
+																		id="phone-accountData" name="amount" 
+																			value="1">
 											</div>
 											<div
 												class="btn-group col-lg-8 col-md-8 col-sm-8 col-xs-8 count-div-col count-div-col-2">
@@ -470,4 +472,25 @@
 		</div>
 	</div>
 </section>
+@endsection
+@section('js')
+<script>
+	function changeOffer(offerNumber) {
+		if(offerNumber == 1){
+			$("#offer-1").show();
+			$("#offer-2").hide();
+			$("#offer-3").hide();
+		}
+		else if(offerNumber == 2){
+			$("#offer-1").hide();
+			$("#offer-2").show();
+			$("#offer-3").hide();
+		}
+		else if(offerNumber == 3){
+			$("#offer-1").hide();
+			$("#offer-2").hide();
+			$("#offer-3").show();
+		}
+	}
+</script>
 @endsection
