@@ -1,0 +1,18 @@
+admin 
+
+
+    admin
+    admin
+
+
+client 
+
+
+    client@client.com
+    Admin123$
+
+
+serviceProvider
+
+    osama@gmail.com
+    admin

@@ -155,7 +155,7 @@ class ClientController extends Controller
 
     public function addToCart($id , Request $request )
     {
-        return $request->serviceType;
+        // return $request->serviceType;
         $cart = new \App\Models\Cart();
         $cart->service_id =$id ;
         $cart->client_id = Auth::guard('client')->user()->id;
