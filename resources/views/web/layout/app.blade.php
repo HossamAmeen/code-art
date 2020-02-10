@@ -19,16 +19,16 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="{{url('/')}}">
             <img src="{{asset('web/assets/imgs/logo.png')}}" width="42" height="60" alt="" />
         </a>
         <form class="form-inline mr-auto icon-smallscreen">
             <ul class="navbar-nav" style="display: inline-block;">
                 <li class="nav-item form-nav">
-                    <a class="nav-link" href="fav-items.html">
+                    <a class="nav-link" href="{{url('client/wishlist')}}">
                         <i class="nav-link-icon fas fa-heart"></i>
                     </a>
-                    <a class="nav-link" href="cart.html">
+                    <a class="nav-link" href="{{url('client/cart')}}">
                         <i class=" cartHasNotification fas fa-circle"></i><i
                             class="nav-link-icon fas fa-shopping-cart"></i>
                     </a>
@@ -67,7 +67,7 @@
                 </li>
                 @if (!Auth::guard('client')->guest())
                 <li class="nav-item ">
-                    <a class="nav-link" href="{{url('orders')}}"><i class="nav-link-icon fas fa-box-open"></i>
+                    <a class="nav-link" href="{{url('client/orders')}}"><i class="nav-link-icon fas fa-box-open"></i>
                         <span class="navbar-link-span">الطلبات</span>
                     </a>
                 </li>
@@ -102,7 +102,7 @@
                         <a class="nav-link" href="{{url('client/wishlist')}}">
                             <i class="nav-link-icon fas fa-heart"></i>
                         </a>
-                        <a class="nav-link" href="cart.html">
+                        <a class="nav-link" href="{{url('client/cart')}}">
                             <i class=" cartHasNotification fas fa-circle"></i><i
                                 class="nav-link-icon fas fa-shopping-cart"></i>
                         </a>
@@ -135,13 +135,13 @@
                     @endif
                     @if (!Auth::guard('client')->guest())
                     <div class="dropdown-menu user_card-dropdown" aria-labelledby="">
-                        <a class="dropdown-item" href="my-orders.html"><i class="nav-link-icon fas fa-shopping-bag"></i>
+                        <a class="dropdown-item" href="{{url('client/orders')}}"><i class="nav-link-icon fas fa-shopping-bag"></i>
                             الطلبات</a>
-                        <a class="dropdown-item" href="cart.html"><i class="nav-link-icon fas fa-shopping-cart"></i> سلة
+                        <a class="dropdown-item" href="{{url('client/cart')}}"><i class="nav-link-icon fas fa-shopping-cart"></i> سلة
                             الشراء </a>
-                        <a class="dropdown-item" href="fav-items.html"><i class="nav-link-icon fas fa-heart"></i>
+                        <a class="dropdown-item" href="{{url('client/wishlist')}}"><i class="nav-link-icon fas fa-heart"></i>
                             المفضلة</a>
-                        <a class="dropdown-item" href="settings.html"><i class="nav-link-icon fas fa-edit"></i> تعديل
+                        <a class="dropdown-item" href="{{url('client/account')}}"><i class="nav-link-icon fas fa-edit"></i> تعديل
                             البيانات</a>
                         <a class="dropdown-item" href="{{url('client/logout')}}"><i class="nav-link-icon fas fa-sign-out-alt"></i>
                             تسجيل

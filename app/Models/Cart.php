@@ -4,17 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class WishList extends Model
+class Cart extends Model
 {
-    protected $fillable = ['client_id','service_id'  , 'date'];
+    protected $fillable = ['service_id' , 'client_id' ];
 
     public function service()
     {
         return $this->belongsTo(ServiceProviderService::class , "service_id");
-    }
-
-    public function client()
-    {
-        return $this->belongsTo(Client::class , "client_id");
     }
 }

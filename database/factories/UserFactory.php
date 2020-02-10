@@ -157,6 +157,7 @@ $factory->define(App\Models\ServiceProviderService::class, function (Faker $fake
         'service_category_id' => $faker->randomElement(getServiceCategory()),
         'description' => $faker->sentence,
         'rate' => $faker->randomDigit,
+        'price' => $faker->randomDigit,
         'discount' => $faker->randomDigit,
         'image' => 'uploads\service-detials.png',
         'overview' => $faker->sentence,
@@ -199,8 +200,8 @@ $factory->define(App\Models\ServiceQuestionMultipleChoice::class, function (Fake
 
 $factory->define(App\Models\ServiceComment::class, function (Faker $faker) {
     return [
-        'service_provider_id' => $faker->randomElement(getServiceProvider()),
-        'service_category_id' => $faker->randomElement(getServiceCategory()),
-        'comment' => $faker->sentence,
+        'client_id' => $faker->randomElement(getCities()),
+        'service_provider_service_id' =>  $faker->randomElement(getServiceProviderService()),
+            'comment' => $faker->sentence,
     ];
 });

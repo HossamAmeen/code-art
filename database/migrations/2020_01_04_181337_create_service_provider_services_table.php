@@ -18,6 +18,7 @@ class CreateServiceProviderServicesTable extends Migration
             $table->longText('description');
             $table->double('discount')->nullable();
             $table->double('rate')->default(2.5);
+            $table->double('price');
             $table->string('image');
             $table->longText('overview');
             $table->string('title');

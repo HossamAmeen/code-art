@@ -13,7 +13,7 @@ class ClientSeeder extends Seeder
     {
         \App\Models\Client::create([
             "email" => "client@client.com",
-            "user_name" => "user_name",
+            "user_name" => "hossam",
             "phone" => "01010079798",
             "country_id" => 1,
             "city_id" => 1,
@@ -80,6 +80,7 @@ class ClientSeeder extends Seeder
              'service_category_id' => 1,
               'description' => "تصميم محترف للشعار",
                'rate' => 3,
+               'price' => 2,
              'discount' => 2,
               'image' => 'uploads\service-detials.png',
                'overview' => " في هذه الخدمة سوف أقوم بتصميم شعار احترافي لشركتك او لمؤسستك او موقعك - خدمتك - محلك - فكرتك.
@@ -98,7 +99,7 @@ class ClientSeeder extends Seeder
         // factory('App\Models\', 10)->create();
         factory('App\Models\Question', 10)->create();
         factory('App\Models\Order', 100)->create();
-
+        factory('App\Models\Cart', 100)->create();
         \App\Models\SuggestAddition::create([
             'suggestion' => "تصميم صفحه فيس بوك",
              'price' => 2   , 

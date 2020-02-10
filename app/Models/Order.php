@@ -8,7 +8,7 @@ class Order extends Model
 {
     protected $fillable = ['service_id' , 'client_id' , 'price' , 'amount'];
 
-    public function service()
+    public function serviceOrder()
     {
         return $this->belongsTo(ServiceProviderService::class , "service_id");
     }

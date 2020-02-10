@@ -68,7 +68,7 @@ $factory->define(App\Models\WishList::class, function (Faker $faker) {
     return [ 
         'client_id' => $faker->randomElement(getCities()),
         'service_id' => $faker->randomElement(getServiceProviderService()),
-         'price' => $faker->randomDigit,
+        
     ];
 });
 
@@ -91,6 +91,13 @@ $factory->define(App\Models\Order::class, function (Faker $faker) {
         "price" => $faker->randomDigit,
         "amount"   => $faker->randomDigit,
         "status" =>  $faker->randomElement(array(1,2,3,4)),
+        "client_id" => $faker->randomElement(getClients()),
+        "service_id" => $faker->randomElement(getServiceProviderService()),
+    ];
+});
+
+$factory->define(App\Models\Cart::class, function (Faker $faker) {
+    return [
         "client_id" => $faker->randomElement(getClients()),
         "service_id" => $faker->randomElement(getServiceProviderService()),
     ];

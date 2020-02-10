@@ -17,12 +17,12 @@ class CreateServiceCommentsTable extends Migration
             $table->bigIncrements('id');
             $table->longText('comment');
 
-            $table->bigInteger('service_provider_id')->unsigned()->nullable();
-            $table->foreign('service_provider_id')->references('id')->on('service_providers')->onDelete('cascade');
-
-            $table->bigInteger('service_category_id')->unsigned()->nullable();
-            $table->foreign('service_category_id')->references('id')->on('service_categories')->onDelete('cascade');
-
+            $table->bigInteger('service_provider_service_id')->unsigned()->nullable();
+            $table->foreign('service_provider_service_id')->references('id')->on('service_provider_services')->onDelete('cascade');
+            
+            $table->bigInteger('client_id')->unsigned()->nullable();
+            $table->foreign('client_id')->references('id')->on('clients')->onUpdate('set null')
+            ->onDelete('set null');
             $table->timestamps();
         });
     }

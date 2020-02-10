@@ -17,7 +17,8 @@ class CreateOrdersTable extends Migration
             $table->bigIncrements('id');
             $table->double('price');
             $table->integer('amount');
-            $table->integer('status');
+            $table->integer('status')->default(1);
+            $table->date('date')->default(date("Y-m-d"));
           /**
            *  1 => معلق
            * 

@@ -10,7 +10,8 @@
 <section>
 	<div class="service-details">
 		<div class="container-fluid">
-			<form action="{{url('addToCart')}}">
+			<form action="{{url('client/addToCart/'.$service->id)}}" method="POST">
+				@csrf
 				<div class="row">
 					<div class="col-lg-9 col-md-12 col-sm-12">
 						<div class="service-details-up-intro row">
