@@ -23,13 +23,14 @@
         <a class="navbar-brand" href="{{url('/')}}">
             <img src="{{asset('web/assets/imgs/logo.png')}}" width="42" height="60" alt="" />
         </a>
+        @if (!Auth::guard('client')->guest())
         <form class="form-inline mr-auto icon-smallscreen">
             <ul class="navbar-nav" style="display: inline-block;">
                 <li class="nav-item form-nav">
                     <a class="nav-link" href="{{url('client/wishlist')}}">
                         <i class="nav-link-icon fas fa-heart"></i>
                     </a>
-                    <a class="nav-link" href="{{url('client/cart')}}">
+                    <a class="nav-link" href="{{url('client')}}">
                         <i class=" cartHasNotification fas fa-circle"></i><i
                             class="nav-link-icon fas fa-shopping-cart"></i>
                     </a>
@@ -41,6 +42,7 @@
                 <i class="fas fa-search"></i>
             </button>
         </form>
+        @endif
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

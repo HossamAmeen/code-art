@@ -78,21 +78,26 @@ Route::namespace ('WebSite')->group(function () {
         Route::any('register', 'ClientController@register');
         Route::post('login', 'ClientController@login')->name('client/login');
         Route::get('logout', 'ClientController@logout')->name('client/logout');
-        Route::any('account', 'ClientController@account');
-        Route::get('wishlist', 'ClientController@wishlist');
-        Route::get('add/wishlist/{id}', 'ClientController@addWishlist');
-        Route::get('delete/wishlist/{id}', 'ClientController@deleteWishlist');
-        Route::get('orders', 'ClientController@orders');
-        Route::get('show-order/{id}', 'ClientController@showOrder');
-        Route::any('addToCart/{id}', 'ClientController@addToCart');
-        Route::any('rate-service/{id}', 'ClientController@rateService');
-        Route::get('cart', 'ClientController@cart');
-        Route::get('delete/cart/{id}', 'ClientController@deleteCart');
+        // Route::middleware('auth:client')->group(function () { 
+            Route::any('account', 'ClientController@account');
+            Route::get('wishlist', 'ClientController@wishlist');
+            Route::get('add/wishlist/{id}', 'ClientController@addWishlist');
+            Route::get('delete/wishlist/{id}', 'ClientController@deleteWishlist');
+            Route::get('orders', 'ClientController@orders');
+            Route::get('show-order/{id}', 'ClientController@showOrder');
+            Route::any('addToCart/{id}', 'ClientController@addToCart');
+            Route::any('rate-service/{id}', 'ClientController@rateService');
+            Route::get('cart', 'ClientController@cart');
+            Route::get('delete/cart/{id}', 'ClientController@deleteCart');
+
+        // });
+      
     });
     
     /////////////////// service provider service
     Route::prefix('service-provider')->group(function () {
         Route::post('login', 'ServiceProviderController@login')->name('serviceProvider/login');
+      
         Route::get('logout', 'ServiceProviderController@logout')->name('serviceProvider/logout');
         Route::get('/', 'ServiceProviderController@servicesForProvider')->name('serviceProvider/home');
         Route::any('account', 'ServiceProviderController@account');
