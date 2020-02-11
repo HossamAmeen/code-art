@@ -28,7 +28,7 @@
 <div class="form-group">
     <label class="col-lg-2 control-label">كلمة السر </label>
     <div class="col-lg-10">
-        <input type="password" name="{{ $input }}" class="form-control" @if($pageDes !="Here you can edit User" )
+        <input type="password" name="{{ $input }}" class="form-control" @if($pageDes !="Here you can edit ServiceProvider" )
         required @endif>
         @error($input)
         <span class="invalid-feedback" role="alert">
@@ -41,7 +41,7 @@
 <div class="form-group">
     <label class="col-lg-2 control-label"> تاكيد كلمة السر</label>
     <div class="col-lg-10">
-        <input type="password" name="{{ $input }}" class="form-control" @if($pageDes !="Here you can edit User" )
+        <input type="password" name="{{ $input }}" class="form-control" @if($pageDes !="Here you can edit ServiceProvider" )
         required @endif>
         @error($input)
         <span class="invalid-feedback" role="alert">
