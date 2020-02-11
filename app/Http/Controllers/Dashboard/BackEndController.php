@@ -108,6 +108,23 @@ class BackEndController extends Controller
         $image->save($destinationPath.$fileName);
         return 'uploads/'.$this->getClassNameFromModel().'/'. $fileName;
     }
+
+    protected function uploadFile($request , $height = 400 , $width = 400){
+
+        $photo = $request->file('image');
+        $fileName = time().str_random('10').'.'.$photo->getClientOriginalExtension();
+        $destinationPath = public_path('uploads/'.$this->getClassNameFromModel().'/');
+        // $image = Image::make($photo->getRealPath())->resize($height, $width);
+
+            // return $destinationPath;
+
+         if(!is_dir($destinationPath) ){
+             mkdir($destinationPath);
+         }
+        $photo->save($destinationPath.$fileName);
+        return 'uploads/'.$this->getClassNameFromModel().'/'. $fileName;
+    }
+
     protected function filter($rows)
     {
         return $rows;
