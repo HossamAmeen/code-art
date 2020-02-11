@@ -121,7 +121,7 @@ class BackEndController extends Controller
          if(!is_dir($destinationPath) ){
              mkdir($destinationPath);
          }
-        $photo->save($destinationPath.$fileName);
+        $photo->move($destinationPath , $fileName);
         return 'uploads/'.$this->getClassNameFromModel().'/'. $fileName;
     }
 

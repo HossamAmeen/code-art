@@ -28,7 +28,7 @@ class ServiceQuestionController extends BackEndController
         }
         if($request->type == 'file')
         {
-            $fileName = $this->uploadImage($request);
+            $fileName = $this->uploadFile($request);
             ServiceQuestionMultipleChoice::create([
                 'choice' => $fileName,
                 'service_question_id' => $question->id
