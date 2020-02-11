@@ -30,7 +30,7 @@
                     <a class="nav-link" href="{{url('client/wishlist')}}">
                         <i class="nav-link-icon fas fa-heart"></i>
                     </a>
-                    <a class="nav-link" href="{{url('client')}}">
+                    <a class="nav-link" href="{{url('client/cart')}}">
                         <i class=" cartHasNotification fas fa-circle"></i><i
                             class="nav-link-icon fas fa-shopping-cart"></i>
                     </a>
