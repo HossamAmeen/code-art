@@ -156,12 +156,17 @@ class ClientController extends Controller
     public function addToCart($id , Request $request )
     {
         // return $request->serviceType;
+       if( !Auth::guard('client')->guest() )
+       {
         $cart = new \App\Models\Cart();
         $cart->service_id =$id ;
         $cart->client_id = Auth::guard('client')->user()->id;
         $cart->amount = $request->amount ;
         $cart->save();
         return redirect()->back();
+       }
+        
+       return redirect()->route('client/login');
     }
 
     public function cart()

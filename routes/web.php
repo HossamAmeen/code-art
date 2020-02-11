@@ -59,7 +59,7 @@ Route::prefix('admin')->group(function () {
 Route::namespace ('WebSite')->group(function () {
     ///////////// home
     Route::get('/', 'HomeController@index')->name('home');
-    Route::get('questions', 'HomeController@questions');
+    Route::get('questions', 'HomeController@questions')->name('test');;
     Route::post('complaint', 'HomeController@complaint');
     Route::view('/about-us', 'web.home.about-us', ['pageTitle' => 'من نحن']);
     Route::view('/how-work', 'web.home.how-it-work', ['pageTitle' => 'من نحن']);
@@ -74,7 +74,7 @@ Route::namespace ('WebSite')->group(function () {
     /////////////////////// client
     Route::prefix('client')->group(function () {
         // Route::view('register', 'web.client.register', ['pageTitle' => 'إنشاء حساب جديد']);
-        Route::view('login', 'web.client.login', ['pageTitle' => 'تسجيل دخول ']);
+        Route::view('login', 'web.client.login', ['pageTitle' => 'تسجيل دخول '])->name('client/login');
         Route::any('register', 'ClientController@register');
         Route::post('login', 'ClientController@login')->name('client/login');
         Route::get('logout', 'ClientController@logout')->name('client/logout');
