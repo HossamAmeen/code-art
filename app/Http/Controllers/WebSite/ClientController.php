@@ -38,9 +38,9 @@ class ClientController extends Controller
         $suggestAdditions = \App\Models\SuggestAddition::where('service_category_id' , $service->service_category_id)->get();
 
         $servicesType = ServiceType::where('service_provider_service_id', $service_id)->get();
-        $prices = array();
-        $days = array();
-        $serviceId = array();
+        $prices = array(0,0,0);
+        $days = array(0,0,0);
+        $serviceId = array(0,0,0);
         foreach ($servicesType as $type) {
             $serviceId[] = $type->id;
             $prices[] = $type->price;
