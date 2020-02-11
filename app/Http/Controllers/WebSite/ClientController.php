@@ -116,16 +116,16 @@ class ClientController extends Controller
     public function wishlist()
     {
         $pageTitle = "القائمه المفضلة" ;
-        $wishlists = \App\Models\Wishlist::where('client_id',Auth::guard('client')->user()->id)
+        $wishlists = \App\Models\WishList::where('client_id',Auth::guard('client')->user()->id)
         ->get();
-        $countWislist = \App\Models\Wishlist::where('client_id',Auth::guard('client')->user()->id)
+        $countWislist = \App\Models\WishList::where('client_id',Auth::guard('client')->user()->id)
                                                     ->get()->count();
         return view('web.client.wishlist' , compact('pageTitle', 'wishlists','countWislist' ));
     }
 
     public function addWishlist($id)
     {
-        $wishlist = new \App\Models\Wishlist();
+        $wishlist = new \App\Models\WishList();
         $wishlist->service_id =$id ;
         $wishlist->client_id = Auth::guard('client')->user()->id;
         $wishlist->save();
@@ -134,7 +134,7 @@ class ClientController extends Controller
     public function deleteWishlist($id)
     {
         
-        $wishlist = \App\Models\Wishlist::find($id);
+        $wishlist = \App\Models\WishList::find($id);
         // return $wishlist;
         if(isset($wishlist))
         $wishlist->delete();

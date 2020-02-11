@@ -53,7 +53,8 @@
 									</div>
 									<div class="col-lg-2 col-md-6 col-sm-6 div-2-4">
 										<div class="data-cell mt-3">
-											<a href="{{url('client/add/wishlist/'.$item->service->id)}}" class="btn fav-action-btn"><i class="fas fa-heart"></i>
+											<a href="{{url('client/add/wishlist/'.$item->service->id)}}" class="btn fav-action-btn">
+												<i class="fas fa-heart"></i></a>
 												اضافة الى الامنيات </button>
 										</div>
 									</div>
